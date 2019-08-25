@@ -1,4 +1,4 @@
-package JWW.underwaterbiome.Utils.Interfaces;
+package underwaterbiome.Utils.Interfaces;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;

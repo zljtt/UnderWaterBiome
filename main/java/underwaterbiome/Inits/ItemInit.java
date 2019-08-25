@@ -1,14 +1,14 @@
-package JWW.underwaterbiome.Inits;
+package underwaterbiome.Inits;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import JWW.underwaterbiome.Objects.Items.ItemBase;
-import JWW.underwaterbiome.Utils.Reference;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import underwaterbiome.Objects.Items.ItemBase;
+import underwaterbiome.Utils.Reference;
 
 public class ItemInit 
 {

@@ -1,9 +1,9 @@
-package JWW.underwaterbiome.Utils.Proxy;
+package underwaterbiome.Utils.Proxy;
 
-import JWW.underwaterbiome.Utils.Interfaces.IProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
+import underwaterbiome.Utils.Interfaces.IProxy;
 
 public class ClientProxy implements IProxy
 {

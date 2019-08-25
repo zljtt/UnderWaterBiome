@@ -1,8 +1,5 @@
- package JWW.underwaterbiome.Handlers;
+ package underwaterbiome.Handlers;
 
-import JWW.underwaterbiome.Inits.BiomeInit;
-import JWW.underwaterbiome.Inits.BlockInit;
-import JWW.underwaterbiome.Inits.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
@@ -13,6 +10,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import underwaterbiome.Inits.BiomeInit;
+import underwaterbiome.Inits.BlockInit;
+import underwaterbiome.Inits.ItemInit;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class RegistryHandler 

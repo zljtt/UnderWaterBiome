@@ -1,4 +1,4 @@
-package JWW.underwaterbiome.Handlers;
+package underwaterbiome.Handlers;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

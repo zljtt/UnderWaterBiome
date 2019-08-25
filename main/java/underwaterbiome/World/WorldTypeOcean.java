@@ -1,4 +1,4 @@
-package JWW.underwaterbiome.World;
+package underwaterbiome.World;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;

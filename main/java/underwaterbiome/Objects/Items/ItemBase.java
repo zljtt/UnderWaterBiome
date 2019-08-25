@@ -1,10 +1,10 @@
-package JWW.underwaterbiome.Objects.Items;
+package underwaterbiome.Objects.Items;
 
-import JWW.underwaterbiome.Inits.ItemInit;
-import JWW.underwaterbiome.Utils.Reference;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
+import underwaterbiome.Inits.ItemInit;
+import underwaterbiome.Utils.Reference;
 
 public class ItemBase extends Item
 {

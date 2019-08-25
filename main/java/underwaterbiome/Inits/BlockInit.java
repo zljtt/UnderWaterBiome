@@ -1,16 +1,16 @@
-package JWW.underwaterbiome.Inits;
+package underwaterbiome.Inits;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import JWW.underwaterbiome.Objects.Blocks.BlockBase;
-import JWW.underwaterbiome.Utils.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import underwaterbiome.Objects.Blocks.BlockBase;
+import underwaterbiome.Utils.Reference;
 
 public class BlockInit 
 {

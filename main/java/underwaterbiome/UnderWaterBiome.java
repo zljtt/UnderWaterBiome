@@ -1,15 +1,10 @@
-package JWW.underwaterbiome;
+package underwaterbiome;
 
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import JWW.underwaterbiome.Handlers.RegistryHandler;
-import JWW.underwaterbiome.Utils.Interfaces.IProxy;
-import JWW.underwaterbiome.Utils.Proxy.ClientProxy;
-import JWW.underwaterbiome.Utils.Proxy.ServerProxy;
-import JWW.underwaterbiome.World.WorldTypeOcean;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +17,11 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import underwaterbiome.Handlers.RegistryHandler;
+import underwaterbiome.Utils.Interfaces.IProxy;
+import underwaterbiome.Utils.Proxy.ClientProxy;
+import underwaterbiome.Utils.Proxy.ServerProxy;
+import underwaterbiome.World.WorldTypeOcean;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("underwaterbiome")
@@ -37,7 +37,6 @@ public class UnderWaterBiome
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

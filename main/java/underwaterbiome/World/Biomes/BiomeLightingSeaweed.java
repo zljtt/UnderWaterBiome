@@ -1,4 +1,4 @@
-package JWW.underwaterbiome.World.Biomes;
+package underwaterbiome.World.Biomes;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;

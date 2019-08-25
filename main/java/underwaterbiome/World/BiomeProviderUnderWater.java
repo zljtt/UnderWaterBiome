@@ -1,4 +1,4 @@
-package JWW.underwaterbiome.World;
+package underwaterbiome.World;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +9,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Sets;
 
-import JWW.underwaterbiome.Inits.BiomeInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,6 +20,7 @@ import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
 import net.minecraft.world.storage.WorldInfo;
+import underwaterbiome.Inits.BiomeInit;
 
 
 
