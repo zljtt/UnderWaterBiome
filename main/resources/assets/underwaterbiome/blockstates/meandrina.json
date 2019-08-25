@@ -1,0 +1,23 @@
+{
+    "variants": 
+    {
+        "level=0": { "model": "underwaterbiome:meandrina" },
+        "level=1": { "model": "underwaterbiome:meandrina" },
+        "level=2": { "model": "underwaterbiome:meandrina" },
+        "level=3": { "model": "underwaterbiome:meandrina" },
+        "level=4": { "model": "underwaterbiome:meandrina" },
+        "level=5": { "model": "underwaterbiome:meandrina" },
+        "level=6": { "model": "underwaterbiome:meandrina" },
+        "level=7": { "model": "underwaterbiome:meandrina" },
+        "level=8": { "model": "underwaterbiome:meandrina" },
+        "level=9": { "model": "underwaterbiome:meandrina" },
+        "level=10": { "model": "underwaterbiome:meandrina" },
+        "level=11": { "model": "underwaterbiome:meandrina" },
+        "level=12": { "model": "underwaterbiome:meandrina" },
+        "level=13": { "model": "underwaterbiome:meandrina" },
+        "level=14": { "model": "underwaterbiome:meandrina" },
+        "level=15": { "model": "underwaterbiome:meandrina" }
+
+    }
+}
+

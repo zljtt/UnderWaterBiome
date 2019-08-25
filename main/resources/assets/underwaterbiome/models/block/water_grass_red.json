@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "underwaterbiome:blocks/water_grass_red"
+    }
+}

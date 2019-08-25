@@ -1,0 +1,40 @@
+{
+    "variants": 
+    {
+        "level=0,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=1,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=2,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=3,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=4,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=5,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=6,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=7,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=8,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=9,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=10,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=11,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=12,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=13,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=14,variant=green": { "model": "underwaterbiome:water_grass_green" },
+        "level=15,variant=green": { "model": "underwaterbiome:water_grass_green" },
+
+        "level=0,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=1,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=2,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=3,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=4,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=5,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=6,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=7,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=8,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=9,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=10,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=11,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=12,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=13,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=14,variant=red": { "model": "underwaterbiome:water_grass_red" },
+        "level=15,variant=red": { "model": "underwaterbiome:water_grass_red" }
+
+    }
+}
+

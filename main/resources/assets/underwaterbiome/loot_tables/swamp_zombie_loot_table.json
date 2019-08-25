@@ -1,0 +1,34 @@
+{
+    "pools": [
+        {
+            "name": "main",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "alchemy:green_stone",
+                    "weight": 30
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:rotten_flesh",
+                    "weight": 60 ,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }   
+                        }
+                    ]        
+                },
+                {
+                    "type": "empty",
+                    "weight": 10
+                }
+
+            ]
+        }
+    ]
+}
