@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:heating_pad"
+    ]
+  },
+  "criteria": {
+    "use_blueprint": {
+      "trigger": "underwaterbiome:unlocked_blue_print",
+      "conditions": {
+        "blueprint": "heating_pad"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:heating_pad"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_blueprint",
+      "has_the_recipe"
+    ]
+  ]
+}

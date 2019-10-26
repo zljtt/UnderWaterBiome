@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:iron_slab"
+    ]
+  },
+  "criteria": {
+    "use_blueprint": {
+      "trigger": "underwaterbiome:unlocked_blue_print",
+      "conditions": {
+        "blueprint": "iron_slab"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:iron_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_blueprint",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "parent": "underwaterbiome:single_oxygen_tank",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:double_oxygen_tank"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "biology": 8,
+        "physics": 14
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:double_oxygen_tank"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:double_oxygen_tank"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.double_oxygen_tank.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.double_oxygen_tank.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.double_oxygen_tank",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.biology","color": "yellow","bold": false,"extra":[{
+                      "text" : "8","color": "aqua","extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{
+                      "text" : "14","color": "aqua"
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

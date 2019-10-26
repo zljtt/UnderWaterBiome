@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "RIR",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "underwaterbiome:precision_part"
+    },
+    "I": {
+      "item": "underwaterbiome:chameleon_skin"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:temperature_meter",
+    "count": 1
+  }
+}

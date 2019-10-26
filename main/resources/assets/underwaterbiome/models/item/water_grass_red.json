@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "underwaterbiome:blocks/water_grass_red"
+        "layer0": "underwaterbiome:block/water_grass_red"
     }
 }

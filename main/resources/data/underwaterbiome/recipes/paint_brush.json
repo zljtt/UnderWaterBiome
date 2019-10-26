@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#P ",
+    "  #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:paint_brush",
+    "count": 1
+  }
+}

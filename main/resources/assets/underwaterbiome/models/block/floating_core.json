@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "underwaterbiome:blocks/floating_core"
+        "all": "underwaterbiome:block/floating_core"
     }
 }

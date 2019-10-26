@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "underwaterbiome:blocks/lime",
-		"particle": "underwaterbiome:blocks/lime"
+		"0": "underwaterbiome:block/lime",
+		"particle": "underwaterbiome:block/lime"
 	},
 	"elements": [
 		{

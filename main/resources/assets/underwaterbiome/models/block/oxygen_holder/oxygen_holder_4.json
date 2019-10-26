@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "underwaterbiome:block/oxygen_holder/oxygen_holder_top",
+        "front": "underwaterbiome:block/oxygen_holder/oxygen_holder_4",
+        "side": "underwaterbiome:block/oxygen_holder/oxygen_holder"
+    }
+}
+

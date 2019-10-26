@@ -1,8 +1,7 @@
+
 {
     "variants": 
     {
-    	"normal": { "model": "underwaterbiome:fluorescent_lamp_on" }
-
+        "": { "model": "underwaterbiome:block/fluorescent_lamp_on" }
     }
 }
-

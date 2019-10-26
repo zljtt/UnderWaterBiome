@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group":"fish_skin",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "underwaterbiome:fish_skin"
+    }
+  },
+  "result": {
+    "item": "minecraft:leather_chestplate"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:blueprint_fragment_occult"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:blueprint_fragment_chemistry"
+  }
+}

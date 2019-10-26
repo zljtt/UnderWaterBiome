@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GII",
+    " HP",
+    " I "
+  ],
+  "key": {
+    "H": {
+      "item": "underwaterbiome:stagnation_gun"
+    },
+    "I": {
+      "item": "underwaterbiome:venom_extract"
+    },
+    "G": {
+      "item": "underwaterbiome:floating_extract"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:stagnation_gun_poison",
+    "count": 1
+  }
+}

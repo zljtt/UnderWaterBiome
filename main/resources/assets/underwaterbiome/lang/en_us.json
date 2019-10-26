@@ -1,0 +1,256 @@
+{
+	//ingredient items
+	"item.underwaterbiome.seaweed_fruit": "Seaweed Fruit",
+	"item.underwaterbiome.lime_powder": "Lime Powder",
+	"item.underwaterbiome.chameleon_skin": "Chameleon Skin",
+	"item.underwaterbiome.perpetual_motion_core": "Perpetual Motion Core",
+	"item.underwaterbiome.fuel": "Advanced Fuel",
+	"item.underwaterbiome.plant_fiber": "Plant Fiber",
+	"item.underwaterbiome.floating_extract": "Floating Extract",
+	"item.underwaterbiome.lighting_extract": "Lumino Extract",
+	"item.underwaterbiome.plant_extract": "Plant Extract",
+	"item.underwaterbiome.precision_part": "Precision Part",
+	"item.underwaterbiome.fish_skin": "Fish Skin",
+	"item.underwaterbiome.shark_fin": "Shark Fin",
+	"item.underwaterbiome.venom_extract": "Venum Extract",
+	"item.underwaterbiome.silt": "Silt",
+
+	//equipment items
+	"item.underwaterbiome.double_oxygen_tank": "Double Oxygen Tank",
+	"item.underwaterbiome.single_oxygen_tank": "Oxygen Tank",
+	"item.underwaterbiome.measuring_device": "Research Pack",
+	"item.underwaterbiome.temperature_meter": "Temterature Meter",
+	"item.underwaterbiome.pressure_meter": "Pressure Meter",
+	"item.underwaterbiome.torch_near": "Torch I",
+	"item.underwaterbiome.torch_far": "Torch II",
+	"item.underwaterbiome.water_pump": "Absorbent Pad",
+	"item.underwaterbiome.psyche_gun": "Psyche Gun",
+	"item.underwaterbiome.gravity_gun_attractive": "Gravity Gun",
+	"item.underwaterbiome.gravity_gun_repulsive": "Gravity Gun",
+	"item.underwaterbiome.heating_pad": "Heating Pad",
+	"item.underwaterbiome.decipher_device": "Decipher Device",
+	"item.underwaterbiome.paint_brush": "Paint Brush",
+	"item.underwaterbiome.stagnation_gun": "Gun of Stagnation",
+	"item.underwaterbiome.stagnation_gun_time": "Gun of Stagnation - Time",
+	"item.underwaterbiome.stagnation_gun_poison": "Gun of Stagnation - Poison",
+
+	//egg items
+	"item.underwaterbiome.shark_egg": "Shark Egg",
+	"item.underwaterbiome.conch_egg": "Conch Egg",
+	"item.underwaterbiome.conch_sea_grass_egg": "Conch Egg",
+	"item.underwaterbiome.fish_sturgeon_egg": "Sturgeon Egg",
+	"item.underwaterbiome.ray_egg": "Ray Egg",
+
+	//blueprints
+	"item.underwaterbiome.blueprint_fragment_chemistry": "Blueprint Fragment",
+	"item.underwaterbiome.blueprint_fragment_biology": "Blueprint Fragment",
+	"item.underwaterbiome.blueprint_fragment_physics": "Blueprint Fragment",
+	"item.underwaterbiome.blueprint_fragment_occult": "Blueprint Fragment",
+	"item.underwaterbiome.blueprint.double_oxygen_tank": "Blueprint",
+	"item.underwaterbiome.blueprint.single_oxygen_tank": "Blueprint",
+	"item.underwaterbiome.blueprint.temperature_meter": "Blueprint",
+	"item.underwaterbiome.blueprint.pressure_meter": "Blueprint",
+	"item.underwaterbiome.blueprint.torch_near": "Blueprint",
+	"item.underwaterbiome.blueprint.torch_far": "Blueprint",
+	"item.underwaterbiome.blueprint.water_pump": "Blueprint",
+	"item.underwaterbiome.blueprint.advanced_iron_block": "Blueprint",
+	"item.underwaterbiome.blueprint.gravity_gun_attractive": "Blueprint",
+	"item.underwaterbiome.blueprint.psyche_gun": "Blueprint",
+	// "item.underwaterbiome.blueprint.perpetual_motion_core": "Blueprint",
+	"item.underwaterbiome.blueprint.fluorescent_lamp_off": "Blueprint",
+	"item.underwaterbiome.blueprint.oxygen_holder": "Blueprint",
+	"item.underwaterbiome.blueprint.fuel": "Blueprint",
+	// "item.underwaterbiome.blueprint.plant_extract": "Blueprint",
+	"item.underwaterbiome.blueprint.lighting_extract": "Blueprint",
+	"item.underwaterbiome.blueprint.floating_extract": "Blueprint",
+	// "item.underwaterbiome.blueprint.lime_powder": "Blueprint",
+	"item.underwaterbiome.blueprint.decipher_device": "Blueprint",
+	"item.underwaterbiome.blueprint.ship_chest": "Blueprint",
+	"item.underwaterbiome.blueprint.stagnation_gun": "Blueprint",
+	"item.underwaterbiome.blueprint.stagnation_gun_poison": "Blueprint",
+	"item.underwaterbiome.blueprint.stagnation_gun_time": "Blueprint",
+	"item.underwaterbiome.blueprint.venom_extract": "Blueprint",
+	"item.underwaterbiome.blueprint.": "Blueprint",
+	"item.underwaterbiome.blueprint.": "Blueprint",
+
+	//blocks
+	"block.underwaterbiome.fluorescent_lamp_off": "Fluorescent Lamp",
+	"block.underwaterbiome.fluorescent_lamp_on": "Fluorescent Lamp",
+	"block.underwaterbiome.living_root": "Living Root",
+	"block.underwaterbiome.lime_stone": "Lime Stone",
+	"block.underwaterbiome.lime": "Lime",
+	"block.underwaterbiome.meandrina": "Meandrina",
+	"block.underwaterbiome.water_grass_red": "Water Grass",
+	"block.underwaterbiome.water_grass_green": "Water Grass",
+	"block.underwaterbiome.floating_core": "Core of Floating",
+	"block.underwaterbiome.oxygen_holder": "Oxygen Holder",
+	"block.underwaterbiome.reef": "Reef",
+	"block.underwaterbiome.polluted_sand": "Polluted Sand",
+	"block.underwaterbiome.cabin_door": "Cabin Door",
+	"block.underwaterbiome.iron_slab": "Iron Slab",
+	"block.underwaterbiome.advanced_iron_block": "Block of Iron",
+	"block.underwaterbiome.ship_door": "Locked Iron Door",
+	"block.underwaterbiome.ship_chest": "Ship Cabinet",
+
+	//entities
+	"entity.underwaterbiome.shark": "Shark",
+	"entity.underwaterbiome.conch": "Conch",
+	"entity.underwaterbiome.conch_sea_grass": "Conch",
+	"entity.underwaterbiome.fish_sturgeon": "Sturgeon",
+	"entity.underwaterbiome.ray": "Ray",
+	"entity.underwaterbiome.ray_boss": "Sand Ray",
+	"entity.underwaterbiome.drowned_boss": "Lord of The Drowned",
+
+	//biomes
+	"biome.underwaterbiome.lighting_seaweed": "Luminous Kelp Forest",
+	"biome.underwaterbiome.floating_island": "Floating Island Zone",
+	"biome.underwaterbiome.normal_seaweed": "Kelp Forest",
+	"biome.underwaterbiome.rooty_tantacle": "Tantacle Roots",
+	"biome.underwaterbiome.broken_canyon": "Broken Land",
+	"biome.underwaterbiome.lava_range": "Obsidian Poor",
+	"biome.underwaterbiome.coral_reef": "Coral Reef",
+	"biome.underwaterbiome.coral_tree": "Coral Forest",
+
+	//others
+	"effect.underwaterbiome.scald": "Scald",
+	"effect.underwaterbiome.frost_bite": "Frost Bite",
+	"effect.underwaterbiome.scald_high": "Scald",
+	"effect.underwaterbiome.frost_bite_high": "Frost Bite",
+	"effect.underwaterbiome.water_curse": "Curse of Water",
+	"effect.underwaterbiome.high_pressure": "Over Pressure",
+
+	"message.unlock_blueprint": "Unlock Blueprint For ",
+	"message.already_have_blueprint": "You Have Obtained Blueprint For ",
+	"message.change_to_fragment": ", So Blueprint Change Into Several Fragments",
+	"message.reward": "\nREWARD BLUEPRINT\n",
+	"message.require": "\nREQUIRE",
+	"message.chemistry": 	"\nChemistry: ",
+	"message.biology": 		"\nBiology:    ",
+	"message.physics": 		"\nPhysics:   ",
+	"message.occult": 		"\nOccult:     ",
+
+	"suit.leather": "Leather Suit",
+
+	"tooltip.gravity_gun_repulsive": "Repulsive Mode (Right Click to Change Mode)",
+	"tooltip.gravity_gun_attractive": "Atttractive Mode (Right Click to Change Mode)",
+	"tooltip.iron_block": "Only Used For Building",
+	"tooltip.oxygen_left": "Oxygen Left: ",
+	"tooltip.cold_prof": " Cold Resistance",
+	"tooltip.heat_prof": " Heat Resistance",
+	"tooltip.chemistry": "Chemistry Knowledge",
+	"tooltip.biology": "Biology Knowledge",
+	"tooltip.physics": "Physics Knowledge",
+	"tooltip.occult": "Occult Knowledge",
+	
+	"gui.chemistry": 	"Chemistry Knowledge: ",
+	"gui.biology": 		"Biology Knowledge:    ",
+	"gui.physics": 		"Physics Knowledge:   ",
+	"gui.occult": 		"Occult Knowledge:     ",
+
+
+	//advancements starts
+	"advancements.underwaterbiome.name.title": "",
+	"advancements.underwaterbiome.name.description": "",
+
+	"advancements.underwaterbiome.force_landing.title": "Force Landing",
+	"advancements.underwaterbiome.force_landing.description": "The Spaceship exploded, and the escape capsule landed on an unknown planet, what should you do?",
+
+	"advancements.underwaterbiome.advanced_iron_block.title": "More Efficient Smelting",
+	"advancements.underwaterbiome.advanced_iron_block.description": "Craft build-only iron blocks with less iron",
+
+	"advancements.underwaterbiome.cabin_door.title": "Airtight Technology",
+	"advancements.underwaterbiome.cabin_door.description": "Allow you to move through the water and air",
+
+	"advancements.underwaterbiome.decipher_device.title": "Information Technology",
+	"advancements.underwaterbiome.decipher_device.description": "If you cannot use your force, you have to use your brain",
+
+	"advancements.underwaterbiome.double_oxygen_tank.title": "Advanced Respiration",
+	"advancements.underwaterbiome.double_oxygen_tank.description": "Higher pressure means higher oxygen capacity",
+
+	"advancements.underwaterbiome.fish_skin.title": "Fish Skin Sewing",
+	"advancements.underwaterbiome.fish_skin.description": "Best way to keep warm",
+
+	"advancements.underwaterbiome.floating_extract.title": "Create Bio-Physical Gravity",
+	"advancements.underwaterbiome.floating_extract.description": "Core of the floating islands",
+
+	"advancements.underwaterbiome.fluorescent_lamp_off.title": "Investigation In Living Roots",
+	"advancements.underwaterbiome.fluorescent_lamp_off.description": "Why is it called lamp? Because water can enlighten the block",
+
+	"advancements.underwaterbiome.fuel.title": "Astronautical Fuel",
+	"advancements.underwaterbiome.fuel.description": "Fuel made by plants, as efficient as coal",
+
+	"advancements.underwaterbiome.gravity_gun_attractive.title": "Controllable Anti-Gravity",
+	"advancements.underwaterbiome.gravity_gun_attractive.description": "Pull and Push all the creatures",
+
+	"advancements.underwaterbiome.heating_pad.title": "Calcium Reaction",
+	"advancements.underwaterbiome.heating_pad.description": "Warm you heart only in a flash",
+
+	"advancements.underwaterbiome.iron_slab.title": "Metal Carving",
+	"advancements.underwaterbiome.iron_slab.description": "Carve iron blocks to half",
+
+	"advancements.underwaterbiome.lighting_extract.title": "Lighting Technique",
+	"advancements.underwaterbiome.lighting_extract.description": "Yes, it is also made by plant",
+
+	"advancements.underwaterbiome.lime_powder.title": "The Only Chemical Found",
+	"advancements.underwaterbiome.lime_powder.description": "LIME + FUEL --Heat--> LIME POWDER",
+
+	"advancements.underwaterbiome.oxygen_holder.title": "Oxygen Auto-Compression",
+	"advancements.underwaterbiome.oxygen_holder.description": "Absorb oxygen from blocks around, use oxygen tank to collect",
+
+	"advancements.underwaterbiome.paint_brush.title": "Waterproof Spray Paint",
+	"advancements.underwaterbiome.paint_brush.description": "Only support BLUE and ORANGE on iron blocks",
+
+	"advancements.underwaterbiome.perpetual_motion_core.title": "Unbelieveable Energy Source",
+	"advancements.underwaterbiome.perpetual_motion_core.description": "Support different types of weapons and equipment",
+
+	"advancements.underwaterbiome.plant_extract.title": "Basic Alchemy",
+	"advancements.underwaterbiome.plant_extract.description": "Discovering the unique plants on the planet",
+
+	"advancements.underwaterbiome.precision_part.title": "First Step of Physics",
+	"advancements.underwaterbiome.precision_part.description": "The basic thing that make you survive alone on the planet",
+
+	"advancements.underwaterbiome.pressure_meter.title": "Researcher's Equipment II",
+	"advancements.underwaterbiome.pressure_meter.description": "Measure the pressure of water",
+
+	"advancements.underwaterbiome.psyche_gun.title": "Mind Power",
+	"advancements.underwaterbiome.psyche_gun.description": "Can be used to get the item far away",
+
+	"advancements.underwaterbiome.ship_chest.title": "Spatial Compression",
+	"advancements.underwaterbiome.ship_chest.description": "Just like wooden chests",
+
+	"advancements.underwaterbiome.single_oxygen_tank.title": "Respiratory Devices",
+	"advancements.underwaterbiome.single_oxygen_tank.description": "Allow you to spend more time underwater, use more oxygen under high pressure",
+
+	"advancements.underwaterbiome.stagnation_gun.title": "Paralysis Toxin? or Time Control?",
+	"advancements.underwaterbiome.stagnation_gun.description": "You find that this random weapon can actually stun the enermy",
+
+	"advancements.underwaterbiome.stagnation_gun_time.title": "Time Control",
+	"advancements.underwaterbiome.stagnation_gun_time.description": "Longer stun time",
+
+	"advancements.underwaterbiome.stagnation_gun_poison.title": "Paralysis Toxin",
+	"advancements.underwaterbiome.stagnation_gun_poison.description": "Cast poison as well as stun",
+
+	"advancements.underwaterbiome.temperature_meter.title": "Researcher's Equipment I",
+	"advancements.underwaterbiome.temperature_meter.description": "Keep aware of the temperature around you",
+
+	"advancements.underwaterbiome.torch_far.title": "Advanced Lighting",
+	"advancements.underwaterbiome.torch_far.description": "The light can extend to a larger distance",
+
+	"advancements.underwaterbiome.torch_near.title": "Waterproof Torch",
+	"advancements.underwaterbiome.torch_near.description": "How to make a light source underwater?",
+
+	"advancements.underwaterbiome.venom_extract.title": "Venom",
+	"advancements.underwaterbiome.venom_extract.description": "Never try to find out what's in the silt",
+
+	"advancements.underwaterbiome.water_pump.title": "Is it truely Diatom Ooze?",
+	"advancements.underwaterbiome.water_pump.description": "If you want to build a house underwater, you may need it to remove the water inside",
+
+
+
+	//advancements ends
+	"itemGroup.underwaterbiome_items": "UnderwaterBiome Items",
+	"itemGroup.underwaterbiome_blueprints": "Blueprints",
+	"itemGroup.underwaterbiome_blocks": "UnderwaterBiome Blocks",
+	"generator.water_world": "WaterWorld"
+
+}

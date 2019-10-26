@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I# ",
+    " H#",
+    " P#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "H": {
+      "item": "underwaterbiome:perpetual_motion_core"
+    },
+    "I": {
+      "item": "underwaterbiome:floating_extract"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:gravity_gun_attractive",
+    "count": 1
+  }
+}

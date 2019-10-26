@@ -1,0 +1,96 @@
+{
+  "parent": "underwaterbiome:stagnation_gun",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:stagnation_gun_poison"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "chemistry": 12,
+        "biology": 8,
+        "physics": 8,
+        "occult": 8
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:stagnation_gun_poison"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:stagnation_gun_poison"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.stagnation_gun_poison.title"
+    },
+    "frame": "challenge",
+    "description": {
+      "translate": "advancements.underwaterbiome.stagnation_gun_poison.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.stagnation_gun_poison",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.chemistry","color": "yellow","bold": false,"extra":[{
+                      "text" : "12","color": "aqua","extra":[
+                    {
+                      "translate" : "message.biology","color": "yellow","italic": false,"extra":[{
+                      "text" : "8","color": "aqua","extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{
+                      "text" : "8","color": "aqua","extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","italic": false,"extra":[{
+                      "text" : "8","color": "aqua"
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

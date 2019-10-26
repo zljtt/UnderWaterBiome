@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:gravity_gun_attractive"
+    ]
+  },
+  "criteria": {
+    "use_blueprint": {
+      "trigger": "underwaterbiome:unlocked_blue_print",
+      "conditions": {
+        "blueprint": "gravity_gun_attractive"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:gravity_gun_attractive"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_blueprint",
+      "has_the_recipe"
+    ]
+  ]
+}

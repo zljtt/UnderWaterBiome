@@ -1,0 +1,72 @@
+{
+  "parent": "underwaterbiome:ship_chest",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:cabin_door"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "physics": 16
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:cabin_door"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:cabin_door"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.cabin_door.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.cabin_door.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "block.underwaterbiome.cabin_door",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","bold": false,"extra":[{
+                      "text" : "16","color": "aqua"
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

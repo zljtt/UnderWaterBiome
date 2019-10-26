@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "paint=no": { "model": "underwaterbiome:block/advanced_iron_block" },
+        "paint=orange": { "model": "underwaterbiome:block/advanced_iron_block_orange" }, 
+        "paint=blue": { "model": "underwaterbiome:block/advanced_iron_block_blue" }
+    }
+}

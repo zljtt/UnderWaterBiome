@@ -1,0 +1,83 @@
+{
+  "parent": "underwaterbiome:precision_part",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:leather_chestplate",
+      "underwaterbiome:leather_helmet",
+      "underwaterbiome:leather_boots",
+      "underwaterbiome:leather_leggings"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "biology": 2,
+        "physics": 7
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:fish_skin"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.fish_skin.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.fish_skin.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "suit.leather",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.biology","color": "yellow","bold": false,"extra":[{
+                      "text" : "2","color": "aqua","extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{
+                      "text" : "7","color": "aqua"
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

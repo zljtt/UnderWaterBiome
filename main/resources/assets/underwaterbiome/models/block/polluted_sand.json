@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+    "textures": {
+        "end": "underwaterbiome:block/polluted_sand",
+        "side": "underwaterbiome:block/sand"
+    }
+}

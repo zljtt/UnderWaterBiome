@@ -1,7 +1,9 @@
 {
     "variants": 
     {
-    	"normal": { "model": "underwaterbiome:floating_core" }
+    	"": { "model": "underwaterbiome:block/floating_core" }
+
+
     }
 }
 
