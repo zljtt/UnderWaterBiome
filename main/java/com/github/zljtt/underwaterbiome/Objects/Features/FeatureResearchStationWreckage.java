@@ -104,10 +104,5 @@ public class FeatureResearchStationWreckage extends Feature<WreckageConfig>
 		
 		return map;
 	}
-	
-	public void createPath(IWorld worldIn, Random rand, BlockPos pos, WreckageConfig config) 
-	{
-		
-	}
 
 }

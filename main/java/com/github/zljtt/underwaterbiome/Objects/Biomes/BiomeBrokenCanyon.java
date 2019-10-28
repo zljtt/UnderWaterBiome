@@ -34,7 +34,6 @@ public class BiomeBrokenCanyon extends BiomeOceanBase
 	    						  Blocks.SAND.getDefaultState(), 
 	    						  Blocks.SAND.getDefaultState(), 
 	    						  Blocks.SAND.getDefaultState()), depth, scale, color, parent, weight,pollution,0.5F);
-	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(Feature.OCEAN_RUIN, new OceanRuinConfig(OceanRuinStructure.Type.COLD, 0.3F, 0.9F), Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
 
 	      this.addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.UNDERWATER_CANYON, new ProbabilityConfig(0.3F)));
 	      this.addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.CAVE, new ProbabilityConfig(0.2F)));

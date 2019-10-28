@@ -2,6 +2,7 @@ package com.github.zljtt.underwaterbiome.Gui;
 import com.github.zljtt.underwaterbiome.Capabilities.CapabilityPlayerData.KnowledgePoints;
 import com.github.zljtt.underwaterbiome.Handlers.EventHandler;
 import com.github.zljtt.underwaterbiome.Handlers.NetworkingHandler;
+import com.github.zljtt.underwaterbiome.Handlers.TemperatureHandler;
 import com.github.zljtt.underwaterbiome.Objects.Messages.MessageOverlay;
 
 import net.minecraft.client.Minecraft;
@@ -40,22 +41,22 @@ public class GuiOverlay
     {        		
 		if (event.getGui() instanceof AdvancementsScreen)
 		{
+			mc.getTextureManager().bindTexture(new ResourceLocation("underwaterbiome:textures/gui/part_window.png"));
 //			mc.getTextureManager().bindTexture(new ResourceLocation("underwaterbiome:textures/gui/advancements/part_window.png"));
 			NetworkingHandler.sendToServer(new MessageOverlay(1));
-			int posX = (event.getGui().width - 244)/2;
+			int posX = (event.getGui().width - 244)/2-4;
 			int posY = (event.getGui().height - 140)/2;
-//			mc.ingameGUI.blit(posX, posY, 0, 0, 244, 16);
+			mc.ingameGUI.blit(posX-25, posY, 0, 0, 25, 47);
 			if (knowledge!=null)
 			{
 				String k1 = I18n.format("gui.chemistry");
 				String k2 = I18n.format("gui.biology");
 				String k3 = I18n.format("gui.physics");
 				String k4 = I18n.format("gui.occult");
-				int offset = mc.fontRenderer.getStringWidth(k1);
-				mc.fontRenderer.drawString(k1+knowledge.getChemistry(), 	posX-offset-5, posY+20, 0xB5FCF0);
-				mc.fontRenderer.drawString(k2+knowledge.getBiology(), 		posX-offset-5, posY+45, 0xB5FCF0);
-				mc.fontRenderer.drawString(k3+knowledge.getPhysics(), 		posX-offset-5, posY+70, 0xB5FCF0);
-				mc.fontRenderer.drawString(k4+knowledge.getOccult(), 		posX-offset-5, posY+95, 0xB5FCF0);
+				mc.fontRenderer.drawString(k1+knowledge.getChemistry(), 	posX-19, posY+5, 0x000000);//4
+				mc.fontRenderer.drawString(k2+knowledge.getBiology(), 		posX-19, posY+15, 0x000000);
+				mc.fontRenderer.drawString(k3+knowledge.getPhysics(), 		posX-19, posY+25, 0x000000);
+				mc.fontRenderer.drawString(k4+knowledge.getOccult(), 		posX-19, posY+35, 0x000000);
 
 				
 //				mc.fontRenderer.drawString(k, (event.getGui().width-mc.fontRenderer.getStringWidth(k)) / 2,
@@ -106,7 +107,7 @@ public class GuiOverlay
 				}
 				if (show_temp)
 				{
-					int amount = (int) Math.round(30*(temp+EventHandler.temp_bound*3/2)/(3*EventHandler.temp_bound));//x=-300,y=0/x=0,y=15/x=300,y=30
+					int amount = (int) Math.round(30*(temp+TemperatureHandler.temp_bound*3/2)/(3*TemperatureHandler.temp_bound));//x=-300,y=0/x=0,y=15/x=300,y=30
 
 					mc.ingameGUI.blit(posX, posY, 30, 0, tex_width, tex_height);
 					mc.ingameGUI.blit(posX+1, posY+32-(1+amount), 1+tex_width*3, 32-(1+amount), bar_width, amount);

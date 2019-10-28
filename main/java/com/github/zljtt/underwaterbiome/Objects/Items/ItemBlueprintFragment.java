@@ -29,16 +29,19 @@ public class ItemBlueprintFragment extends ItemBase
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		ITextComponent string = new StringTextComponent(I18n.format("tooltip."+knowledge));
-		tooltip.add(string.applyTextStyle(TextFormatting.YELLOW));
+		if (knowledge!="all")
+		{
+			ITextComponent string = new StringTextComponent(I18n.format("tooltip."+knowledge));
+			tooltip.add(string.applyTextStyle(TextFormatting.YELLOW));
+		}
 	}
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
 	{
+		if (knowledge == "all") return super.onItemRightClick(worldIn, playerIn, handIn);
 		IPlayerData data = playerIn.getCapability(CapabilityPlayerDataProvider.CAP).orElse(null);
 		if (data!=null)
 		{
-			System.out.println("before"+data.getKnowledgePoints().toString());
 			switch(knowledge)
 			{
 			case "chemistry":
@@ -54,8 +57,12 @@ public class ItemBlueprintFragment extends ItemBase
 			{
 				playerIn.getHeldItem(handIn).shrink(1);
 			}
-			System.out.println("after"+data.getKnowledgePoints().toString());
 		}
 		return super.onItemRightClick(worldIn, playerIn, handIn);
-	}	
+	}
+	@Override
+	public String getTranslationKey() 
+	{
+		return "item.underwaterbiome.blueprint_fragment";
+	}
 }

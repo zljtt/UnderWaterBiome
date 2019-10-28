@@ -89,7 +89,7 @@ public class RoomAquarium extends RoomSquare
 				tobuild.put(start_pos.offset(info.direction,i).offset(info.direction.rotateY(),j), 
 						RoomInfo.getByTwo(Blocks.SAND.getDefaultState(), Blocks.DIRT.getDefaultState(), 0.8F, config, ran));
 				tobuild.put(start_pos.offset(info.direction,i).offset(info.direction.rotateY(),j).up(), 
-						RoomInfo.getByChance(Blocks.SEAGRASS.getDefaultState(), 0.5F, config, ran));
+						RoomInfo.getByChance(Blocks.SEAGRASS.getDefaultState(), 0.7F, config, ran));
 			}
 		}
 		Entity entity_in_room =  EntityInit.ENTITY_CONCH.create(worldIn.getWorld());

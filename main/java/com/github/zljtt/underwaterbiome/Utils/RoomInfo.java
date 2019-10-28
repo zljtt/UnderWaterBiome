@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Random;
 
 import com.github.zljtt.underwaterbiome.Inits.BlockInit;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockIron;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockIron.PaintColor;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockShipDoor;
 import com.github.zljtt.underwaterbiome.Objects.Features.Configs.WreckageConfig;
 import com.github.zljtt.underwaterbiome.Utils.Rooms.RoomBase;
@@ -28,8 +30,12 @@ import net.minecraft.world.IWorld;
 
 public class RoomInfo
 {
+	public static BlockState air =  Blocks.AIR.getDefaultState();
 	public static BlockState iron_block =  BlockInit.IRON_BLOCK.getDefaultState();
+	public static BlockState iron_block_orange =  BlockInit.IRON_BLOCK.getDefaultState().with(BlockIron.PAINT, PaintColor.ORANGE);
+	public static BlockState iron_block_blue =  BlockInit.IRON_BLOCK.getDefaultState().with(BlockIron.PAINT, PaintColor.BLUE);
 	public static BlockState iron_slab =  BlockInit.IRON_SLAB.getDefaultState().with(BlockStateProperties.WATERLOGGED, true);
+	public static BlockState iron_slab_nowater =  BlockInit.IRON_SLAB.getDefaultState().with(BlockStateProperties.WATERLOGGED, false);
 	public static BlockState iron_slab_top =  BlockInit.IRON_SLAB.getDefaultState().with(SlabBlock.TYPE, SlabType.TOP).with(BlockStateProperties.WATERLOGGED, true);
 	public static BlockState glass =  Blocks.GLASS.getDefaultState();
 	public static BlockState water =  Blocks.WATER.getDefaultState();

@@ -32,7 +32,7 @@ public enum Rooms
 	public static final RoomBase DORM = new RoomDorm("dorm", 6, 6, 4, false, 0, 1, 2);
 	public static final RoomBase STORAGE = new RoomStorage("storage", 6, 6, 4, false, 1, 2);
 	public static final RoomBase LIBRARY = new RoomLibrary("library", 7, 7, 4, false, 0, 1);
-	public static final RoomBase SMELT = new RoomSmelt("smelt", 4, 7, 4, false, 1, 2);
+	public static final RoomBase SMELT = new RoomSmelt("smelt", 5, 7, 4, false, 1, 2);
 
 	
 	

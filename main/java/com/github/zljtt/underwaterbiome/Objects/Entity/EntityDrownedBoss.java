@@ -6,10 +6,15 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.github.zljtt.underwaterbiome.Client.Models.ModelDrownedBoss;
 import com.github.zljtt.underwaterbiome.Inits.EffectInit;
+
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -17,29 +22,30 @@ import net.minecraft.entity.monster.DrownedEntity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.ServerBossInfo;
 import net.minecraft.world.World;
 
 public class EntityDrownedBoss extends EntityFishBase implements IMob
 {
-	private final static int MAX_SUMMON = 5;
-	public boolean hasSheld= false;
 	private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS)).setDarkenSky(true);
-	List<DrownedEntity> list =  new ArrayList<DrownedEntity>();
+	private List<DrownedEntity> list ;
 	   private int delayCounter;
-		Random ran = new Random();
 
 	public EntityDrownedBoss(EntityType<? extends EntityDrownedBoss> entityTypeIn, World worldIn) 
 	{
 		super(entityTypeIn, worldIn);
-
+		list=  new ArrayList<DrownedEntity>();
 	}
 	@Override
 	protected void registerGoals() 
@@ -65,37 +71,70 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 	public void tick() 
 	{
 		super.tick();
-		if (list.size()<MAX_SUMMON && this.delayCounter<0)
+		if (world.isRemote) return;
+		if (ModelDrownedBoss.SUMMON_AMOUNT<5 && this.delayCounter<0)
 		{
+			if (list.size()==0)
+				ModelDrownedBoss.SUMMON_AMOUNT =0;
+			
 			DrownedEntity entity =  EntityType.DROWNED.create(world);
 			entity.setPosition(this.posX,this.posY,this.posZ);
+//			entity.getAttribute(LivingEntity.SWIM_SPEED).setBaseValue(1.0D);
+			entity.getAttribute(LivingEntity.SWIM_SPEED).applyModifier(new AttributeModifier("swim_speed_improve", 1.25, Operation.MULTIPLY_BASE));
+			entity.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).applyModifier(new AttributeModifier("movement_speed_improve", 1.25, Operation.MULTIPLY_BASE));
+			if ((double)this.rand.nextFloat() > 0.9D) 
+			{
+		         int i = this.rand.nextInt(16);
+		         if (i < 8) {
+		        	 entity.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.TRIDENT));
+		         } else {
+		        	 entity.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.FISHING_ROD));
+		         }
+		    }
+			entity.setCustomName(new TranslationTextComponent(I18n.format("boss.drowned")));
+			entity.setCustomNameVisible(true);
+			entity.setAttackTarget(this.getAttackTarget());
+
 			world.addEntity(entity);
 			list.add(entity);
+			ModelDrownedBoss.SUMMON_AMOUNT+=1;
 			for (int i = 0;i<100;i++)
 			{
 				world.addParticle(ParticleTypes.SMOKE, 
-						this.posX+ran.nextDouble()*3-ran.nextDouble()*3, 
-						this.posY+ran.nextDouble()*3-ran.nextDouble()*3, 
-						this.posZ+ran.nextDouble()*3-ran.nextDouble()*3, 
-						ran.nextDouble()-ran.nextDouble(), ran.nextDouble()-ran.nextDouble(), ran.nextDouble()-ran.nextDouble());
+						this.posX+rand.nextDouble()*3-rand.nextDouble()*3, 
+						this.posY+rand.nextDouble()*3-rand.nextDouble()*3, 
+						this.posZ+rand.nextDouble()*3-rand.nextDouble()*3, 
+						rand.nextDouble()/2-rand.nextDouble()/2, rand.nextDouble()/2-rand.nextDouble()/2, rand.nextDouble()/2-rand.nextDouble()/2);
 			}
 			this.delayCounter = 50;
 		}
-
-		for (int i = 0; i<list.size();i++)
+		
+		for (int i = 0; i<ModelDrownedBoss.SUMMON_AMOUNT;i++)
 		{
 			if (list.get(i) == null || !list.get(i).isAlive())
 			{
-				System.out.println("remove"+list.get(i));
        		 	list.remove(i);
-       			this.delayCounter = 110;
+       		 	ModelDrownedBoss.SUMMON_AMOUNT-=1;
+       			this.delayCounter = 200;
 			}
 		}
-		if (list.size()<MAX_SUMMON)
+		if (ModelDrownedBoss.SUMMON_AMOUNT>=5)
 		{
-			hasSheld = false;
+			ModelDrownedBoss.hasSheld = 3;
 		}
-		else hasSheld = true;
+		else if (ModelDrownedBoss.SUMMON_AMOUNT==4)
+		{
+			ModelDrownedBoss.hasSheld = 2;
+		}
+		else if (ModelDrownedBoss.SUMMON_AMOUNT==3)
+		{
+			ModelDrownedBoss.hasSheld = 1;
+		}
+		else
+		{
+			ModelDrownedBoss.hasSheld = 0;
+		}
+		System.out.println(ModelDrownedBoss.hasSheld+"/"+ModelDrownedBoss.SUMMON_AMOUNT+"/"+list.size());
 		this.delayCounter--;
         this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
 
@@ -103,7 +142,12 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) 
 	{
-		return hasSheld?false:super.attackEntityFrom(source, amount);
+		if (ModelDrownedBoss.hasSheld == 3)
+		{
+			return false;
+		}
+		float newamount = amount*((3-ModelDrownedBoss.hasSheld)/3);
+		return super.attackEntityFrom(source, newamount);
 	}
 	@Override
 	public void readAdditional(CompoundNBT compound) 

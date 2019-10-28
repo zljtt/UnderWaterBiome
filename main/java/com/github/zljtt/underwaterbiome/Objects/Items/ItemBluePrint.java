@@ -27,6 +27,7 @@ import net.minecraft.world.World;
 public class ItemBluePrint extends Item 
 {
 	public int rarity;
+	Random ran = new Random();
 	public ItemBluePrint(String name, Properties property) 
 	{
 		super(property);
@@ -46,7 +47,7 @@ public class ItemBluePrint extends Item
 				ITextComponent com2 = new TranslationTextComponent(I18n.format("message.change_to_fragment"));
 				playerIn.sendMessage(com.appendSibling(getItemByName().getName()).appendSibling(com2));
 				playerIn.setHeldItem(handIn, new ItemStack(Items.AIR));
-				randomBluprintFragment(1,2).forEach(item->playerIn.addItemStackToInventory(item));
+				playerIn.addItemStackToInventory(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT, 2+ran.nextInt(3)));
 			}
 			else 
 			{
@@ -81,32 +82,11 @@ public class ItemBluePrint extends Item
 		}
 		return Items.AIR;
 	}
-	
-	public static List<ItemStack> randomBluprintFragment(int min, int max)
+	@Override
+	public String getTranslationKey() 
 	{
-		List<ItemStack> list = new ArrayList<ItemStack>();
-		Random ran = new Random();
-		int time = min+ran.nextInt(max-min+1);
-		for (;time>0;time--)
-		{
-			int index = ran.nextInt(4);
-			switch(index)
-			{
-			case 0:
-				list.add(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT_CHEMISTRY));
-				break;
-			case 1:
-				list.add(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT_BIOLOGY));
-				break;
-			case 2:
-				list.add(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT_PHYSICS));
-				break;
-			case 3:
-				list.add(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT_OCCULT));
-				break;			
-			}
-		}
-		return list;
+		return "item.underwaterbiome.blueprint";
 	}
+	
 
 }

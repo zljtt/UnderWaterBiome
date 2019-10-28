@@ -28,8 +28,8 @@ public class BiomeInit
 {
 	public static final List<Biome> BIOMES = new ArrayList<Biome>();
 	
-	public static final Biome CORAL_REEF = new BiomeCoralReef(-0.6F, 0.01F, 0x12c3dd,(String)null, 3, Difficulty.EASY);//5
-		public static final Biome CORAL_TREE = new BiomeCoralTree(-0.8F, 0.01F, 0x12c3dd,"coral_reef", 2, Difficulty.NORMAL);//5
+	public static final Biome CORAL_REEF = new BiomeCoralReef( -1.0F, 0.01F, 0x12c3dd,(String)null, 3, Difficulty.EASY);//5
+		public static final Biome CORAL_TREE = new BiomeCoralTree(-1.1F, 0.01F, 0x12c3dd,"coral_reef", 2, Difficulty.NORMAL);//5
 		
 	public static final Biome NORMAL_SEAWEED = new BiomeNormalKelp(-1.6F, 0.1F, 0x0AAA8E,(String)null, 5, Difficulty.NORMAL);//5
 		public static final Biome LIGHTING_SEAWEED = new BiomeLightingKelp(-1.9F, 0.1F, 0x0AAA70,"normal_seaweed", 5,Difficulty.DIFFICULT);//5
@@ -50,7 +50,7 @@ public class BiomeInit
 		
 		initBiome(event, ROOTY_TANTACLE, "rooty_tantacle", BiomeType.COOL, Type.OCEAN);
 		initBiome(event, FLOATING_ISLAND, "floating_island", BiomeType.COOL, Type.OCEAN);
-		initBiome(event, BROKEN_CANYAN, "broken_canyan", BiomeType.COOL, Type.OCEAN);
+		initBiome(event, BROKEN_CANYAN, "broken_canyon", BiomeType.COOL, Type.OCEAN);
 		initBiome(event, LAVA_RANGE, "lava_range", BiomeType.COOL, Type.OCEAN);
 		
 

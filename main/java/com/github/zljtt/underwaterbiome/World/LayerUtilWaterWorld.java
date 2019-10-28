@@ -22,7 +22,7 @@ public class LayerUtilWaterWorld
     {
         IAreaFactory<T> biomeFactory = GenLayerWaterWorldBiome.INSTANCE.apply(contextFactory.apply(200L));
         // magnify the biome layer
-        biomeFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, biomeFactory, 2, contextFactory);
+        biomeFactory = LayerUtil.repeat(1000L, ZoomLayer.FUZZY, biomeFactory, 2, contextFactory);
         return biomeFactory;
     }
 
@@ -34,7 +34,7 @@ public class LayerUtilWaterWorld
 
         // Allocate the biomes
         IAreaFactory<T> biomesFactory = createBiomeFactory(oceanFactory, contextFactory);
-
+        
         // Zoom more based on the biome size
         for (int i = 0; i < biomeSize; ++i)
         {

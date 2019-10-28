@@ -119,7 +119,6 @@ public class TriggerUnlockBluePrint implements ICriterionTrigger<TriggerUnlockBl
 
         public boolean test(String item)
         {
-            System.out.println(item);
         	if(item!=null)
         	{
 //                System.out.println(recipe);

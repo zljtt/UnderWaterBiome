@@ -7,6 +7,7 @@ import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityOxygenPr
 import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityPlayerDataProvider;
 import com.github.zljtt.underwaterbiome.Gui.GuiOverlay;
 import com.github.zljtt.underwaterbiome.Handlers.EventHandler;
+import com.github.zljtt.underwaterbiome.Handlers.OxygenHandler;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IOxygen;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IPlayerData;
@@ -51,7 +52,7 @@ public class MessageOverlay extends MessageBase
  		    	{
  		    		for (ItemStack stack : sender.inventory.mainInventory)
  		 	    	{
- 		 	    		if 	(EventHandler.breathableItem().contains(stack.getItem()))
+ 		 	    		if 	(OxygenHandler.breathableItem().contains(stack.getItem()))
  		 	    		{
  		 	    			count+=1;
  		 	    			IOxygen cap_o =  stack.getCapability(CapabilityOxygenProvider.PARTICLE_CAP, null).orElse(null);

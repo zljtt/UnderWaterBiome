@@ -49,9 +49,12 @@ public class BlockMeandrina extends BlockWaterPlantBase
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) 
 	{
+		double d0 = (double)pos.getX() + 0.5D+rand.nextDouble()-rand.nextDouble();
+	      double d1 = (double)pos.getY() + 0.7D+rand.nextDouble()-rand.nextDouble();
+	      double d2 = (double)pos.getZ() + 0.5D+rand.nextDouble()-rand.nextDouble();
 		if (worldIn.getBlockState(pos.up()).getBlock() == Blocks.WATER)
 		{
-	    	worldIn.addParticle(ParticleTypes.BUBBLE, (double)pos.getX()+rand.nextDouble()-rand.nextDouble(), (double)pos.getY(), (double)pos.getZ()+rand.nextDouble()-rand.nextDouble(), 0.0D, 0.7D, 0.0D);
+		      worldIn.addParticle(ParticleTypes.BUBBLE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
 		}
 	}
 	@Override

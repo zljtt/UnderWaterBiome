@@ -13,7 +13,9 @@ import com.github.zljtt.underwaterbiome.Objects.Items.ItemGravityGun;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemHeatingPad;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemPaintBrush;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemPsycheGun;
+import com.github.zljtt.underwaterbiome.Objects.Items.ItemSpaceshipDivingRecorder;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemStagnationGun;
+import com.github.zljtt.underwaterbiome.Objects.Items.ItemSummon;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemWaterBow;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemWaterPump;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemBase;
@@ -24,10 +26,13 @@ import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Interface.INeedBluePrint;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.WallOrFloorItem;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 
 public class ItemInit 
@@ -97,8 +102,10 @@ public class ItemInit
 			.group(ItemInit.itemGroup).maxStackSize(1),true,BlueprintType.CHEMISTRY_PHYSICS,0,1);
 	public static final Item PAINT_BRUSH = new ItemPaintBrush("paint_brush", new Item.Properties()
 			.group(ItemInit.itemGroup).maxStackSize(1),true,BlueprintType.CHEMISTRY_PHYSICS,0,1);
-	public static final Item WATER_BOW = new ItemWaterBow("water_bow", new Item.Properties()
+	public static final Item SPACESHIP_DRIVING_RECORDER = new ItemSpaceshipDivingRecorder("spaceship_driving_recorder", new Item.Properties()
 			.group(ItemInit.itemGroup).maxStackSize(1),false,null);
+	public static final Item WATER_TORCH = new WallOrFloorItem(BlockInit.WATER_TORCH, BlockInit.WALL_WATER_TORCH, (new Item.Properties())
+			.group(ItemInit.itemGroup)).setRegistryName(new ResourceLocation(Reference.MODID,"water_torch"));
 	//Items-ingredient
 	public static final Item SEAWEED_FRUIT = new ItemBase("seaweed_fruit", new Item.Properties()
 			.group(ItemInit.itemGroup).food((new Food.Builder()).hunger(2+ran.nextInt()).saturation(0.1F).build()),false,null);
@@ -129,16 +136,23 @@ public class ItemInit
 	public static final Item SILT = new ItemBase("silt", new Item.Properties()
 			.group(ItemInit.itemGroup),false, null);
 	
-	
+	//summon
+	public static final Item DROWNED_BOSS_SUMMON = new ItemSummon("drowned_boss_summon", new Item.Properties()
+			.group(ItemInit.itemGroup).maxStackSize(1),EntityInit.ENTITY_DROWNED_BOSS, false, null);
+	public static final Item RAY_BOSS_SUMMON = new ItemSummon("ray_boss_summon", new Item.Properties()
+			.group(ItemInit.itemGroup).maxStackSize(1),EntityInit.ENTITY_RAY_BOSS, false, null);
 	//egg
 	public static final Item SHARK_EGG = new ItemEggBase("shark_egg", EntityInit.ENTITY_SHARK, 0xB5FCF0, 0x127EFC);
 	public static final Item CONCH_EGG = new ItemEggBase("conch_egg", EntityInit.ENTITY_CONCH, 0xCADB10, 0x105DDB);
 	public static final Item CONCH_SEA_GRASS_EGG = new ItemEggBase("conch_sea_grass_egg", EntityInit.ENTITY_CONCH_SEA_GRASS, 0x0EB70B, 0x105DDB);
 	public static final Item FISH_STURGEON_EGG = new ItemEggBase("fish_sturgeon_egg", EntityInit.ENTITY_FISH_STURGEON, 0x359BB5, 0x127EFC);
 	public static final Item RAY_EGG = new ItemEggBase("ray_egg", EntityInit.ENTITY_RAY, 0xB4E4EB, 0xB8C1C2);
+	
 
 	//others
 	public static Item BLUE_PRINT_TEMPERATURE_METER;
+	public static final Item BLUEPRINT_FRAGMENT = new ItemBlueprintFragment("blueprint_fragment", new Item.Properties()
+			.group(ItemInit.itemGroup),"all");
 	public static final Item BLUEPRINT_FRAGMENT_CHEMISTRY = new ItemBlueprintFragment("blueprint_fragment_chemistry", new Item.Properties()
 			.group(ItemInit.itemGroup),"chemistry");
 	public static final Item BLUEPRINT_FRAGMENT_BIOLOGY = new ItemBlueprintFragment("blueprint_fragment_biology", new Item.Properties()
@@ -147,41 +161,7 @@ public class ItemInit
 			.group(ItemInit.itemGroup),"physics");
 	public static final Item BLUEPRINT_FRAGMENT_OCCULT = new ItemBlueprintFragment("blueprint_fragment_occult", new Item.Properties()
 			.group(ItemInit.itemGroup),"occult");
-	//blueprint
-//	public static final Item BLUE_PRINT_TEMPERATURE_METER = new ItemBluePrint("temperature_meter", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_PRESSURE_METER = new ItemBluePrint("pressure_meter", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_SINGLE_OXYGEN_TANK = new ItemBluePrint("single_oxygen_tank", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_DOUBLE_OXYGEN_TANK = new ItemBluePrint("double_oxygen_tank", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_TORCH_FAR = new ItemBluePrint("torch_far", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_TORCH_NEAR = new ItemBluePrint("torch_near", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_WATER_PUMP = new ItemBluePrint("water_pump", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_PSYCHE_GUN = new ItemBluePrint("psyche_gun", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_GRAVITY_GUN_ATTRACTIVE = new ItemBluePrint("gravity_gun_attractive", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_OXYGEN_HOLDER = new ItemBluePrint("oxygen_holder", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_ADVANCED_IRON_BLOCK = new ItemBluePrint("advanced_iron_block", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_FLUORESCENT_LAMP_OFF = new ItemBluePrint("fluorescent_lamp_off", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_CABIN_DOOR = new ItemBluePrint("cabin_door", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_PERPETUAL_MOTION_CORE = new ItemBluePrint("cabin_door", new Item.Properties()
-//			.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_ = new ItemBluePrint("", new Item.Properties()
-//	.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_ = new ItemBluePrint("", new Item.Properties()
-//	.group(ItemInit.itemGroup).maxStackSize(1));
-//	public static final Item BLUE_PRINT_ = new ItemBluePrint("", new Item.Properties()
-//	.group(ItemInit.itemGroup).maxStackSize(1));
+
 	
 
 	//armor
@@ -192,6 +172,9 @@ public class ItemInit
 	
 	public static void register(RegistryEvent.Register<Item> event)
 	{
+		//add additional item
+		ITEMS.add(WATER_TORCH);
+		
 		event.getRegistry().registerAll(ItemInit.ITEMS.toArray(new Item[0]));
 		for(Item item: ItemInit.ITEMS)
 		{

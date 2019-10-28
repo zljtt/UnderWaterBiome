@@ -14,6 +14,11 @@
 	"item.underwaterbiome.shark_fin": "Shark Fin",
 	"item.underwaterbiome.venom_extract": "Venum Extract",
 	"item.underwaterbiome.silt": "Silt",
+	"item.underwaterbiome.blueprint_fragment": "Blueprint Fragment",
+	"item.underwaterbiome.blueprint": "Blueprint",
+	"item.underwaterbiome.spaceship_driving_recorder": "Spaceship Driving Recorder",
+	"item.underwaterbiome.ray_boss_summon": "Fish Skin Battle Drum",
+	"item.underwaterbiome.drowned_boss_summon": "Brain of The Drowned",
 
 	//equipment items
 	"item.underwaterbiome.double_oxygen_tank": "Double Oxygen Tank",
@@ -41,38 +46,6 @@
 	"item.underwaterbiome.fish_sturgeon_egg": "Sturgeon Egg",
 	"item.underwaterbiome.ray_egg": "Ray Egg",
 
-	//blueprints
-	"item.underwaterbiome.blueprint_fragment_chemistry": "Blueprint Fragment",
-	"item.underwaterbiome.blueprint_fragment_biology": "Blueprint Fragment",
-	"item.underwaterbiome.blueprint_fragment_physics": "Blueprint Fragment",
-	"item.underwaterbiome.blueprint_fragment_occult": "Blueprint Fragment",
-	"item.underwaterbiome.blueprint.double_oxygen_tank": "Blueprint",
-	"item.underwaterbiome.blueprint.single_oxygen_tank": "Blueprint",
-	"item.underwaterbiome.blueprint.temperature_meter": "Blueprint",
-	"item.underwaterbiome.blueprint.pressure_meter": "Blueprint",
-	"item.underwaterbiome.blueprint.torch_near": "Blueprint",
-	"item.underwaterbiome.blueprint.torch_far": "Blueprint",
-	"item.underwaterbiome.blueprint.water_pump": "Blueprint",
-	"item.underwaterbiome.blueprint.advanced_iron_block": "Blueprint",
-	"item.underwaterbiome.blueprint.gravity_gun_attractive": "Blueprint",
-	"item.underwaterbiome.blueprint.psyche_gun": "Blueprint",
-	// "item.underwaterbiome.blueprint.perpetual_motion_core": "Blueprint",
-	"item.underwaterbiome.blueprint.fluorescent_lamp_off": "Blueprint",
-	"item.underwaterbiome.blueprint.oxygen_holder": "Blueprint",
-	"item.underwaterbiome.blueprint.fuel": "Blueprint",
-	// "item.underwaterbiome.blueprint.plant_extract": "Blueprint",
-	"item.underwaterbiome.blueprint.lighting_extract": "Blueprint",
-	"item.underwaterbiome.blueprint.floating_extract": "Blueprint",
-	// "item.underwaterbiome.blueprint.lime_powder": "Blueprint",
-	"item.underwaterbiome.blueprint.decipher_device": "Blueprint",
-	"item.underwaterbiome.blueprint.ship_chest": "Blueprint",
-	"item.underwaterbiome.blueprint.stagnation_gun": "Blueprint",
-	"item.underwaterbiome.blueprint.stagnation_gun_poison": "Blueprint",
-	"item.underwaterbiome.blueprint.stagnation_gun_time": "Blueprint",
-	"item.underwaterbiome.blueprint.venom_extract": "Blueprint",
-	"item.underwaterbiome.blueprint.": "Blueprint",
-	"item.underwaterbiome.blueprint.": "Blueprint",
-
 	//blocks
 	"block.underwaterbiome.fluorescent_lamp_off": "Fluorescent Lamp",
 	"block.underwaterbiome.fluorescent_lamp_on": "Fluorescent Lamp",
@@ -91,6 +64,7 @@
 	"block.underwaterbiome.advanced_iron_block": "Block of Iron",
 	"block.underwaterbiome.ship_door": "Locked Iron Door",
 	"block.underwaterbiome.ship_chest": "Ship Cabinet",
+	"block.underwaterbiome.water_torch": "Torch",
 
 	//entities
 	"entity.underwaterbiome.shark": "Shark",
@@ -107,7 +81,7 @@
 	"biome.underwaterbiome.normal_seaweed": "Kelp Forest",
 	"biome.underwaterbiome.rooty_tantacle": "Tantacle Roots",
 	"biome.underwaterbiome.broken_canyon": "Broken Land",
-	"biome.underwaterbiome.lava_range": "Obsidian Poor",
+	"biome.underwaterbiome.lava_range": "Obsidian Pool",
 	"biome.underwaterbiome.coral_reef": "Coral Reef",
 	"biome.underwaterbiome.coral_tree": "Coral Forest",
 
@@ -119,9 +93,15 @@
 	"effect.underwaterbiome.water_curse": "Curse of Water",
 	"effect.underwaterbiome.high_pressure": "Over Pressure",
 
-	"message.unlock_blueprint": "Unlock Blueprint For ",
-	"message.already_have_blueprint": "You Have Obtained Blueprint For ",
-	"message.change_to_fragment": ", So Blueprint Change Into Several Fragments",
+	"message.unlock_blueprint": "Unlock blueprint for ",
+	"message.already_have_blueprint": "You have already obtained blueprint for ",
+	"message.new_day": "Over a day of exploration, you get some knowledge",
+	"message.change_to_fragment": " (Blueprint is changed into several fragments)",
+	"message.craft_get_knowledge": "By accumulating crafting skills, you gain some knowledge",
+	"message.biome_get_knowledge_1": "By entering ",
+	"message.biome_get_knowledge_2": ", you get some ",
+	"message.summon_fail": "Fail to summon, please find a wider place with water",
+	"message.summon_success": " has been awakened",
 	"message.reward": "\nREWARD BLUEPRINT\n",
 	"message.require": "\nREQUIRE",
 	"message.chemistry": 	"\nChemistry: ",
@@ -129,24 +109,27 @@
 	"message.physics": 		"\nPhysics:   ",
 	"message.occult": 		"\nOccult:     ",
 
+
 	"suit.leather": "Leather Suit",
+	"boss.drowned": "Puppet",
 
 	"tooltip.gravity_gun_repulsive": "Repulsive Mode (Right Click to Change Mode)",
 	"tooltip.gravity_gun_attractive": "Atttractive Mode (Right Click to Change Mode)",
-	"tooltip.iron_block": "Only Used For Building",
+	"tooltip.iron_block": "Building-Only",
 	"tooltip.oxygen_left": "Oxygen Left: ",
+	"tooltip.location_of_base": "The Location of Escape Shuttle: ",
+	"tooltip.have_crafting": "Crafting of Different Items: ",
 	"tooltip.cold_prof": " Cold Resistance",
 	"tooltip.heat_prof": " Heat Resistance",
-	"tooltip.chemistry": "Chemistry Knowledge",
-	"tooltip.biology": "Biology Knowledge",
-	"tooltip.physics": "Physics Knowledge",
+	"tooltip.chemistry": "Chemical Knowledge",
+	"tooltip.biology": "Biological Knowledge",
+	"tooltip.physics": "Physical Knowledge",
 	"tooltip.occult": "Occult Knowledge",
 	
-	"gui.chemistry": 	"Chemistry Knowledge: ",
-	"gui.biology": 		"Biology Knowledge:    ",
-	"gui.physics": 		"Physics Knowledge:   ",
-	"gui.occult": 		"Occult Knowledge:     ",
-
+	"gui.chemistry": 	"C:",
+	"gui.biology": 		"B:",
+	"gui.physics": 		"P:",
+	"gui.occult": 		"O:",
 
 	//advancements starts
 	"advancements.underwaterbiome.name.title": "",
@@ -198,7 +181,7 @@
 	"advancements.underwaterbiome.oxygen_holder.description": "Absorb oxygen from blocks around, use oxygen tank to collect",
 
 	"advancements.underwaterbiome.paint_brush.title": "Waterproof Spray Paint",
-	"advancements.underwaterbiome.paint_brush.description": "Only support BLUE and ORANGE on iron blocks",
+	"advancements.underwaterbiome.paint_brush.description": "Only support BLUE and ORANGE on modded iron blocks",
 
 	"advancements.underwaterbiome.perpetual_motion_core.title": "Unbelieveable Energy Source",
 	"advancements.underwaterbiome.perpetual_motion_core.description": "Support different types of weapons and equipment",
@@ -233,7 +216,7 @@
 	"advancements.underwaterbiome.temperature_meter.title": "Researcher's Equipment I",
 	"advancements.underwaterbiome.temperature_meter.description": "Keep aware of the temperature around you",
 
-	"advancements.underwaterbiome.torch_far.title": "Advanced Lighting",
+	"advancements.underwaterbiome.torch_far.title": "Advanced 'Electronic' Lighting",
 	"advancements.underwaterbiome.torch_far.description": "The light can extend to a larger distance",
 
 	"advancements.underwaterbiome.torch_near.title": "Waterproof Torch",
@@ -244,6 +227,12 @@
 
 	"advancements.underwaterbiome.water_pump.title": "Is it truely Diatom Ooze?",
 	"advancements.underwaterbiome.water_pump.description": "If you want to build a house underwater, you may need it to remove the water inside",
+	
+	"advancements.underwaterbiome.water_torch_advanced.title": "Advanced Way to Illuminate",
+	"advancements.underwaterbiome.water_torch_advanced.description": "Double the torch, double the happiness",
+
+	"advancements.underwaterbiome.water_torch.title": "Cheap Way to Illuminate",
+	"advancements.underwaterbiome.water_torch.description": "You have to make Seaweed Fruit into extract to improve the efficiency",
 
 
 

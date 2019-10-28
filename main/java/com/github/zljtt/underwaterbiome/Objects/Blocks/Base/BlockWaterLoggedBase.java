@@ -46,9 +46,8 @@ public class BlockWaterLoggedBase extends BlockBase implements IWaterLoggable
 	
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-	      BlockState blockstate = this.getDefaultState();
 	      IFluidState ifluidstate = context.getWorld().getFluidState(context.getPos());
-	      return blockstate.with(WATERLOGGED, Boolean.valueOf(ifluidstate.getFluid() == Fluids.WATER));
+	      return super.getStateForPlacement(context).with(WATERLOGGED, Boolean.valueOf(ifluidstate.getFluid() == Fluids.WATER));
 
 	}
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {

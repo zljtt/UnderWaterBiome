@@ -1,7 +1,14 @@
 package com.github.zljtt.underwaterbiome.Capabilities;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import com.github.zljtt.underwaterbiome.Handlers.EventHandler;
+import com.github.zljtt.underwaterbiome.Handlers.TemperatureHandler;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IPlayerData;
+
+import net.minecraft.util.math.BlockPos;
 
 public class CapabilityPlayerData implements IPlayerData
 {
@@ -9,10 +16,65 @@ public class CapabilityPlayerData implements IPlayerData
 	public double cold_prof = 0;
 	public double heat_prof = 0;
 	public float oxygen_reduce = 0;
+	public BlockPos escape = new BlockPos(0,0,0);
 
 	public KnowledgePoints knowledge = new KnowledgePoints(0,0,0,0);
 	public boolean ignore_pressure = false;
+	public boolean checked = false;
 
+	public List<String> unlocked_biome = new ArrayList<String>();
+	public List<String> used_item = new ArrayList<String>();
+	
+	@Override
+	public List<String> getUnlockedBiomes() 
+	{
+		return unlocked_biome;
+	}
+	@Override
+	public void setUnlockedBiomes(List<String> print) 
+	{
+		unlocked_biome.clear();
+		unlocked_biome = print;
+	}
+	
+	@Override
+	public void unlockBiome(String print) 
+	{
+		unlocked_biome.add(print);
+	}
+	
+	@Override
+	public void lockAllBiome() 
+	{
+		unlocked_biome.clear();;
+	}
+	@Override
+	public void setUsedItem(List<String> print) 
+	{
+		used_item.clear();
+		used_item = print;
+	}
+	@Override
+	public List<String> getUsedItems() {
+		// TODO Auto-generated method stub
+		return used_item;
+	}
+	@Override
+	public void useItem(String print) {
+		used_item.add(print);		
+	}
+	
+	@Override
+	public boolean getChecked() {
+		return checked;
+	}
+
+	@Override
+	public void setChecked(boolean f) {
+		checked = f;		
+	}
+	
+	
 	@Override
 	public double getTemperature() {
 		return temperature;
@@ -36,13 +98,13 @@ public class CapabilityPlayerData implements IPlayerData
 	@Override
 	public void increaseTemperature(double value, boolean canOverheat) 
 	{
-		if (temperature > EventHandler.temp_bound/2 && !canOverheat)
+		if (temperature > TemperatureHandler.temp_bound/2 && !canOverheat)
 		{
-			temperature = EventHandler.temp_bound/2;
+			temperature = TemperatureHandler.temp_bound/2;
 		}
-		else if (temperature > EventHandler.temp_bound*3/2)
+		else if (temperature > TemperatureHandler.temp_bound*3/2)
 		{
-			temperature = EventHandler.temp_bound*3/2;
+			temperature = TemperatureHandler.temp_bound*3/2;
 		}
 		else 
 			reduceTemperature(-value);	
@@ -51,9 +113,9 @@ public class CapabilityPlayerData implements IPlayerData
 	@Override
 	public void reduceTemperature(double value) 
 	{
-		if (temperature < - EventHandler.temp_bound*3/2)
+		if (temperature < - TemperatureHandler.temp_bound*3/2)
 		{
-			temperature = - EventHandler.temp_bound*3/2;
+			temperature = - TemperatureHandler.temp_bound*3/2;
 		}
 		else 
 			temperature -= value;
@@ -72,7 +134,24 @@ public class CapabilityPlayerData implements IPlayerData
 	{
 		knowledge = point;		
 	}
-
+	@Override
+	public String addRandomKnowledge(Random ran)
+	{
+		int k = ran.nextInt(4);
+		switch(k)
+		{
+		case 0:
+			knowledge.add(1, 0, 0, 0);return "chemistry";
+		case 1:
+			knowledge.add(0, 1, 0, 0);return "biology";
+		case 2:
+			knowledge.add(0, 0, 1, 0);return "physics";
+		case 3:
+			knowledge.add(0, 0, 0, 1);return "occult";
+		default:
+			knowledge.add(0, 0, 0, 1);return "occult";
+		}				
+	}
 	
 	public class KnowledgePoints
 	{
@@ -195,6 +274,16 @@ public class CapabilityPlayerData implements IPlayerData
 	@Override
 	public void setReduceOxyConsumption(float f) {
 		oxygen_reduce=f;		
+	}
+
+	@Override
+	public BlockPos getPosEscape() {
+		return escape==null?new BlockPos(0,0,0):escape;
+	}
+
+	@Override
+	public void setPosEscape(BlockPos f) {
+		escape = f;		
 	}
 
 

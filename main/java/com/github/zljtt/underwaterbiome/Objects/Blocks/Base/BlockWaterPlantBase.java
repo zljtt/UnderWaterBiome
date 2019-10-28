@@ -8,6 +8,7 @@ import com.github.zljtt.underwaterbiome.Utils.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ILiquidContainer;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
@@ -55,11 +56,12 @@ public class BlockWaterPlantBase extends Block implements ILiquidContainer
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
 			BlockPos currentPos, BlockPos facingPos) 
 	{
+		worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		if (!stateIn.isValidPosition(worldIn, currentPos)) 
 		{
-			worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
+			return Blocks.WATER.getDefaultState();
+//			worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
 		}
-		worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	

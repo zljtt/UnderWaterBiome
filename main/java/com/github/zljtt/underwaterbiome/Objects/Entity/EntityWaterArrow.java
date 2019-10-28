@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
@@ -25,21 +26,23 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
-public class EntityWaterArrow extends AbstractArrowEntity
+public class EntityWaterArrow extends ArrowEntity
 {
 
-	public EntityWaterArrow(EntityType<? extends EntityWaterArrow> entitytype, World world) {
+	public EntityWaterArrow(EntityType<? extends ArrowEntity> entitytype, World world) {
 	      super(entitytype, world);
 	   }
 
-	   @SuppressWarnings("unchecked")
-	public EntityWaterArrow(World worldIn, double x, double y, double z) {
-	      super((EntityType<? extends AbstractArrowEntity>) EntityInit.ENTITY_WATER_ARROW, x, y, z, worldIn);
+	@SuppressWarnings("unchecked")
+	public EntityWaterArrow(World worldIn, double x, double y, double z) 
+	   {
+	      super((EntityType<? extends ArrowEntity>) EntityInit.ENTITY_WATER_ARROW, worldIn);
 	   }
 
-	   @SuppressWarnings("unchecked")
-	public EntityWaterArrow(World worldIn, LivingEntity shooter) {
-	      super((EntityType<? extends AbstractArrowEntity>) EntityInit.ENTITY_WATER_ARROW, shooter, worldIn);
+	@SuppressWarnings("unchecked")
+	public EntityWaterArrow(World worldIn, LivingEntity shooter) 
+	   {
+	      super((EntityType<? extends ArrowEntity>) EntityInit.ENTITY_WATER_ARROW, worldIn);
 	   }
 	   
 

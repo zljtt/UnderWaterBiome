@@ -21,6 +21,8 @@ public class EffectScald extends EffectBase
 	@Override
 	public void performEffect(LivingEntity entityLivingBaseIn, int amplifier) 
 	{
+			System.out.println(amplifier);
+			if (amplifier==0)return;
 			if (timer1 >= next)
 			{
 				entityLivingBaseIn.attackEntityFrom(Reference.SCALD, 1);

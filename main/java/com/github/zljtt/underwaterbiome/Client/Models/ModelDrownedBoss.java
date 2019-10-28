@@ -23,6 +23,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class ModelDrownedBoss extends EntityModel<EntityDrownedBoss> 
 {
+	public static int hasSheld= 3;
+	public static int SUMMON_AMOUNT = 0;
+
 	private final RendererModel bone;
 	private final RendererModel left;
 	private final RendererModel right;
@@ -89,13 +92,13 @@ public class ModelDrownedBoss extends EntityModel<EntityDrownedBoss>
 			this.bone.rotateAngleX = headPitch * ((float)Math.PI / 180F);
 		    this.bone.rotateAngleY = (netHeadYaw) * ((float)Math.PI / 180F);
 		    
-		    this.sheld1.showModel = entityIn.hasSheld;
-		    this.sheld2.showModel = entityIn.hasSheld;
-		    this.sheld3.showModel = entityIn.hasSheld;
+		    this.sheld1.showModel = hasSheld >= 3;
+		    this.sheld2.showModel = hasSheld >= 2;
+		    this.sheld3.showModel = hasSheld >= 1;
 
-//		    this.sheld1.rotateAngleY = ageInTicks;
-//		    this.sheld2.rotateAngleY = -2.0944F+ageInTicks;
-//		    this.sheld3.rotateAngleY = 2.0944F+ageInTicks;
+		    this.sheld1.rotateAngleY = ageInTicks/20;
+		    this.sheld2.rotateAngleY = -2.0944F+ageInTicks/20;
+		    this.sheld3.rotateAngleY = 2.0944F+ageInTicks/20;
 
 		    
 		    bone.offsetY = 0.04F * MathHelper.cos(ageInTicks * 0.1F);

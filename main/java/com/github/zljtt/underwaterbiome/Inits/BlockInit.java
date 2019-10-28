@@ -16,7 +16,9 @@ import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockMeandrina;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockOxygenHolder;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockShipChest;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockShipDoor;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWallWaterTorch;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWaterGrass;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWaterTorch;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockBase;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockWaterPlantBase;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockKelps.BlockKelp;
@@ -26,6 +28,7 @@ import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -41,6 +44,7 @@ public class BlockInit
         @Override
         public ItemStack createIcon() 
         {
+        	
             return new ItemStack(BlockInit.FLUORESCENT_LAMP_ON);
         }
     };
@@ -48,7 +52,21 @@ public class BlockInit
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Blocks
+	public static final BlockWaterTorch WATER_TORCH = new BlockWaterTorch("water_torch",Block.Properties
+			.create(Material.MISCELLANEOUS)
+			.doesNotBlockMovement()
+			.hardnessAndResistance(0.0F)
+			.lightValue(14)
+			.sound(SoundType.WOOD), true, BlueprintType.CHEMISTRY, 1,2);
 	
+	public static final BlockWallWaterTorch WALL_WATER_TORCH = new BlockWallWaterTorch("wall_water_torch", Block.Properties
+			.create(Material.MISCELLANEOUS)
+			.doesNotBlockMovement()
+			.hardnessAndResistance(0.0F)
+			.lightValue(14)
+			.sound(SoundType.WOOD)
+			.lootFrom(WATER_TORCH), false, null);
+			
 	
 	public static final BlockInvisible MOVING_LIGHT_LOW = new BlockInvisible("moving_light_low",Block.Properties
 			.create(Material.AIR)

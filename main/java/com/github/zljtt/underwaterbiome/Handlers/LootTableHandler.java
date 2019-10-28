@@ -26,6 +26,10 @@ public class LootTableHandler
 	   public static final ResourceLocation RESEARCH_STATION_SMELT_0 = new ResourceLocation(Reference.MODID, "chests/research_station_smelt_0");
 	   public static final ResourceLocation RESEARCH_STATION_SMELT_1 = new ResourceLocation(Reference.MODID, "chests/research_station_smelt_1");
 
+	   public static final ResourceLocation STARTER_1 = new ResourceLocation(Reference.MODID, "chests/starter_1");
+	   public static final ResourceLocation STARTER_2 = new ResourceLocation(Reference.MODID, "chests/starter_2");
+	   public static final ResourceLocation STARTER_3 = new ResourceLocation(Reference.MODID, "chests/starter_3");
+
 	   public static void init() 
 	   {		   
 		   LootFunctionManager.registerFunction(new FunctionRandomBlueprint.Serializer());

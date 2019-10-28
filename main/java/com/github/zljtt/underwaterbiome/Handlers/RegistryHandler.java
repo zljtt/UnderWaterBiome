@@ -74,7 +74,10 @@ public class RegistryHandler
 		TriggerHandler.init();
         MinecraftForge.EVENT_BUS.register(new GuiOverlay());
         MinecraftForge.EVENT_BUS.register(new EventHandler());
-        
+        MinecraftForge.EVENT_BUS.register(new KnowledgePointHandler());
+        MinecraftForge.EVENT_BUS.register(new TemperatureHandler());
+        MinecraftForge.EVENT_BUS.register(new OxygenHandler());
+
        
 	}
 	

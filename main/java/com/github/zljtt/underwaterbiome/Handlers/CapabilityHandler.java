@@ -24,13 +24,13 @@ public class CapabilityHandler
 {
 	public static final ResourceLocation OXYGEN = new ResourceLocation(Reference.MODID, "oxygen");
 	public static final ResourceLocation PLAYER_DATA = new ResourceLocation(Reference.MODID, "player_data");
-//	public static final ResourceLocation UNLOCKED_BLUEPRINT = new ResourceLocation(Reference.MODID, "unlocked_blueprint");
+//	public static final ResourceLocation UNLOCKED_BIOME = new ResourceLocation(Reference.MODID, "unlocked_biome");
 
 	public static void init()
 	{
 		CapabilityManager.INSTANCE.register(IPlayerData.class, new CapabilityPlayerDataStorage(),CapabilityPlayerData::new);
 		CapabilityManager.INSTANCE.register(IOxygen.class, new CapabilityOxygenStorage(),CapabilityOxygen::new);
-//		CapabilityManager.INSTANCE.register(IBluePrint.class, new CapabilityBluePrintStorage(),CapabilityBluePrint::new);
+//		CapabilityManager.INSTANCE.register(IUnlockBiome.class, new CapabilityUnlockBiomeStorage(),CapabilityUnlockBiome::new);
 
 	}
 	
@@ -39,14 +39,14 @@ public class CapabilityHandler
     {
         if (!(event.getObject() instanceof PlayerEntity)) return;
         event.addCapability(PLAYER_DATA, new CapabilityPlayerDataProvider());
-//        event.addCapability(UNLOCKED_BLUEPRINT, new CapabilityBluePrintProvider());
+//        event.addCapability(UNLOCKED_BIOME, new CapabilityUnlockBiomeProvider());
     }
 	
     @SubscribeEvent
     public void attachCapabilityItem(AttachCapabilitiesEvent<ItemStack> event)
     {
         if (!(event.getObject() instanceof ItemStack)) return;
-        if (EventHandler.breathableItem().contains(event.getObject().getItem()))
+        if (OxygenHandler.breathableItem().contains(event.getObject().getItem()))
         {
             event.addCapability(OXYGEN, new CapabilityOxygenProvider());
         }

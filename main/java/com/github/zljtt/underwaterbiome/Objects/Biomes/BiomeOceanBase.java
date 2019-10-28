@@ -12,6 +12,8 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
+import net.minecraft.world.gen.feature.structure.OceanRuinConfig;
+import net.minecraft.world.gen.feature.structure.OceanRuinStructure;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
@@ -40,6 +42,7 @@ public class BiomeOceanBase extends Biome
 		this.pollution = pollution.getDifficulty();
 		
 	    this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(FeatureInit.SPACECRAFT_WRECKAGE, new WreckageConfig(this.getPollution()*10+25, this.getPollution(), this.getPollution()), Placement.CHANCE_TOP_SOLID_HEIGHTMAP, new ChanceConfig(25)));
+	    this.addStructure(Feature.OCEAN_RUIN, new OceanRuinConfig(OceanRuinStructure.Type.COLD, 0.3F, 0.9F));
 
 	    //normal ocean setting
 	      DefaultBiomeFeatures.addOres(this);

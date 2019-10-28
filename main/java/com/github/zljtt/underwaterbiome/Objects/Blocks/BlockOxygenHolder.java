@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityOxygenProvider;
 import com.github.zljtt.underwaterbiome.Handlers.EventHandler;
+import com.github.zljtt.underwaterbiome.Handlers.OxygenHandler;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockBase;
 import com.github.zljtt.underwaterbiome.Objects.TileEntities.TileEntityOxygenHolder;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
@@ -67,7 +68,7 @@ public class BlockOxygenHolder extends BlockBase
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn,
 			BlockRayTraceResult hit) 
 	{
-		if (EventHandler.chargeableItem().contains(player.getHeldItem(handIn).getItem()))
+		if (OxygenHandler.chargeableItem().contains(player.getHeldItem(handIn).getItem()))
 		{
 			ItemStack stack = player.getHeldItem(handIn);
  			IOxygen cap_itemstack =  stack.getCapability(CapabilityOxygenProvider.PARTICLE_CAP, null).orElse(null);

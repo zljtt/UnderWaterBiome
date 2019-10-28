@@ -9,60 +9,20 @@
     ]
   },
   "criteria": {
-    "has_item1": {
+    "has_item": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "underwaterbiome:blueprint_fragment_chemistry"
+            "item": "underwaterbiome:blueprint_fragment"
           }
         ]
-      }
-    },
-    "has_item2": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "underwaterbiome:blueprint_fragment_biology"
-          }
-        ]
-      }
-    },
-    "has_item3": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "underwaterbiome:blueprint_fragment_physics"
-          }
-        ]
-      }
-    },
-    "has_item4": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "underwaterbiome:blueprint_fragment_occult"
-          }
-        ]
-      }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "underwaterbiome:blueprint_fragment_occult"
       }
     }
   },
   "requirements": [
     [
-      "has_item1",
-      "has_item2",
-      "has_item3",
-      "has_item4",
-      "has_the_recipe"
+      "has_item"
     ]
   ]
 }
