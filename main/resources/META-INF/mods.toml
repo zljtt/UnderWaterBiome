@@ -18,15 +18,15 @@ version="${file.jarVersion}" #mandatory
  # A display name for the mod
 displayName="Underwater Biome" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="http://myurl.me/" #optional
+# updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="http://example.com/" #optional
+# displayURL="http://example.com/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="underwaterbiome.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="jww" #optional
 # A text field displayed in the mod UI
-authors="Love, Cheese and small house plants" #optional
+authors="jwws" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Mod that adds several biomes into the ocean, along with new structures and features.
