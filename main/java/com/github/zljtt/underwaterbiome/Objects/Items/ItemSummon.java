@@ -36,7 +36,7 @@ public class ItemSummon extends ItemBase
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
 	{
 		Random ran = new Random();
-		for (int x = 0; x < 100; x++)
+		for (int x = 0; x < 50; x++)
 		{
 			BlockPos pos = new BlockPos(playerIn.posX-16+ran.nextInt(32),
 					playerIn.posY-16+ran.nextInt(32),

@@ -6,6 +6,21 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "underwaterbiome:accessory/large_silt",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:air",
+          "weight": 96
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "weight":5,
           "functions": [
             {

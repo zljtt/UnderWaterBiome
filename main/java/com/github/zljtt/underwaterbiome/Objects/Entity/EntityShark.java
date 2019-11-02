@@ -1,5 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Entity;
 
+import com.github.zljtt.underwaterbiome.Utils.Interface.IFish;
+
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
@@ -19,7 +21,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
-public class EntityShark extends EntityFishBase implements IMob
+public class EntityShark extends EntityFishBase implements IMob,IFish
 {
 	private static final DataParameter<Integer> HUNGER = EntityDataManager.createKey(EntityShark.class, DataSerializers.VARINT);
 

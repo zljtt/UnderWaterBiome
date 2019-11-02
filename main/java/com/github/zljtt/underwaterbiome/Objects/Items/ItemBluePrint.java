@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Objects.Items;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -45,7 +46,7 @@ public class ItemBluePrint extends Item
 			{
 				ITextComponent com = new TranslationTextComponent(I18n.format("message.already_have_blueprint"));
 				ITextComponent com2 = new TranslationTextComponent(I18n.format("message.change_to_fragment"));
-				playerIn.sendMessage(com.appendSibling(getItemByName().getName()).appendSibling(com2));
+				playerIn.sendMessage(com.appendSibling(getItemByName().getName()).applyTextStyle(TextFormatting.BLUE).appendSibling(com2));
 				playerIn.setHeldItem(handIn, new ItemStack(Items.AIR));
 				playerIn.addItemStackToInventory(new ItemStack(ItemInit.BLUEPRINT_FRAGMENT, 2+ran.nextInt(3)));
 			}

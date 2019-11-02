@@ -10,6 +10,7 @@ import com.github.zljtt.underwaterbiome.Client.Models.ModelDrownedBoss;
 import com.github.zljtt.underwaterbiome.Inits.EffectInit;
 
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -55,6 +56,15 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 	    this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 2, true, false, this::shouldAttack));
 	    this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)).setCallsForHelp(DrownedEntity.class));
 
+	}
+	public CreatureAttribute getCreatureAttribute() 
+	{
+	      return CreatureAttribute.UNDEAD;
+	}
+	@Override
+	protected int getExperiencePoints(PlayerEntity player) 
+	{
+		return 50 + this.world.rand.nextInt(50);
 	}
 	@Override
 	protected void registerAttributes() 

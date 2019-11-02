@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:torch_near",
+  "parent": "underwaterbiome:water_torch",
   "rewards": {
     "recipes": [
       "underwaterbiome:torch_far"

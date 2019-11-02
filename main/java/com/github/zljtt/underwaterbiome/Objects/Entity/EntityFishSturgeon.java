@@ -1,5 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Entity;
 
+import com.github.zljtt.underwaterbiome.Utils.Interface.IFish;
+
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -8,7 +10,7 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.World;
 
-public class EntityFishSturgeon extends EntityFishBase implements IMob
+public class EntityFishSturgeon extends EntityFishBase implements IMob, IFish
 {
 	public EntityFishSturgeon(EntityType<? extends EntityFishBase> entityTypeIn, World worldIn) 
 	{

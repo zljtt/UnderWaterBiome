@@ -5,6 +5,7 @@ import java.util.List;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemBase;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
+import com.github.zljtt.underwaterbiome.Utils.Interface.IGun;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
@@ -14,6 +15,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +25,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class ItemGravityGun extends ItemBase 
+public class ItemGravityGun extends ItemBase  implements IGun
 {
 	Minecraft mc = Minecraft.getInstance();
 	public ItemGravityGun(String name, Properties property, boolean needBlueprint,BlueprintType type, int... difficulty) 
@@ -40,6 +42,7 @@ public class ItemGravityGun extends ItemBase
 		    Vec3d vec3d1 = player.getLook(0);
 			for(LivingEntity living_entity : entity.world.getEntitiesWithinAABB(LivingEntity.class, (new AxisAlignedBB(pos_target).grow(1)))) 
 			{
+				living_entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 1);
 				if (stack.getItem().getRegistryName().getPath().equals("gravity_gun_attractive")&&!(living_entity instanceof PlayerEntity))
 				{
 					living_entity.addVelocity(-vec3d1.x, -vec3d1.y, -vec3d1.z);
@@ -49,6 +52,7 @@ public class ItemGravityGun extends ItemBase
 					living_entity.addVelocity(vec3d1.x, vec3d1.y, vec3d1.z);
 				}
 			}
+			
 			return true;
 		}	
 		return false;

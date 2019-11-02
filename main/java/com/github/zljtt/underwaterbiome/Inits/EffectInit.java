@@ -24,5 +24,6 @@ public class EffectInit
 //	public static final Effect SCALD_II = new EffectScald("scald_high", EffectType.HARMFUL, 0xE55010);
 	public static final Effect WATER_CURSE = new EffectWaterCurse("water_curse", EffectType.HARMFUL, 0x125C89);
 	public static final Effect HIGH_PRESSURE = new EffectBase("high_pressure", EffectType.HARMFUL, Color.TRANSLUCENT);
+	public static final Effect BREAK_SHELD = new EffectBase("break_sheld", EffectType.HARMFUL, 0x125C89).addAttributesModifier(SharedMonsterAttributes.ARMOR, "7197DE5E-7CF8-4030-949E-514C1F120350", (double)-10F, AttributeModifier.Operation.ADDITION);
 
 }

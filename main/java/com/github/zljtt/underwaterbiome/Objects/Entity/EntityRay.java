@@ -1,5 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Entity;
 
+import com.github.zljtt.underwaterbiome.Utils.Interface.IFish;
+
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -11,7 +13,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityRay extends EntityFishBase implements IMob
+public class EntityRay extends EntityFishBase implements IMob,IFish
 {
 	public EntityRay(EntityType<? extends EntityFishBase> entityTypeIn, World worldIn) 
 	{

@@ -7,6 +7,7 @@ import java.util.List;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeBrokenCanyon;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeCoralReef;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeCoralTree;
+import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeDeadCoral;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeFloatingland;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLavaRange;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLightingKelp;
@@ -29,15 +30,17 @@ public class BiomeInit
 	public static final List<Biome> BIOMES = new ArrayList<Biome>();
 	
 	public static final Biome CORAL_REEF = new BiomeCoralReef( -1.0F, 0.01F, 0x12c3dd,(String)null, 3, Difficulty.EASY);//5
-		public static final Biome CORAL_TREE = new BiomeCoralTree(-1.1F, 0.01F, 0x12c3dd,"coral_reef", 2, Difficulty.NORMAL);//5
-		
+	
+	public static final Biome CORAL_TREE = new BiomeCoralTree(-1.1F, 0.01F, 0x12c3dd,(String)null, 2, Difficulty.NORMAL);//5
+		public static final Biome DEAD_CORAL = new BiomeDeadCoral(-1.9F, 0.2F, 0x12c3dd,"coral_tree", 2, Difficulty.DIFFICULT);//5
+
 	public static final Biome NORMAL_SEAWEED = new BiomeNormalKelp(-1.6F, 0.1F, 0x0AAA8E,(String)null, 5, Difficulty.NORMAL);//5
 		public static final Biome LIGHTING_SEAWEED = new BiomeLightingKelp(-1.9F, 0.1F, 0x0AAA70,"normal_seaweed", 5,Difficulty.DIFFICULT);//5
 		
 	public static final Biome FLOATING_ISLAND = new BiomeFloatingland(-1.8F, 0.2F, 0x53A1FC,(String)null, 4, Difficulty.NORMAL);//
 	
 	public static final Biome BROKEN_CANYAN = new BiomeBrokenCanyon(-1F, 0.1F, 0x125C89,(String)null, 5, Difficulty.NORMAL);//5
-		public static final Biome LAVA_RANGE = new BiomeLavaRange(-1.9F, 0.02F, 0x65599A,"broken_canyon", 2, Difficulty.DIFFICULT);//5
+		public static final Biome LAVA_RANGE = new BiomeLavaRange(-1.8F, 0.02F, 0x65599A,"broken_canyon", 2, Difficulty.DIFFICULT);//5
 		public static final Biome ROOTY_TANTACLE = new BiomeRootyTentacle(-1.5F, 0.07F, 0xDFFF7F,"broken_canyon", 2, Difficulty.DIFFICULT);//5
 
 
@@ -45,6 +48,8 @@ public class BiomeInit
 	{
 		initBiome(event, CORAL_REEF, "coral_reef", BiomeType.WARM, Type.OCEAN);
 		initBiome(event, CORAL_TREE, "coral_tree", BiomeType.WARM, Type.OCEAN);
+		initBiome(event, DEAD_CORAL, "dead_coral", BiomeType.COOL, Type.OCEAN);
+
 		initBiome(event, LIGHTING_SEAWEED, "lighting_seaweed", BiomeType.WARM, Type.OCEAN);
 		initBiome(event, NORMAL_SEAWEED, "normal_seaweed", BiomeType.WARM, Type.OCEAN);
 		

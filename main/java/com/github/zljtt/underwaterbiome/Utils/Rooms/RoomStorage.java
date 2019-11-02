@@ -34,13 +34,19 @@ public class RoomStorage extends RoomSquare
 		if (info.height%2 != 0)
 		{
 			mid_start = mid_start.offset(info.direction.rotateY(),(info.height-1)/2-1);
-			info.buildSolidWall(worldIn, config, mid_start.offset(info.direction.rotateY()), w1, info.direction, false);
 			for(int i = 0; i<w1; i++)
 			{
 				for(int k = 0; k<3;k++)
 				{
-					RoomInfo.addChest(mid_start.offset(info.direction, 2+i).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateYCCW());
-					RoomInfo.addChest(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY(),2).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateY());
+					if (ran.nextInt(3)==0)
+						RoomInfo.addChest(mid_start.offset(info.direction, 2+i).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateYCCW());
+					else
+						tobuild.put(mid_start.offset(info.direction, 2+i).up(k), RoomInfo.iron_block);
+					if (ran.nextInt(3)==0)
+						RoomInfo.addChest(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY(),2).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateY());
+					else
+						tobuild.put(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY(),2).up(k), RoomInfo.iron_block);
+					tobuild.put(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY()).up(k), RoomInfo.iron_block);
 				}
 			}
 		}

@@ -13,6 +13,8 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.potion.Effect;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.world.biome.Biome;
@@ -58,11 +60,12 @@ public class RegistryHandler
 	{		
 		event.getRegistry().registerAll(EffectInit.EFFECTS.toArray(new Effect[0]));
 	}
-//	@SubscribeEvent
-//	public static void registerRecipes(final RegistryEvent.Register<IRecipe> event)
-//	{		
-//		event.getRegistry().registerAll(EffectInit.EFFECTS.toArray(new Effect[0]));
-//	}
+	@SubscribeEvent
+	public static void registerRecipes(final RegistryEvent.Register<IRecipeSerializer<?>> event)
+	{		
+		CraftingHandler.register(event);
+	}
+
 	
 	public static void preInitRegistries()
 	{    
@@ -77,6 +80,7 @@ public class RegistryHandler
         MinecraftForge.EVENT_BUS.register(new KnowledgePointHandler());
         MinecraftForge.EVENT_BUS.register(new TemperatureHandler());
         MinecraftForge.EVENT_BUS.register(new OxygenHandler());
+        MinecraftForge.EVENT_BUS.register(new AccessoryHandler());
 
        
 	}

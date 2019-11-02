@@ -4,6 +4,8 @@ package com.github.zljtt.underwaterbiome.Inits;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.zljtt.underwaterbiome.Objects.Features.FeatureBone;
+import com.github.zljtt.underwaterbiome.Objects.Features.FeatureDeadCoral;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureFloatingIsland;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureLavaBlock;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureLightingKelp;
@@ -33,6 +35,8 @@ public class FeatureInit
 	public static final Feature<NoFeatureConfig> FLOATING_ISLAND = new FeatureFloatingIsland(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> REEF = new FeatureReef(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> WATER_GRASS = new FeatureWaterGrass(NoFeatureConfig::deserialize);
+	public static final Feature<NoFeatureConfig> DEAD_CORAL = new FeatureDeadCoral(NoFeatureConfig::deserialize);
+	public static final Feature<NoFeatureConfig> BONE = new FeatureBone(NoFeatureConfig::deserialize);
 
 	public static final Feature<WreckageConfig> SPACECRAFT_WRECKAGE = new FeatureResearchStationWreckage(WreckageConfig::deserialize);
 
@@ -49,6 +53,8 @@ public class FeatureInit
 		initFeature(REEF, "reef");
 		initFeature(WATER_GRASS, "water_grass");
 		initFeature(SPACECRAFT_WRECKAGE, "spacecraft_wreckage");
+		initFeature(DEAD_CORAL, "dead_coral");
+		initFeature(BONE, "bone");
 
 		
 		

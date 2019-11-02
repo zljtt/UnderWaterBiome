@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#H#",
+    "#H#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "H": {
+      "item": "underwaterbiome:venom_extract"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:accessory/venom_container",
+    "count": 1
+  }
+}

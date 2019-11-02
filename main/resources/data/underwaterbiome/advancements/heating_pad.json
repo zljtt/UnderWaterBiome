@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:lime_powder",
+  "parent": "underwaterbiome:conical_flask",
   "rewards": {
     "recipes": [
       "underwaterbiome:heating_pad"

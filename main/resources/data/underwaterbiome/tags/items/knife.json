@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "underwaterbiome:iron_knife",
+    "underwaterbiome:golden_knife",
+    "underwaterbiome:diamond_knife",
+    "underwaterbiome:stone_knife",
+    "underwaterbiome:wooden_knife"
+  ]
+}

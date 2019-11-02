@@ -11,6 +11,7 @@ import com.github.zljtt.underwaterbiome.Utils.Enum.Rooms;
 import com.github.zljtt.underwaterbiome.Utils.Rooms.RoomBase;
 import com.mojang.datafixers.Dynamic;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -30,14 +31,16 @@ public class FeatureResearchStationWreckage extends Feature<WreckageConfig>
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, WreckageConfig config) 
 	{
-		System.out.println("Place Wreckage at: "+pos.toString());
+//		System.out.println("Place Wreckage at: "+pos.toString());
+		if (worldIn.getBlockState(pos.up(7)).getBlock().equals(Blocks.AIR))return false;
+			
 		List<RoomInfo> room_list = generateStationMap(worldIn.getWorld(), rand, pos, config);
 		room_list.forEach(room_info->
 		{
-			if (!room_info.room.is_corridor)
-			{
-				System.out.println("With Room: "+room_info.toString());
-			}
+//			if (!room_info.room.is_corridor)
+//			{
+//				System.out.println("With Room: "+room_info.toString());
+//			}
 			room_info.room.generate(worldIn, room_info, config, rand);
 		});
 		return true;

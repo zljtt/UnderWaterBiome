@@ -2,10 +2,11 @@
   "parent": "underwaterbiome:precision_part",
   "rewards": {
     "recipes": [
-      "underwaterbiome:leather_chestplate",
-      "underwaterbiome:leather_helmet",
-      "underwaterbiome:leather_boots",
-      "underwaterbiome:leather_leggings"
+      "underwaterbiome:fish_skin_stone",
+      "underwaterbiome:fish_skin_diamond",
+      "underwaterbiome:fish_skin_gold",
+      "underwaterbiome:fish_skin_iron",
+      "underwaterbiome:fish_skin_wood"   
     ]
   },
   "criteria": {
@@ -13,7 +14,7 @@
       "trigger": "underwaterbiome:have_knowledge",
       "conditions": {
         "biology": 2,
-        "physics": 7
+        "physics": 5
       }
     },
     "have_the_recipe": {
@@ -25,7 +26,7 @@
   },
   "display": {
     "icon": {
-      "item": "minecraft:leather_chestplate"
+      "item": "underwaterbiome:fish_skin"
     },
     "title": {
       "translate": "advancements.underwaterbiome.fish_skin.title"
@@ -40,7 +41,7 @@
           "color": "gold",
           "extra":[
             {
-              "translate" : "suit.leather",
+              "translate" : "underwaterbiome.fish_skin",
               "color": "yellow",
               "bold": false,
               "extra":[
@@ -54,7 +55,7 @@
                       "text" : "2","color": "aqua","extra":[
                     {
                       "translate" : "message.physics","color": "yellow","italic": false,"extra":[{
-                      "text" : "7","color": "aqua"
+                      "text" : "5","color": "aqua"
                     }
                   ]
                     }

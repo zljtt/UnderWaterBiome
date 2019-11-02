@@ -42,7 +42,7 @@ public class BiomeCoralTree extends BiomeOceanBase
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.PUFFERFISH, 15, 3, 6));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 15, 5, 10));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.DOLPHIN, 15, 1, 2));
-	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityInit.ENTITY_FISH_STURGEON, 2, 1, 1));
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityInit.ENTITY_FISH_STURGEON, 10, 1, 1));
 
 
 	      

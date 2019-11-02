@@ -19,6 +19,7 @@
 	"item.underwaterbiome.spaceship_driving_recorder": "Spaceship Driving Recorder",
 	"item.underwaterbiome.ray_boss_summon": "Fish Skin Battle Drum",
 	"item.underwaterbiome.drowned_boss_summon": "Brain of The Drowned",
+	"item.underwaterbiome.conical_flask": "Conical Flask",
 
 	//equipment items
 	"item.underwaterbiome.double_oxygen_tank": "Double Oxygen Tank",
@@ -38,6 +39,11 @@
 	"item.underwaterbiome.stagnation_gun": "Gun of Stagnation",
 	"item.underwaterbiome.stagnation_gun_time": "Gun of Stagnation - Time",
 	"item.underwaterbiome.stagnation_gun_poison": "Gun of Stagnation - Poison",
+	"item.underwaterbiome.golden_knife": "Golden Knife",
+	"item.underwaterbiome.diamond_knife": "Diamond Knife",
+	"item.underwaterbiome.wooden_knife": "Wooden Knife",
+	"item.underwaterbiome.stone_knife": "Stone Knife",
+	"item.underwaterbiome.iron_knife": "Iron Knife",
 
 	//egg items
 	"item.underwaterbiome.shark_egg": "Shark Egg",
@@ -45,6 +51,31 @@
 	"item.underwaterbiome.conch_sea_grass_egg": "Conch Egg",
 	"item.underwaterbiome.fish_sturgeon_egg": "Sturgeon Egg",
 	"item.underwaterbiome.ray_egg": "Ray Egg",
+	"item.underwaterbiome.water_skeleton_egg": "Drowned Skeleton Egg",
+
+	//accessory items
+	"item.underwaterbiome.large_silt": "Large Silt",
+	"item.underwaterbiome.venom_container": "Venom Container",
+	"item.underwaterbiome.undead_killer": "Holy Cross",
+	"item.underwaterbiome.poison_protection": "Panacea",
+	"item.underwaterbiome.poison_weakness": "Petri Dish",
+	"item.underwaterbiome.wither_flower": "Wither Flower",
+	"item.underwaterbiome.magical_gun": "Magical Bullets",
+	"item.underwaterbiome.magical_through": "Old Magic Book",
+	"item.underwaterbiome.precise_part": "Sighting Telescope",
+	"item.underwaterbiome.bloodthirsty_soul": "The Bloodthirsty Soul",
+
+	//accessory discription
+	"accessory.large_silt": "When you attack with a MELEE weapon, apply POISON I for 3s",
+	"accessory.venom_container": "When you apply POISON to an enemy, increase its LEVEL by 1",
+	"accessory.undead_killer": "When you attack an UNDEAD enemy, cause 1 more damage",
+	"accessory.poison_protection": "Immune to POISON", 
+	"accessory.poison_weakness": "For each LEVEL of POISON your enermies have, cause 20% more damage",
+	"accessory.wither_flower": "Immune to damage, but it will turn to WITHER with the time equals to the amount of damage",
+	"accessory.magical_gun": "When you attack with a GUN, cause MAGIC damage instead, and apply WEAKNESS I for 3s", 
+	"accessory.magical_through": "MAGIC damage has 20% chance to cause 10 more damages",
+	"accessory.precise_part": "When you attack with a GUN, cause 2 more damages",
+	"accessory.bloodthirsty_soul": "When you attack with a MELEE weapon, heal yourself by 10% of the damage",
 
 	//blocks
 	"block.underwaterbiome.fluorescent_lamp_off": "Fluorescent Lamp",
@@ -74,6 +105,7 @@
 	"entity.underwaterbiome.ray": "Ray",
 	"entity.underwaterbiome.ray_boss": "Sand Ray",
 	"entity.underwaterbiome.drowned_boss": "Lord of The Drowned",
+	"entity.underwaterbiome.water_skeleton": "Drowned Skeleton",
 
 	//biomes
 	"biome.underwaterbiome.lighting_seaweed": "Luminous Kelp Forest",
@@ -84,6 +116,7 @@
 	"biome.underwaterbiome.lava_range": "Obsidian Pool",
 	"biome.underwaterbiome.coral_reef": "Coral Reef",
 	"biome.underwaterbiome.coral_tree": "Coral Forest",
+	"biome.underwaterbiome.dead_coral": "The Coral Land of Death",
 
 	//others
 	"effect.underwaterbiome.scald": "Scald",
@@ -115,10 +148,13 @@
 
 	"tooltip.gravity_gun_repulsive": "Repulsive Mode (Right Click to Change Mode)",
 	"tooltip.gravity_gun_attractive": "Atttractive Mode (Right Click to Change Mode)",
+	"tooltip.ignore_armer_to_fish": "Cause 2 more damages while attacking FISH",
+	"tooltip.unbreakable": "Unbreakable",
 	"tooltip.iron_block": "Building-Only",
 	"tooltip.oxygen_left": "Oxygen Left: ",
 	"tooltip.location_of_base": "The Location of Escape Shuttle: ",
 	"tooltip.have_crafting": "Crafting of Different Items: ",
+	"tooltip.in_inventory": "In inventory: ",
 	"tooltip.cold_prof": " Cold Resistance",
 	"tooltip.heat_prof": " Heat Resistance",
 	"tooltip.chemistry": "Chemical Knowledge",
@@ -141,6 +177,9 @@
 	"advancements.underwaterbiome.advanced_iron_block.title": "More Efficient Smelting",
 	"advancements.underwaterbiome.advanced_iron_block.description": "Craft build-only iron blocks with less iron",
 
+	"advancements.underwaterbiome.conical_flask.title": "Apparatus I",
+	"advancements.underwaterbiome.conical_flask.description": "I would say it is physics rather than chemistry",
+
 	"advancements.underwaterbiome.cabin_door.title": "Airtight Technology",
 	"advancements.underwaterbiome.cabin_door.description": "Allow you to move through the water and air",
 
@@ -150,8 +189,8 @@
 	"advancements.underwaterbiome.double_oxygen_tank.title": "Advanced Respiration",
 	"advancements.underwaterbiome.double_oxygen_tank.description": "Higher pressure means higher oxygen capacity",
 
-	"advancements.underwaterbiome.fish_skin.title": "Fish Skin Sewing",
-	"advancements.underwaterbiome.fish_skin.description": "Best way to keep warm",
+	"advancements.underwaterbiome.fish_skin.title": "Knife Expert",
+	"advancements.underwaterbiome.fish_skin.description": "Use raw fish to make fish skin",
 
 	"advancements.underwaterbiome.floating_extract.title": "Create Bio-Physical Gravity",
 	"advancements.underwaterbiome.floating_extract.description": "Core of the floating islands",
@@ -171,11 +210,20 @@
 	"advancements.underwaterbiome.iron_slab.title": "Metal Carving",
 	"advancements.underwaterbiome.iron_slab.description": "Carve iron blocks to half",
 
+	"advancements.underwaterbiome.leather_suit.title": "Fish Skin Sewing",
+	"advancements.underwaterbiome.leather_suit.description": "Best way to keep warm",
+
 	"advancements.underwaterbiome.lighting_extract.title": "Lighting Technique",
 	"advancements.underwaterbiome.lighting_extract.description": "Yes, it is also made by plant",
 
 	"advancements.underwaterbiome.lime_powder.title": "The Only Chemical Found",
 	"advancements.underwaterbiome.lime_powder.description": "LIME + FUEL --Heat--> LIME POWDER",
+
+	"advancements.underwaterbiome.magical_gun.title": "Gun Enchantment",
+	"advancements.underwaterbiome.magical_gun.description": "Do you enchant your gun or your bullets?",
+
+	"advancements.underwaterbiome.magical_through.title": "The Magic Amplifier",
+	"advancements.underwaterbiome.magical_through.description": "Armor worses nothing",
 
 	"advancements.underwaterbiome.oxygen_holder.title": "Oxygen Auto-Compression",
 	"advancements.underwaterbiome.oxygen_holder.description": "Absorb oxygen from blocks around, use oxygen tank to collect",
@@ -205,13 +253,13 @@
 	"advancements.underwaterbiome.single_oxygen_tank.description": "Allow you to spend more time underwater, use more oxygen under high pressure",
 
 	"advancements.underwaterbiome.stagnation_gun.title": "Paralysis Toxin? or Time Control?",
-	"advancements.underwaterbiome.stagnation_gun.description": "You find that this random weapon can actually stun the enermy",
+	"advancements.underwaterbiome.stagnation_gun.description": "You find that this random weapon can actually stun the enermy (3s)",
 
 	"advancements.underwaterbiome.stagnation_gun_time.title": "Time Control",
-	"advancements.underwaterbiome.stagnation_gun_time.description": "Longer stun time",
+	"advancements.underwaterbiome.stagnation_gun_time.description": "Longer stun time from 3s to 6s",
 
 	"advancements.underwaterbiome.stagnation_gun_poison.title": "Paralysis Toxin",
-	"advancements.underwaterbiome.stagnation_gun_poison.description": "Cast poison as well as stun",
+	"advancements.underwaterbiome.stagnation_gun_poison.description": "Apply POISON I for 3s as well as stun",
 
 	"advancements.underwaterbiome.temperature_meter.title": "Researcher's Equipment I",
 	"advancements.underwaterbiome.temperature_meter.description": "Keep aware of the temperature around you",
@@ -221,6 +269,9 @@
 
 	"advancements.underwaterbiome.torch_near.title": "Waterproof Torch",
 	"advancements.underwaterbiome.torch_near.description": "How to make a light source underwater?",
+
+	"advancements.underwaterbiome.venom_container.title": "Venom Storage",
+	"advancements.underwaterbiome.venom_container.description": "Enhence abilities about venom",
 
 	"advancements.underwaterbiome.venom_extract.title": "Venom",
 	"advancements.underwaterbiome.venom_extract.description": "Never try to find out what's in the silt",
@@ -238,8 +289,9 @@
 
 	//advancements ends
 	"itemGroup.underwaterbiome_items": "UnderwaterBiome Items",
-	"itemGroup.underwaterbiome_blueprints": "Blueprints",
+	"itemGroup.underwaterbiome_blueprints": "UnderwaterBiome Blueprints",
 	"itemGroup.underwaterbiome_blocks": "UnderwaterBiome Blocks",
+	"itemGroup.underwaterbiome_accessory": "UnderwaterBiome Accessory",
 	"generator.water_world": "WaterWorld"
 
 }

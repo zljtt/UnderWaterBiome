@@ -31,6 +31,7 @@ public enum GenLayerWaterWorldBiome implements IAreaTransformer0, IDimOffset0Tra
     
     final WeightedBiomeEntry ROOTY_TANTACLE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.ROOTY_TANTACLE).getWeight(),BiomeInit.ROOTY_TANTACLE);
     final WeightedBiomeEntry NORMAL_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.NORMAL_SEAWEED).getWeight(),BiomeInit.NORMAL_SEAWEED);
+    final WeightedBiomeEntry DEAD_CORAL = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.DEAD_CORAL).getWeight(),BiomeInit.DEAD_CORAL);
     final WeightedBiomeEntry LIGHTING_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.LIGHTING_SEAWEED).getWeight(),BiomeInit.LIGHTING_SEAWEED);
     final WeightedBiomeEntry BROKEN_CANYAN = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.BROKEN_CANYAN).getWeight(),BiomeInit.BROKEN_CANYAN);
     final WeightedBiomeEntry FLOATING_ISLAND = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.FLOATING_ISLAND).getWeight(),BiomeInit.FLOATING_ISLAND);

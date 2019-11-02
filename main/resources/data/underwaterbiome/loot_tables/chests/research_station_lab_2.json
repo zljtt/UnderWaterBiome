@@ -9,6 +9,22 @@
           "name": "minecraft:air",
           "functions": [
             {
+              "function":"underwaterbiome:random_accessory",
+              "obtain":"chest",
+              "chance":5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:air",
+          "functions": [
+            {
               "function":"underwaterbiome:random_blueprint",
               "type":"a",
               "difficulty":2

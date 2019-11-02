@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:lighting_extract",
+  "parent": "underwaterbiome:perpetual_motion_core",
   "rewards": {
     "recipes": [
       "underwaterbiome:floating_extract"

@@ -76,6 +76,11 @@ public class EntityRayBoss extends EntityRay
 	      }
 	 }
 	@Override
+	protected int getExperiencePoints(PlayerEntity player) 
+	{
+		return 50 + this.world.rand.nextInt(50);
+	}
+	@Override
 	 public void setCustomName(@Nullable ITextComponent name) 
 	 {
 	      super.setCustomName(name);

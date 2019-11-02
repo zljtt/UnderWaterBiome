@@ -6,6 +6,26 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "underwaterbiome:accessory/large_silt",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "underwaterbiome:accessory/poison_weakness",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:air",
+          "weight": 92
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "weight":5,
           "functions": [
             {

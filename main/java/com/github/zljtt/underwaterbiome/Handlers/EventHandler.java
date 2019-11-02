@@ -7,6 +7,7 @@ import org.lwjgl.glfw.GLFW;
 
 import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityOxygenProvider;
 import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityPlayerDataProvider;
+import com.github.zljtt.underwaterbiome.Gui.GuiOverlay;
 import com.github.zljtt.underwaterbiome.Inits.BlockInit;
 import com.github.zljtt.underwaterbiome.Inits.EffectInit;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
@@ -14,7 +15,9 @@ import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLavaRange;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockInvisible;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureStarter;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemSpaceshipDivingRecorder;
+import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemAccessoryBase;
 import com.github.zljtt.underwaterbiome.Objects.Messages.MessageDebug;
+import com.github.zljtt.underwaterbiome.Utils.AccessoryEntry;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Enum.BreathableItem;
 import com.github.zljtt.underwaterbiome.Utils.Enum.LightingItem;
@@ -28,6 +31,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.command.impl.TimeCommand;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -38,8 +42,10 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -51,12 +57,14 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RenderTooltipEvent;
+import net.minecraftforge.common.extensions.IForgeEntity;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 
@@ -85,6 +93,23 @@ public class EventHandler
     }	
 //	
 	@SubscribeEvent
+    public void onGetHealth(PlayerTickEvent event)
+    {
+//		IPlayerData data = event.player.getCapability(CapabilityPlayerDataProvider.CAP).orElse(null);
+		RayTraceResult rtr = mc.objectMouseOver;
+		if (rtr!=null && rtr.getType() == Type.ENTITY && rtr instanceof EntityRayTraceResult)
+		{
+			Entity en = ((EntityRayTraceResult) rtr).getEntity();
+			if (en instanceof LivingEntity)
+			{
+				GuiOverlay.health =((LivingEntity)en).getHealth();
+			}
+			else GuiOverlay.health=0;
+		}
+		else GuiOverlay.health=0;
+    }
+	
+	@SubscribeEvent
     public void onAfterLoginSync(PlayerTickEvent event)
     {
 		PlayerEntity player = (PlayerEntity) event.player;
@@ -100,8 +125,7 @@ public class EventHandler
 				craft_time = data.getUsedItems().size();
 				timer_3 = true;
 			}		
-		}
-		
+		}	
     }
 	
 	@SubscribeEvent
@@ -168,6 +192,7 @@ public class EventHandler
 	         f *= 5.0F;
 	    }
 		event.setNewSpeed(f);
+	    event = ItemAccessoryBase.testAccessoryAndEdit(event.getEntityPlayer().world, event.getEntityPlayer(), event, AccessoryEntry.ON_DIGGING);
     }
 	@SubscribeEvent
     public void onLighting(PlayerTickEvent event)
@@ -250,12 +275,12 @@ public class EventHandler
 	@SubscribeEvent
     public void onPlayerPressKey(InputEvent.KeyInputEvent event)
     {
-		if (event.getKey()==GLFW.GLFW_KEY_P)
-		{
-			NetworkingHandler.sendToServer(new MessageDebug(0));
+//		if (event.getKey()==GLFW.GLFW_KEY_P)
+//		{
+//			NetworkingHandler.sendToServer(new MessageDebug(0));
 
 //			this.mc.worldRenderer.loadRenderers();
-		}
+//		}
     }
 	@SubscribeEvent
 	public void onTooltip(ItemTooltipEvent event)
@@ -329,7 +354,7 @@ public class EventHandler
     public void onPlayerClone(net.minecraftforge.event.entity.player.PlayerEvent.Clone event)
     {        
 		IPlayerData data =  event.getEntityPlayer().getCapability(CapabilityPlayerDataProvider.CAP, null).orElse(null);
-		IPlayerData olddata = (IPlayerData) event.getOriginal().getCapability(CapabilityPlayerDataProvider.CAP, null);        
+		IPlayerData olddata = event.getOriginal().getCapability(CapabilityPlayerDataProvider.CAP, null).orElse(null);        
 		        
 		data.setBaseColdProf(olddata.getBaseColdProf());;
 		data.setBaseHeatProf(olddata.getBaseHeatProf());

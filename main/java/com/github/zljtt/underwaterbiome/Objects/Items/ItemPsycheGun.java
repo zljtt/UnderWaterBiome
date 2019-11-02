@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemBase;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
+import com.github.zljtt.underwaterbiome.Utils.Interface.IGun;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
@@ -15,7 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-public class ItemPsycheGun extends ItemBase 
+public class ItemPsycheGun extends ItemBase implements IGun
 {
 	Minecraft mc = Minecraft.getInstance();
 	public ItemPsycheGun(String name, Properties property, boolean needBlueprint,BlueprintType type, int... difficulty) 

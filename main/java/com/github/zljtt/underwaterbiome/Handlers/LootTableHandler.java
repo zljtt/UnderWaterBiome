@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Handlers;
 
+import com.github.zljtt.underwaterbiome.Client.LootTables.FunctionRandomAccessory;
 import com.github.zljtt.underwaterbiome.Client.LootTables.FunctionRandomBlueprint;
 import com.github.zljtt.underwaterbiome.Client.LootTables.FunctionRandomBlueprintFragment;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
@@ -34,6 +35,7 @@ public class LootTableHandler
 	   {		   
 		   LootFunctionManager.registerFunction(new FunctionRandomBlueprint.Serializer());
 		   LootFunctionManager.registerFunction(new FunctionRandomBlueprintFragment.Serializer());
+		   LootFunctionManager.registerFunction(new FunctionRandomAccessory.Serializer());
 	   }
 
 }

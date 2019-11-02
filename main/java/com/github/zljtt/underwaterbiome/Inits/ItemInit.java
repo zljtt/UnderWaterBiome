@@ -11,6 +11,7 @@ import com.github.zljtt.underwaterbiome.Objects.Items.ItemBlueprintFragment;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemFuel;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemGravityGun;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemHeatingPad;
+import com.github.zljtt.underwaterbiome.Objects.Items.ItemKnife;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemPaintBrush;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemPsycheGun;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemSpaceshipDivingRecorder;
@@ -18,6 +19,17 @@ import com.github.zljtt.underwaterbiome.Objects.Items.ItemStagnationGun;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemSummon;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemWaterBow;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemWaterPump;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemBloodthirstySoul;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemLargeSilt;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemMagicThrough;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemMagicalGun;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemPoisonProtection;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemPoisonWeakness;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemPrecisePart;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemUndeadKiller;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemVenomContainer;
+import com.github.zljtt.underwaterbiome.Objects.Items.Accessory.ItemWitherFlower;
+import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemAccessoryBase.ObtainType;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemBase;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemEggBase;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo;
@@ -31,6 +43,8 @@ import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -63,7 +77,19 @@ public class ItemInit
             return new ItemStack(ItemInit.BLUE_PRINT_TEMPERATURE_METER);
         }
     };
+    public static ItemGroup accessoryGroup = new ItemGroup(Reference.MODID+"_accessory") 
+	{
+        @Override
+        public ItemStack createIcon() 
+        {
+            return new ItemStack(ItemInit.MAGICAL_THROUGH);
+        }
+    };
 	public static final List<Item> ITEMS = new ArrayList<Item>();
+	public static final List<Item> ACCESSORY_CRAFTING = new ArrayList<Item>();
+	public static final List<Item> ACCESSORY_ENTITY_DROP = new ArrayList<Item>();
+	public static final List<Item> ACCESSORY_CHEST = new ArrayList<Item>();
+
 	public static final List<Item> BLUEPRINT = new ArrayList<Item>();
 	public static final Map<ItemStack, BlueprintInfo> BLUEPRINT_MAP = new HashMap<ItemStack, BlueprintInfo>();
 
@@ -106,9 +132,21 @@ public class ItemInit
 			.group(ItemInit.itemGroup).maxStackSize(1),false,null);
 	public static final Item WATER_TORCH = new WallOrFloorItem(BlockInit.WATER_TORCH, BlockInit.WALL_WATER_TORCH, (new Item.Properties())
 			.group(ItemInit.itemGroup)).setRegistryName(new ResourceLocation(Reference.MODID,"water_torch"));
+	public static final Item WOODEN_KNIFE = new ItemKnife("wooden_knife",ItemTier.WOOD, 1, -1.9F, (new Item.Properties())
+			.group(ItemInit.itemGroup).maxStackSize(1));
+	public static final Item STONE_KNIFE = new ItemKnife("stone_knife",ItemTier.STONE, 1, -1.9F, (new Item.Properties())
+			.group(ItemInit.itemGroup).maxStackSize(1));
+	public static final Item IRON_KNIFE = new ItemKnife("iron_knife",ItemTier.IRON, 1, -1.9F, (new Item.Properties())
+			.group(ItemInit.itemGroup).maxStackSize(1));
+	public static final Item GOLDEN_KNIFE = new ItemKnife("golden_knife",ItemTier.GOLD, 1, -1.9F, (new Item.Properties())
+			.group(ItemInit.itemGroup).maxStackSize(1));
+	public static final Item DIAMOND_KNIFE = new ItemKnife("diamond_knife",ItemTier.DIAMOND, 1, -1.9F, (new Item.Properties())
+			.group(ItemInit.itemGroup).maxStackSize(1));
 	//Items-ingredient
 	public static final Item SEAWEED_FRUIT = new ItemBase("seaweed_fruit", new Item.Properties()
 			.group(ItemInit.itemGroup).food((new Food.Builder()).hunger(2+ran.nextInt()).saturation(0.1F).build()),false,null);
+	public static final Item CONICAL_FLASK = new ItemBase("conical_flask", new Item.Properties()
+			.group(ItemInit.itemGroup),false,null);
 	public static final Item LIME_POWDER = new ItemBase("lime_powder", new Item.Properties()
 			.group(ItemInit.itemGroup),false,null);
 	public static final Item CHAMELEON_SKIN = new ItemBase("chameleon_skin", new Item.Properties()
@@ -136,6 +174,30 @@ public class ItemInit
 	public static final Item SILT = new ItemBase("silt", new Item.Properties()
 			.group(ItemInit.itemGroup),false, null);
 	
+	//accessory
+	//loot
+	public static final Item LARGE_SILT = new ItemLargeSilt("large_silt", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.ENTITY_DROP, false, null, null);//conch-finished
+	public static final Item UNDEAD_KILLER = new ItemUndeadKiller("undead_killer", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.ENTITY_DROP,false, null);//skeleton-finished
+	public static final Item POISON_PROTECTION = new ItemPoisonProtection("poison_protection", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.ENTITY_DROP,false, null);//skeleton-finished
+	public static final Item POISON_WEAKNESS = new ItemPoisonWeakness("poison_weakness", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.ENTITY_DROP,false, null);//conch-finished
+	public static final Item WITHER_FLOWER = new ItemWitherFlower("wither_flower", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.ENTITY_DROP,false, null);//drowned_boss-finished
+	//craft
+	public static final Item VENPM_CONTAINER = new ItemVenomContainer("venom_container", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.CRAFTING,true, BlueprintType.CHEMISTRY_BIOLOGY_OCCULT, 1,2);//crafting-finished
+	public static final Item MAGICAL_GUN = new ItemMagicalGun("magical_gun", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.CRAFTING,true, BlueprintType.PHYSICS_OCCULT,0,1,2);//craft-finished
+	public static final Item MAGICAL_THROUGH = new ItemMagicThrough("magical_through", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.CRAFTING,true, BlueprintType.OCCULT,0,1,2);//craft-finished
+	//chest
+	public static final Item PRECISE_PART = new ItemPrecisePart("precise_part", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.CHEST,false, null);// chest-finished
+	public static final Item BLOODTHIRSTY_SOUL = new ItemBloodthirstySoul("bloodthirsty_soul", new Item.Properties()
+			.group(ItemInit.accessoryGroup),ObtainType.CHEST,false, null);// chest-finished
 	//summon
 	public static final Item DROWNED_BOSS_SUMMON = new ItemSummon("drowned_boss_summon", new Item.Properties()
 			.group(ItemInit.itemGroup).maxStackSize(1),EntityInit.ENTITY_DROWNED_BOSS, false, null);
@@ -147,7 +209,8 @@ public class ItemInit
 	public static final Item CONCH_SEA_GRASS_EGG = new ItemEggBase("conch_sea_grass_egg", EntityInit.ENTITY_CONCH_SEA_GRASS, 0x0EB70B, 0x105DDB);
 	public static final Item FISH_STURGEON_EGG = new ItemEggBase("fish_sturgeon_egg", EntityInit.ENTITY_FISH_STURGEON, 0x359BB5, 0x127EFC);
 	public static final Item RAY_EGG = new ItemEggBase("ray_egg", EntityInit.ENTITY_RAY, 0xB4E4EB, 0xB8C1C2);
-	
+	public static final Item WATER_SKELETON_EGG = new ItemEggBase("water_skeleton_egg", EntityInit.ENTITY_WATER_SKELETON, 0x59DF59, 0xDBDBDB);
+
 
 	//others
 	public static Item BLUE_PRINT_TEMPERATURE_METER;
