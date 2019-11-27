@@ -156,17 +156,16 @@ public class ModelShark extends EntityModel<EntityShark>
 	         this.tail_1.rotateAngleY = -0.05F * MathHelper.cos(ageInTicks * 0.3F);
 	         this.tail_2.rotateAngleY = -0.1F * MathHelper.cos(ageInTicks * 0.3F);
 	         this.tail_3.rotateAngleY = -0.2F * MathHelper.cos(ageInTicks * 0.3F);
-	         this.fin_right.rotateAngleZ = -0.6109F-0.05F * MathHelper.cos(ageInTicks * 0.3F);
-	         this.fin_left.rotateAngleZ = 0.6109F+0.05F * MathHelper.cos(ageInTicks * 0.3F);
+	         
 	      }
 	    else 
 	    {
 	    	this.tail_1.rotateAngleY = -0.05F * MathHelper.cos(ageInTicks * 0.3F);
 	         this.tail_2.rotateAngleY = -0.07F * MathHelper.cos(ageInTicks * 0.3F);
 	         this.tail_3.rotateAngleY = -0.1F * MathHelper.cos(ageInTicks * 0.3F);
-	         this.fin_right.rotateAngleZ = -0.6109F-0.03F * MathHelper.cos(ageInTicks * 0.3F);
-	         this.fin_left.rotateAngleZ = 0.6109F+0.03F * MathHelper.cos(ageInTicks * 0.3F);
 	    }
+	    this.fin_right.rotateAngleZ = -0.6109F-0.05F * MathHelper.cos(ageInTicks * 0.3F);
+        this.fin_left.rotateAngleZ = 0.6109F+0.05F * MathHelper.cos(ageInTicks * 0.3F);
 //	      this.field_78148_b.rotateAngleX = ((float)Math.PI / 2F);
 //	      this.field_78149_c.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 //	      this.field_78146_d.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;

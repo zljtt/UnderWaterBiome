@@ -24,7 +24,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class ModelDrownedBoss extends EntityModel<EntityDrownedBoss> 
 {
 	public static int hasSheld= 3;
-	public static int SUMMON_AMOUNT = 0;
 
 	private final RendererModel bone;
 	private final RendererModel left;

@@ -26,7 +26,7 @@ public class BlockLime extends BlockWaterLoggedBase
 
 	public BlockLime(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty,  needBlueprint, type,  difficulty);
+		super(name, porperty, true, needBlueprint, type,  difficulty);
 	}
 	
 	@Override

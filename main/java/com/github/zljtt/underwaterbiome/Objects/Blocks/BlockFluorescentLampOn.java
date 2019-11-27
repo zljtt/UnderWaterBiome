@@ -19,7 +19,7 @@ public class BlockFluorescentLampOn extends BlockBase
 
 	public BlockFluorescentLampOn(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty,  needBlueprint, type,  difficulty);
+		super(name, porperty,true,  needBlueprint, type,  difficulty);
 	}
 	@Override
 	public int getLightValue(BlockState state) 

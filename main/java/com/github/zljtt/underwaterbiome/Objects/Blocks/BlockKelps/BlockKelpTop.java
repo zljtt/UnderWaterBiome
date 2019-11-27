@@ -1,5 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Blocks.BlockKelps;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -13,11 +15,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.fluid.IFluidState;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -25,6 +29,12 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootParameterSets;
+import net.minecraft.world.storage.loot.LootParameters;
+import net.minecraft.world.storage.loot.LootTable;
+import net.minecraft.world.storage.loot.LootTables;
 
 public class BlockKelpTop extends BlockWaterPlantBase {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_25;
@@ -52,10 +62,13 @@ public class BlockKelpTop extends BlockWaterPlantBase {
 	}
 
 	@Override
-	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-		if (!state.isValidPosition(worldIn, pos)) {
+	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) 
+	{
+		if (!state.isValidPosition(worldIn, pos)) 
+		{
 			worldIn.destroyBlock(pos, true);
-		} else {
+		} else 
+		{
 			BlockPos blockpos = pos.up();
 			BlockState blockstate = worldIn.getBlockState(blockpos);
 			if (blockstate.getBlock() == Blocks.WATER && state.get(AGE) < 25 && random.nextDouble() < 0.14D) {
@@ -64,7 +77,6 @@ public class BlockKelpTop extends BlockWaterPlantBase {
 
 		}
 	}
-
 	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		BlockPos blockpos = pos.down();

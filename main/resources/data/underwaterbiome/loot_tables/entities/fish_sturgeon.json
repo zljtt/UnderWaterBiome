@@ -6,6 +6,21 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "underwaterbiome:accessory/sticky_skin",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:air",
+          "weight": 95
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:set_count",

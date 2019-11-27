@@ -20,6 +20,21 @@
 	"item.underwaterbiome.ray_boss_summon": "Fish Skin Battle Drum",
 	"item.underwaterbiome.drowned_boss_summon": "Brain of The Drowned",
 	"item.underwaterbiome.conical_flask": "Conical Flask",
+	"item.underwaterbiome.creeper_fish": "Bomb Fish",
+	"item.underwaterbiome.shrimp": "Shrimp",
+	"item.underwaterbiome.crab": "Crab",
+	"item.underwaterbiome.bait": "Bait",
+	"item.underwaterbiome.thread": "Thread",
+	"item.underwaterbiome.needle": "Needle",
+	"item.underwaterbiome.needle_and_thread": "Needle and Thread",
+	"item.underwaterbiome.coral_stick": "Coral Stick",
+	"item.underwaterbiome.water_element": "Fragment of Water Element",
+	"item.underwaterbiome.fire_element": "Fragment of Fire Element",
+	"item.underwaterbiome.water_bar": "Ingot of Water Element",
+	"item.underwaterbiome.lava_bar": "Ingot of Fire Element",
+	"item.underwaterbiome.methane_bottle": "Methane Bottle",
+	"item.underwaterbiome.oxygen_fruit": "Oxygen Fruit",
+	"item.underwaterbiome.obsidian_stick": "Obsidian Stick",
 
 	//equipment items
 	"item.underwaterbiome.double_oxygen_tank": "Double Oxygen Tank",
@@ -44,6 +59,12 @@
 	"item.underwaterbiome.wooden_knife": "Wooden Knife",
 	"item.underwaterbiome.stone_knife": "Stone Knife",
 	"item.underwaterbiome.iron_knife": "Iron Knife",
+	"item.underwaterbiome.lava_sword": "Sword of Fire Element",
+	"item.underwaterbiome.water_sword": "Sword of Water Element",
+	"item.underwaterbiome.lava_bow": "Bow of Fire Element",
+	"item.underwaterbiome.water_bow": "Bow of Water Element",
+
+	
 
 	//egg items
 	"item.underwaterbiome.shark_egg": "Shark Egg",
@@ -52,6 +73,8 @@
 	"item.underwaterbiome.fish_sturgeon_egg": "Sturgeon Egg",
 	"item.underwaterbiome.ray_egg": "Ray Egg",
 	"item.underwaterbiome.water_skeleton_egg": "Drowned Skeleton Egg",
+	"item.underwaterbiome.creeper_fish_egg": "Bomb Fish Egg",
+	"item.underwaterbiome.lava_fish_egg": "Magma Fish Egg",
 
 	//accessory items
 	"item.underwaterbiome.large_silt": "Large Silt",
@@ -64,6 +87,9 @@
 	"item.underwaterbiome.magical_through": "Old Magic Book",
 	"item.underwaterbiome.precise_part": "Sighting Telescope",
 	"item.underwaterbiome.bloodthirsty_soul": "The Bloodthirsty Soul",
+	"item.underwaterbiome.sticky_skin": "Sticky Fish Skin",
+	"item.underwaterbiome.attack_amplifer": "Attacking Amplifier",
+	"item.underwaterbiome.arrow_modify": "Streamlined Arrow Head",
 
 	//accessory discription
 	"accessory.large_silt": "When you attack with a MELEE weapon, apply POISON I for 3s",
@@ -76,6 +102,9 @@
 	"accessory.magical_through": "MAGIC damage has 20% chance to cause 10 more damages",
 	"accessory.precise_part": "When you attack with a GUN, cause 2 more damages",
 	"accessory.bloodthirsty_soul": "When you attack with a MELEE weapon, heal yourself by 10% of the damage",
+	"accessory.sticky_skin": "When you are attacked, you have 50% chance to ignore the knockback",
+	"accessory.attack_amplifer": "For every 5 seconds, you get Attack Enhancement - your next attack becomes heavy hit and causes 2 more damages",
+	"accessory.arrow_modify": "The arrows around you will no longer slow down due to water's resistance",
 
 	//blocks
 	"block.underwaterbiome.fluorescent_lamp_off": "Fluorescent Lamp",
@@ -96,6 +125,17 @@
 	"block.underwaterbiome.ship_door": "Locked Iron Door",
 	"block.underwaterbiome.ship_chest": "Ship Cabinet",
 	"block.underwaterbiome.water_torch": "Torch",
+	"block.underwaterbiome.mangrove_leaf": "Mangrove Leaf",
+	"block.underwaterbiome.mangrove_log": "Mangrove Log",
+	"block.underwaterbiome.mangrove_plank": "Mangrove Plank",
+	"block.underwaterbiome.fish_catcher": "Fish Trap",
+	"block.underwaterbiome.fire_core": "Lava Elemental Ore",
+	"block.underwaterbiome.water_core": "Water Elemental Ore",
+	"block.underwaterbiome.lava_grass": "Lava Epiphytic Grass",
+	"block.underwaterbiome.stalactite": "Stalactite",
+	"block.underwaterbiome.gas": "Combustible Ice",
+	"block.underwaterbiome.oxygen_fruit_plant": "Oxygen Fruit",
+	"block.underwaterbiome.life_ring": "Life Ring",
 
 	//entities
 	"entity.underwaterbiome.shark": "Shark",
@@ -106,6 +146,8 @@
 	"entity.underwaterbiome.ray_boss": "Sand Ray",
 	"entity.underwaterbiome.drowned_boss": "Lord of The Drowned",
 	"entity.underwaterbiome.water_skeleton": "Drowned Skeleton",
+	"entity.underwaterbiome.creeper_fish": "Bomb Fish",
+	"entity.underwaterbiome.lava_fish": "Magma Fish",
 
 	//biomes
 	"biome.underwaterbiome.lighting_seaweed": "Luminous Kelp Forest",
@@ -116,6 +158,7 @@
 	"biome.underwaterbiome.lava_range": "Obsidian Pool",
 	"biome.underwaterbiome.coral_reef": "Coral Reef",
 	"biome.underwaterbiome.coral_tree": "Coral Forest",
+	"biome.underwaterbiome.mangrave_forest": "Mangrave",
 	"biome.underwaterbiome.dead_coral": "The Coral Land of Death",
 
 	//others
@@ -125,6 +168,11 @@
 	"effect.underwaterbiome.frost_bite_high": "Frost Bite",
 	"effect.underwaterbiome.water_curse": "Curse of Water",
 	"effect.underwaterbiome.high_pressure": "Over Pressure",
+	"effect.underwaterbiome.temp_strength": "Attack Enhancement",
+
+	"death.attack.scald.player": "You can't cool down",
+	"death.attack.frost_bite.player": "You can't keep warm",
+	"death.attack.water_curse.player": "You are cursed to death",
 
 	"message.unlock_blueprint": "Unlock blueprint for ",
 	"message.already_have_blueprint": "You have already obtained blueprint for ",
@@ -161,11 +209,17 @@
 	"tooltip.biology": "Biological Knowledge",
 	"tooltip.physics": "Physical Knowledge",
 	"tooltip.occult": "Occult Knowledge",
-	
+	"tooltip.all": "Right click to get a free knowledge point, press C/B/P/C in Advancement Sceen to add corresponding knowledge",
+	"tooltip.potion_instant_damage": "Magic Splash Potion",
+	"tooltip.potion_poison": "Poison Splash Potion",
+	"tooltip.water_weapon": "Attack slows down enemies",
+	"tooltip.lava_weapon": "Attack causes fire damage",
+
 	"gui.chemistry": 	"C:",
 	"gui.biology": 		"B:",
 	"gui.physics": 		"P:",
 	"gui.occult": 		"O:",
+	"gui.rest": 		"Free:",
 
 	//advancements starts
 	"advancements.underwaterbiome.name.title": "",
@@ -176,6 +230,12 @@
 
 	"advancements.underwaterbiome.advanced_iron_block.title": "More Efficient Smelting",
 	"advancements.underwaterbiome.advanced_iron_block.description": "Craft build-only iron blocks with less iron",
+
+	"advancements.underwaterbiome.arrow_modify.title": "Streamlined Design",
+	"advancements.underwaterbiome.arrow_modify.description": "Better arrow shooting in the water",
+
+	"advancements.underwaterbiome.attack_amplifer.title": "Equip Yourself with Knowledge",
+	"advancements.underwaterbiome.attack_amplifer.description": "It can improve you attack but not very smooth",
 
 	"advancements.underwaterbiome.conical_flask.title": "Apparatus I",
 	"advancements.underwaterbiome.conical_flask.description": "I would say it is physics rather than chemistry",
@@ -188,6 +248,12 @@
 
 	"advancements.underwaterbiome.double_oxygen_tank.title": "Advanced Respiration",
 	"advancements.underwaterbiome.double_oxygen_tank.description": "Higher pressure means higher oxygen capacity",
+
+	"advancements.underwaterbiome.element_sword.title": "Elemental Casting I",
+	"advancements.underwaterbiome.element_sword.description": "Make a sword to keep warm?",
+
+	"advancements.underwaterbiome.element_bow.title": "Elemental Casting II",
+	"advancements.underwaterbiome.element_bow.description": "Look, I fired a fire!",
 
 	"advancements.underwaterbiome.fish_skin.title": "Knife Expert",
 	"advancements.underwaterbiome.fish_skin.description": "Use raw fish to make fish skin",
@@ -210,6 +276,9 @@
 	"advancements.underwaterbiome.iron_slab.title": "Metal Carving",
 	"advancements.underwaterbiome.iron_slab.description": "Carve iron blocks to half",
 
+	"advancements.underwaterbiome.lava_bar.title": "Application of Fire Element",
+	"advancements.underwaterbiome.lava_bar.description": "Oh, it's so hot!",
+
 	"advancements.underwaterbiome.leather_suit.title": "Fish Skin Sewing",
 	"advancements.underwaterbiome.leather_suit.description": "Best way to keep warm",
 
@@ -223,7 +292,13 @@
 	"advancements.underwaterbiome.magical_gun.description": "Do you enchant your gun or your bullets?",
 
 	"advancements.underwaterbiome.magical_through.title": "The Magic Amplifier",
-	"advancements.underwaterbiome.magical_through.description": "Armor worses nothing",
+	"advancements.underwaterbiome.magical_through.description": "Armour worses nothing",
+
+	"advancements.underwaterbiome.needle_and_thread.title": "Needle and Thread",
+	"advancements.underwaterbiome.needle_and_thread.description": "Start to do some needlework",
+
+	"advancements.underwaterbiome.obsidian_stick.title": "Melting Obsidian",
+	"advancements.underwaterbiome.obsidian_stick.description": "Beside using diamond pickaxe, you can get obsidian from magma fish",
 
 	"advancements.underwaterbiome.oxygen_holder.title": "Oxygen Auto-Compression",
 	"advancements.underwaterbiome.oxygen_holder.description": "Absorb oxygen from blocks around, use oxygen tank to collect",
@@ -236,6 +311,12 @@
 
 	"advancements.underwaterbiome.plant_extract.title": "Basic Alchemy",
 	"advancements.underwaterbiome.plant_extract.description": "Discovering the unique plants on the planet",
+
+	"advancements.underwaterbiome.potion_poison.title": "First Step Using Poison",
+	"advancements.underwaterbiome.potion_poison.description": "Let's fight back the Conches",
+
+	"advancements.underwaterbiome.potion_instant_damage.title": "Instant Magical Damage",
+	"advancements.underwaterbiome.potion_instant_damage.description": "It is AOE!",
 
 	"advancements.underwaterbiome.precision_part.title": "First Step of Physics",
 	"advancements.underwaterbiome.precision_part.description": "The basic thing that make you survive alone on the planet",
@@ -271,10 +352,13 @@
 	"advancements.underwaterbiome.torch_near.description": "How to make a light source underwater?",
 
 	"advancements.underwaterbiome.venom_container.title": "Venom Storage",
-	"advancements.underwaterbiome.venom_container.description": "Enhence abilities about venom",
+	"advancements.underwaterbiome.venom_container.description": "Enhance abilities about venom",
 
 	"advancements.underwaterbiome.venom_extract.title": "Venom",
 	"advancements.underwaterbiome.venom_extract.description": "Never try to find out what's in the silt",
+
+	"advancements.underwaterbiome.water_bar.title": "Application of Water Element",
+	"advancements.underwaterbiome.water_bar.description": "Turn fragments into ingots",
 
 	"advancements.underwaterbiome.water_pump.title": "Is it truely Diatom Ooze?",
 	"advancements.underwaterbiome.water_pump.description": "If you want to build a house underwater, you may need it to remove the water inside",
@@ -285,7 +369,8 @@
 	"advancements.underwaterbiome.water_torch.title": "Cheap Way to Illuminate",
 	"advancements.underwaterbiome.water_torch.description": "You have to make Seaweed Fruit into extract to improve the efficiency",
 
-
+	"advancements.underwaterbiome.element_sword_weapon": "Elemental Swords",
+	"advancements.underwaterbiome.element_bow_weapon": "Elemental Bows",
 
 	//advancements ends
 	"itemGroup.underwaterbiome_items": "UnderwaterBiome Items",

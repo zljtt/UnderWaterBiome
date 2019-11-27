@@ -6,28 +6,23 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "weight": 50,
           "name": "minecraft:kelp"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.3
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
+          "weight": 10,
           "name": "underwaterbiome:plant_fiber"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "minecraft:air"
         }
       ],
       "conditions": [
         {
-          "condition": "minecraft:random_chance",
-          "chance": 0.05
+          "condition": "minecraft:survives_explosion"
         }
       ]
     }

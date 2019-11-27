@@ -36,7 +36,7 @@ public class EntityFishBase extends WaterMobEntity
 	    this.goalSelector.addGoal(0, new FindWaterGoal(this));
 //	    this.goalSelector.addGoal(2, new SwimGoal(this));
 //	    this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 10));
-	    this.goalSelector.addGoal(2, new RandomSwimmingGoal(this,1.0D, 40));
+	    this.goalSelector.addGoal(3, new RandomSwimmingGoal(this,1.0D, 40));
 //	    this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 //	    this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 

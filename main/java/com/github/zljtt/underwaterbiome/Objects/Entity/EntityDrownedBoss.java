@@ -19,6 +19,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.entity.monster.DrownedEntity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,6 +28,9 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
@@ -39,6 +43,8 @@ import net.minecraft.world.World;
 
 public class EntityDrownedBoss extends EntityFishBase implements IMob
 {
+	private static final DataParameter<Integer> SUMMON = EntityDataManager.createKey(CreeperEntity.class, DataSerializers.VARINT);
+
 	private final ServerBossInfo bossInfo = (ServerBossInfo)(new ServerBossInfo(this.getDisplayName(), BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS)).setDarkenSky(true);
 	private List<DrownedEntity> list ;
 	   private int delayCounter;
@@ -82,10 +88,10 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 	{
 		super.tick();
 		if (world.isRemote) return;
-		if (ModelDrownedBoss.SUMMON_AMOUNT<5 && this.delayCounter<0)
+		if (this.getSummonAmount()<5 && this.delayCounter<0)
 		{
 			if (list.size()==0)
-				ModelDrownedBoss.SUMMON_AMOUNT =0;
+				this.setSummonAmount(0);
 			
 			DrownedEntity entity =  EntityType.DROWNED.create(world);
 			entity.setPosition(this.posX,this.posY,this.posZ);
@@ -107,7 +113,7 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 
 			world.addEntity(entity);
 			list.add(entity);
-			ModelDrownedBoss.SUMMON_AMOUNT+=1;
+			this.setSummonAmount(this.getSummonAmount()+1);
 			for (int i = 0;i<100;i++)
 			{
 				world.addParticle(ParticleTypes.SMOKE, 
@@ -119,24 +125,24 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 			this.delayCounter = 50;
 		}
 		
-		for (int i = 0; i<ModelDrownedBoss.SUMMON_AMOUNT;i++)
+		for (int i = 0; i<this.getSummonAmount();i++)
 		{
 			if (list.get(i) == null || !list.get(i).isAlive())
 			{
        		 	list.remove(i);
-       		 	ModelDrownedBoss.SUMMON_AMOUNT-=1;
+       		 	this.setSummonAmount(this.getSummonAmount()-1);
        			this.delayCounter = 200;
 			}
 		}
-		if (ModelDrownedBoss.SUMMON_AMOUNT>=5)
+		if (this.getSummonAmount()>=5)
 		{
 			ModelDrownedBoss.hasSheld = 3;
 		}
-		else if (ModelDrownedBoss.SUMMON_AMOUNT==4)
+		else if (this.getSummonAmount()==4)
 		{
 			ModelDrownedBoss.hasSheld = 2;
 		}
-		else if (ModelDrownedBoss.SUMMON_AMOUNT==3)
+		else if (this.getSummonAmount()==3)
 		{
 			ModelDrownedBoss.hasSheld = 1;
 		}
@@ -144,11 +150,16 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 		{
 			ModelDrownedBoss.hasSheld = 0;
 		}
-		System.out.println(ModelDrownedBoss.hasSheld+"/"+ModelDrownedBoss.SUMMON_AMOUNT+"/"+list.size());
+		System.out.println(ModelDrownedBoss.hasSheld+"/"+this.getSummonAmount()+"/"+list.size());
 		this.delayCounter--;
         this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
 
 	}
+	protected void registerData() 
+	{
+	      super.registerData();
+	      this.dataManager.register(SUMMON, -1);
+	 }
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) 
 	{
@@ -168,7 +179,18 @@ public class EntityDrownedBoss extends EntityFishBase implements IMob
 	         this.bossInfo.setName(this.getDisplayName());
 	      }
 	 }
+	public int getSummonAmount() 
+	{
+	      return this.dataManager.get(SUMMON);
+	   }
 
+	   /**
+	    * Sets the state of creeper, -1 to idle and 1 to be 'in fuse'
+	    */
+	   public void setSummonAmount(int state) 
+	   {
+	      this.dataManager.set(SUMMON, state);
+	   }
 	@Override
 	 public void setCustomName(@Nullable ITextComponent name) 
 	 {

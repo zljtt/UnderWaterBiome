@@ -65,7 +65,23 @@ public class RoomInfo
 	{
 		return ""+room.name+":"+start_pos.toString()+"Width("+width+")Height("+height+")Depth("+depth+")Direction("+direction.toString()+")";
 	}
-	
+	public Map<BlockPos,BlockState> clearRoom()
+	{
+		Map<BlockPos,BlockState> list_pos0 = new HashMap<BlockPos,BlockState>();
+		for(int x = 0; x<this.width; x++)
+		{
+			for(int y = 0; y<this.height; y++)
+			{
+				for(int z = 0; z<this.depth; z++)
+				{
+					list_pos0.put(this.start_pos.offset(direction, x)
+							.offset(direction.rotateY(), y)
+							.up(z), RoomInfo.water);
+				}
+			}
+		}
+		return list_pos0;
+	}
 	public Map<BlockPos,BlockState> buildFloor(IWorld worldIn, WreckageConfig config)
 	{
 		Map<BlockPos,BlockState> list_pos0 = new HashMap<BlockPos,BlockState>();

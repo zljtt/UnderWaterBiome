@@ -80,14 +80,17 @@ public class BlockWaterTorch extends TorchBlock implements IWaterLoggable,INeedB
 	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
+		if (facing == Direction.DOWN && !this.isValidPosition(stateIn, worldIn, currentPos))
+		{
+			worldIn.destroyBlock(currentPos, true);
+			
+		}
 	      if (stateIn.get(WATERLOGGED)) 
 	      {
 	         worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 	      }
 
-	      return facing == Direction.DOWN && !this.isValidPosition(stateIn, worldIn, currentPos) ? 
-	    		  (stateIn.get(WATERLOGGED)?Blocks.WATER.getDefaultState():Blocks.AIR.getDefaultState()):
-	    			  super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+	      return  super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	   }
 
 	@Override
@@ -117,5 +120,10 @@ public class BlockWaterTorch extends TorchBlock implements IWaterLoggable,INeedB
 
 	      }
 	   }
+	public ResourceLocation getLootTable() 
+	{
+		return new ResourceLocation(Reference.MODID,"blocks/water_torch");
+		
+	};
 
 }

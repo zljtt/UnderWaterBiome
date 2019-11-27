@@ -1,6 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Biomes;
 
 import com.github.zljtt.underwaterbiome.Inits.EntityInit;
+import com.github.zljtt.underwaterbiome.Inits.FeatureInit;
 import com.github.zljtt.underwaterbiome.Utils.Enum.Difficulty;
 
 import net.minecraft.block.Blocks;
@@ -37,7 +38,7 @@ public class BiomeCoralTree extends BiomeOceanBase
 	      this.addCarver(GenerationStage.Carving.LIQUID, Biome.createCarver(WorldCarver.CAVE, new ProbabilityConfig(0.4F)));
 	      DefaultBiomeFeatures.addSedimentDisks(this);
 	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.CORAL_TREE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_TOP_SOLID, new FrequencyConfig(5)));
-	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.KELP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_TOP_SOLID, new FrequencyConfig(5)));
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(FeatureInit.KELP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_TOP_SOLID, new FrequencyConfig(5)));
 
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.PUFFERFISH, 15, 3, 6));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 15, 5, 10));

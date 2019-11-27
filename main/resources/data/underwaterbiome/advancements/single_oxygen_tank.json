@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:fish_skin",
+  "parent": "underwaterbiome:leather_suit",
   "rewards": {
     "recipes": [
       "underwaterbiome:single_oxygen_tank"

@@ -33,6 +33,10 @@ public class CapabilityPlayerDataStorage implements IStorage<IPlayerData>
 		nbt.putInt("biology", instance.getKnowledgePoints().getBiology());
 		nbt.putInt("physics", instance.getKnowledgePoints().getPhysics());
 		nbt.putInt("occult", instance.getKnowledgePoints().getOccult());
+		nbt.putInt("rest", instance.getRestFree());
+
+		nbt.putInt("nature_anger", instance.getNatureAnger());
+
 		//
 		String tag = "";
 		if (instance.getUnlockedBiomes().size()>0)tag = instance.getUnlockedBiomes().get(0);
@@ -77,7 +81,10 @@ public class CapabilityPlayerDataStorage implements IStorage<IPlayerData>
         instance.getKnowledgePoints().setBiology(com.getInt("biology"));
         instance.getKnowledgePoints().setPhysics(com.getInt("physics"));
         instance.getKnowledgePoints().setOccult(com.getInt("occult"));
-        
+        instance.setRestFree(com.getInt("rest"));
+
+        instance.setNatureAnger(com.getInt("nature_anger"));;
+
         List<String> list = new ArrayList<String>();
     	for(String str: com.getString("unlocked_biomes").split(" "))
     	{

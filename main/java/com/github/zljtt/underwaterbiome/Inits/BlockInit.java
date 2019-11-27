@@ -4,22 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockCabinDoor;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockFishCatcher;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockFloatingCore;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockFluorescentLampOff;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockFluorescentLampOn;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockGas;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockInvisible;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockIron;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockIronSlab;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockLifeRing;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockLime;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockLivingRoot;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockMangroveLeaf;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockMangroveLog;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockMeandrina;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockOxygenHolder;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockOxygenPlant;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockShipChest;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockShipDoor;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWallWaterTorch;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWaterGrass;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockWaterTorch;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockBase;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockWaterLoggedBase;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockWaterPlantBase;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockKelps.BlockKelp;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockKelps.BlockKelpLight;
@@ -44,7 +51,6 @@ public class BlockInit
         @Override
         public ItemStack createIcon() 
         {
-        	
             return new ItemStack(BlockInit.FLUORESCENT_LAMP_ON);
         }
     };
@@ -52,6 +58,58 @@ public class BlockInit
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//Blocks
+//	public static final BlockLifeRing LIFE_RING = new BlockLifeRing("life_ring",Block.Properties
+//			.create(Material.MISCELLANEOUS)
+//			.sound(SoundType.SLIME)
+//			.hardnessAndResistance(0.5F, 1F), true, false, null);
+	
+	public static final BlockGas GAS = new BlockGas("gas",Block.Properties
+			.create(Material.ICE)
+			.sound(SoundType.STONE)
+			.hardnessAndResistance(1F, 1F), false, null, null);
+	
+//	public static final BlockWaterPlantBase LAVA_GRASS = new BlockWaterPlantBase("lava_grass",Block.Properties
+//			.create(Material.ROCK)
+//			.sound(SoundType.PLANT)
+//			.hardnessAndResistance(0.5F, 6F),Block.makeCuboidShape(2, 0, 2, 14, 8, 14), true);
+	
+	public static final BlockWaterPlantBase OXYGEN_FRUIT = new BlockOxygenPlant("oxygen_fruit_plant",Block.Properties
+			.create(Material.ROCK)
+			.sound(SoundType.PLANT)
+			.hardnessAndResistance(0F));
+	
+//	public static final BlockBase STALACTITE = new BlockWaterLoggedBase("stalactite",Block.Properties
+//			.create(Material.ROCK)
+//			.sound(SoundType.STONE)
+//			.hardnessAndResistance(3F,3F), true, false, null, null);
+	
+	public static final BlockBase FIRE_CORE = new BlockBase("fire_core",Block.Properties
+			.create(Material.ROCK)
+			.sound(SoundType.STONE)
+			.hardnessAndResistance(3F,0F).lightValue(9).harvestLevel(2), true, false, null, null);
+	
+	public static final BlockBase WATER_CORE = new BlockBase("water_core",Block.Properties
+			.create(Material.ROCK)
+			.sound(SoundType.STONE)
+			.hardnessAndResistance(3F,0F).harvestLevel(2), true,false, null, null);
+	
+	public static final BlockFishCatcher FISH_CATCHER = new BlockFishCatcher("fish_catcher",Block.Properties
+			.create(Material.WOOD)
+			.hardnessAndResistance(2.0F)
+			.sound(SoundType.WOOD).tickRandomly(), false, null);
+	
+	
+	public static final BlockMangroveLog MANGROVE_LOG = new BlockMangroveLog("mangrove_log",Block.Properties
+			.create(Material.WOOD)
+			.hardnessAndResistance(2.0F)
+			.sound(SoundType.WOOD));
+	
+	public static final BlockMangroveLeaf MANGROVE_LEAF = new BlockMangroveLeaf("mangrove_leaf",Block.Properties
+			.create(Material.LEAVES)
+			.hardnessAndResistance(0.2F)
+			.tickRandomly()
+			.sound(SoundType.PLANT));
+	
 	public static final BlockWaterTorch WATER_TORCH = new BlockWaterTorch("water_torch",Block.Properties
 			.create(Material.MISCELLANEOUS)
 			.doesNotBlockMovement()
@@ -88,7 +146,7 @@ public class BlockInit
 	public static final BlockFloatingCore FLOATING_CORE = new BlockFloatingCore("floating_core",Block.Properties
 			.create(Material.ROCK)
 			.sound(SoundType.STONE)
-			.hardnessAndResistance(2F,6F).harvestLevel(2));
+			.hardnessAndResistance(2F,6F).harvestLevel(2), false, null, null);
 	
 	public static final BlockCabinDoor CABIN_DOOR = new BlockCabinDoor("cabin_door",Block.Properties
 			.create(Material.MISCELLANEOUS)
@@ -118,17 +176,17 @@ public class BlockInit
 	public static final BlockBase LIME_STONE = new BlockBase("lime_stone",Block.Properties
 			.create(Material.ROCK)
 			.sound(SoundType.STONE)
-			.hardnessAndResistance(1.5F,6F).harvestTool(ToolType.PICKAXE).harvestLevel(1),false, null);
+			.hardnessAndResistance(1.5F,6F).harvestTool(ToolType.PICKAXE).harvestLevel(1),true, false, null, null);
 	
 	public static final BlockBase POLLUTED_SAND = new BlockBase("polluted_sand",Block.Properties
 			.create(Material.SAND, MaterialColor.SAND)
 			.sound(SoundType.SAND)
-			.hardnessAndResistance(0.5F),false, null);
+			.hardnessAndResistance(0.5F),true,false, null);
 	
 	public static final BlockBase REEF = new BlockBase("reef",Block.Properties
 			.create(Material.ROCK)
 			.sound(SoundType.STONE)
-			.hardnessAndResistance(1F,8F).harvestTool(ToolType.PICKAXE),false, null);
+			.hardnessAndResistance(1F,8F).harvestTool(ToolType.PICKAXE),true,false, null);
 	
 	public static final BlockFluorescentLampOn FLUORESCENT_LAMP_ON = new BlockFluorescentLampOn("fluorescent_lamp_on", Block.Properties
 			.create(Material.ROCK)

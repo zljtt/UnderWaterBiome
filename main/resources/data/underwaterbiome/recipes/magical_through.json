@@ -1,13 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "H##",
+    "H##",
+    "H##"
   ],
   "key": {
     "#": {
       "item": "minecraft:book"
+    },
+    "H": {
+      "item": "underwaterbiome:thread"
     }
   },
   "result": {

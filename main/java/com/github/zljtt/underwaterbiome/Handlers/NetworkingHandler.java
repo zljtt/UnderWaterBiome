@@ -19,7 +19,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 
 public class NetworkingHandler
 {
-		private static final String PROTOCOL_VERSION = "1";
+		private static final String PROTOCOL_VERSION = "underwater";
 		private static SimpleChannel INSTANCE;
 
 	 	public static void init()

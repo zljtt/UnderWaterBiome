@@ -31,6 +31,9 @@ public class RoomSquare extends RoomBase
 	public void generate(IWorld worldIn, RoomInfo info, WreckageConfig config, Random ran) 
 	{
 		Map<BlockPos,BlockState> tobuild = new HashMap<BlockPos,BlockState>();
+		//clear room
+		tobuild.putAll(info.clearRoom());
+		
 		//build floor
 		tobuild.putAll(info.buildFloor(worldIn, config));
 

@@ -28,7 +28,7 @@ public class LayerUtilWaterWorld
 
     public static <T extends IArea, C extends IExtendedNoiseRandom<T>> ImmutableList<IAreaFactory<T>> createAreaFactories(WorldType worldType, OverworldGenSettings settings, LongFunction<C> contextFactory)
     {
-        int biomeSize = 2;
+        int biomeSize = 3;
 
         IAreaFactory<T> oceanFactory = GenLayerWaterWorldBiome.INSTANCE.apply(contextFactory.apply(1L));
 
@@ -39,9 +39,9 @@ public class LayerUtilWaterWorld
         for (int i = 0; i < biomeSize; ++i)
         {
             biomesFactory = ZoomLayer.NORMAL.apply(contextFactory.apply((long)(1000 + i)), biomesFactory);
+            biomesFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), biomesFactory);
         }
 
-        biomesFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), biomesFactory);
 
         // Finish biomes with Voroni zoom
         IAreaFactory<T> voroniZoomBiomesFactory = VoroniZoomLayer.INSTANCE.apply(contextFactory.apply(10L), biomesFactory);

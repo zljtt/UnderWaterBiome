@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " # ",
-    "#P ",
-    "  #"
+    " #",
+    "#P",
+    " T"
   ],
   "key": {
     "#": {
@@ -11,6 +11,9 @@
     },
     "P": {
       "item": "underwaterbiome:precision_part"
+    },
+    "T": {
+      "item": "underwaterbiome:needle"
     }
   },
   "result": {

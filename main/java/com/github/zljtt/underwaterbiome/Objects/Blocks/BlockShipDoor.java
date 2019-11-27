@@ -6,6 +6,7 @@ import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Interface.INeedBluePrint;
+import com.github.zljtt.underwaterbiome.Utils.Interface.INeedItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -33,7 +34,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class BlockShipDoor extends DoorBlock implements INeedBluePrint
+public class BlockShipDoor extends DoorBlock implements INeedBluePrint, INeedItem
 {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -45,7 +46,6 @@ public class BlockShipDoor extends DoorBlock implements INeedBluePrint
 		this.info= new BlueprintInfo(needBlueprint, difficulty, type);
 
 		BlockInit.BLOCKS.add(this);
-		ItemInit.ITEMS.add(new BlockItem(this, new Item.Properties().group(BlockInit.blockGroup)).setRegistryName(this.getRegistryName()));
 
 	}
 	public IFluidState getFluidState(BlockState state) 
@@ -154,6 +154,11 @@ public class BlockShipDoor extends DoorBlock implements INeedBluePrint
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) 
 	{
 	      builder.add(HALF, FACING, OPEN, HINGE, POWERED,WATERLOGGED);
+	}
+	@Override
+	public boolean needItem() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

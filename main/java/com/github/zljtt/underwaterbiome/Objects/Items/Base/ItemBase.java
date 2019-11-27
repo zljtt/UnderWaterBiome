@@ -6,6 +6,7 @@ import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Interface.INeedBluePrint;
 
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
@@ -20,6 +21,7 @@ public class ItemBase extends Item implements INeedBluePrint
 		this.name = name;
 		this.info= new BlueprintInfo(needBlueprint, difficulty, type);
 		ItemInit.ITEMS.add(this);
+
 	}
 
 	@Override

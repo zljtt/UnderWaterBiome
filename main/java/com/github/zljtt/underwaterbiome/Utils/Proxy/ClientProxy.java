@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Utils.Proxy;
 
+import com.github.zljtt.underwaterbiome.Handlers.RegistryHandler;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IProxy;
 
 import net.minecraft.client.Minecraft;
@@ -12,7 +13,7 @@ public class ClientProxy implements IProxy
 	@Override
     public void init() 
 	{
-//        ScreenManager.registerFactory(ModBlocks.FIRSTBLOCK_CONTAINER, FirstBlockScreen::new);
+    	RegistryHandler.preInitRegistries();
     }
 
     @Override

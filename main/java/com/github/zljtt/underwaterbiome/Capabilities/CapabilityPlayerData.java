@@ -17,6 +17,8 @@ public class CapabilityPlayerData implements IPlayerData
 	public double heat_prof = 0;
 	public float oxygen_reduce = 0;
 	public BlockPos escape = new BlockPos(0,0,0);
+	public int nature_anger = 0;
+	public int rest = 0;
 
 	public KnowledgePoints knowledge = new KnowledgePoints(0,0,0,0);
 	public boolean ignore_pressure = false;
@@ -24,6 +26,27 @@ public class CapabilityPlayerData implements IPlayerData
 
 	public List<String> unlocked_biome = new ArrayList<String>();
 	public List<String> used_item = new ArrayList<String>();
+	
+	@Override
+	public int getNatureAnger() 
+	{
+		return nature_anger;
+	}
+	@Override
+	public void setNatureAnger(int print) 
+	{
+		nature_anger = print;
+	}
+	@Override
+	public int getRestFree() 
+	{
+		return rest;
+	}
+	@Override
+	public void setRestFree(int print) 
+	{
+		rest = print;
+	}
 	
 	@Override
 	public List<String> getUnlockedBiomes() 

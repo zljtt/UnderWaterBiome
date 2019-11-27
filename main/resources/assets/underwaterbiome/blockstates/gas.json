@@ -1,0 +1,9 @@
+{
+    "variants": 
+    {
+        "gas=0": { "model": "underwaterbiome:block/gas_0"},
+        "gas=1": { "model": "underwaterbiome:block/gas_1"},
+        "gas=2": { "model": "underwaterbiome:block/gas_2"}
+    }
+}
+

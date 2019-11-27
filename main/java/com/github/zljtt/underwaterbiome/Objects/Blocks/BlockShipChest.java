@@ -7,6 +7,7 @@ import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Interface.INeedBluePrint;
+import com.github.zljtt.underwaterbiome.Utils.Interface.INeedItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -39,7 +40,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class BlockShipChest extends ContainerBlock implements INeedBluePrint {
+public class BlockShipChest extends ContainerBlock implements INeedBluePrint, INeedItem {
 	BlueprintInfo info;
 
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
@@ -53,8 +54,7 @@ public class BlockShipChest extends ContainerBlock implements INeedBluePrint {
 		this.setDefaultState(
 				this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(TYPE, ChestType.SINGLE));
 		BlockInit.BLOCKS.add(this);
-		ItemInit.ITEMS.add(new BlockItem(this, new Item.Properties().group((BlockInit.blockGroup)))
-				.setRegistryName(this.getRegistryName()));
+
 	}
 
 	@Override
@@ -155,6 +155,12 @@ public class BlockShipChest extends ContainerBlock implements INeedBluePrint {
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
 		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing());
+	}
+
+	@Override
+	public boolean needItem() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

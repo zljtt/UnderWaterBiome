@@ -9,8 +9,10 @@ import com.github.zljtt.underwaterbiome.Objects.Messages.MessageOverlay;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.advancements.AdvancementsScreen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
@@ -31,6 +33,7 @@ public class GuiOverlay
 	public static float last_hit = 0;
 
 	public static KnowledgePoints knowledge;
+	public static int rest;
 
 	public static boolean show_oxy = false;
 	public static boolean show_depth = false;
@@ -50,29 +53,32 @@ public class GuiOverlay
 		if (event.getGui() instanceof AdvancementsScreen)
 		{
 			mc.getTextureManager().bindTexture(new ResourceLocation("underwaterbiome:textures/gui/part_window.png"));
-//			mc.getTextureManager().bindTexture(new ResourceLocation("underwaterbiome:textures/gui/advancements/part_window.png"));
 			NetworkingHandler.sendToServer(new MessageOverlay(1));
 			int posX = (event.getGui().width - 244)/2-4;
 			int posY = (event.getGui().height - 140)/2;
 			mc.ingameGUI.blit(posX-25, posY, 0, 0, 25, 47);
+			mc.ingameGUI.blit(posX-51, posY+47, 25, 0, 51, 24);
 			if (knowledge!=null)
 			{
 				String k1 = I18n.format("gui.chemistry");
 				String k2 = I18n.format("gui.biology");
 				String k3 = I18n.format("gui.physics");
 				String k4 = I18n.format("gui.occult");
+				String k5 = I18n.format("gui.rest");
+				int word = mc.fontRenderer.getStringWidth(k5+String.valueOf(rest));
+				int k = 51-(51-word)/2;
 				mc.fontRenderer.drawString(k1+knowledge.getChemistry(), 	posX-22, posY+5, 0x000000);//4
 				mc.fontRenderer.drawString(k2+knowledge.getBiology(), 		posX-22, posY+15, 0x000000);
 				mc.fontRenderer.drawString(k3+knowledge.getPhysics(), 		posX-22, posY+25, 0x000000);
 				mc.fontRenderer.drawString(k4+knowledge.getOccult(), 		posX-22, posY+35, 0x000000);
-
-				
-//				mc.fontRenderer.drawString(k, (event.getGui().width-mc.fontRenderer.getStringWidth(k)) / 2,
-//						(posY+5), 
-//						0xB5FCF0);
+				mc.fontRenderer.drawString(k5+String.valueOf(rest), 		posX-k+1, posY+54, 0x000000);
+				if (EventHandler.timer_4 >= 0)
+				{
+					EventHandler.timer_4-=1;
+				}
 			}
+
 			
-//			System.out.print("height"+event.getGui().height+"width"+event.getGui().width );
 		}
 		
     }

@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:force_landing",
+  "parent": "underwaterbiome:potion_instant_damage",
   "rewards": {
     "recipes": [
       "underwaterbiome:magical_through"

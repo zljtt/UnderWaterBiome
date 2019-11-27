@@ -1,0 +1,76 @@
+{
+  "parent": "underwaterbiome:paint_brush",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:attack_amplifer"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "chemistry": 8,
+        "physics": 16
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:attack_amplifer"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:accessory/attack_amplifer"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.attack_amplifer.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.attack_amplifer.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.attack_amplifer",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.chemistry","color": "yellow","bold": false,"extra":[{"text" : "8","color": "aqua","extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{"text" : "16","color": "aqua"}]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

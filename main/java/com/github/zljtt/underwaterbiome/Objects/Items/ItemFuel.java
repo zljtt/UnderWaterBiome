@@ -1,9 +1,15 @@
 package com.github.zljtt.underwaterbiome.Objects.Items;
 
+import com.github.zljtt.underwaterbiome.Inits.EffectInit;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemBase;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 
 public class ItemFuel extends ItemBase
 {
@@ -17,9 +23,9 @@ public class ItemFuel extends ItemBase
 	{
 		return 1600;
 	}
-//	@Override
-//	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
-//	{
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) 
+	{
 //		if(!worldIn.isRemote())
 //		{
 //			Random rand = new Random();
@@ -31,8 +37,8 @@ public class ItemFuel extends ItemBase
 //				room_info.room.generate(worldIn, room_info, config, rand);
 //			});
 //		}
-//		
-//		return super.onItemRightClick(worldIn, playerIn, handIn);
-//	}
+//		playerIn.addPotionEffect(new EffectInstance(EffectInit.BREAK_SHELD, 999));
+		return super.onItemRightClick(worldIn, playerIn, handIn);
+	}
 
 }

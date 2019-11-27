@@ -1,4 +1,4 @@
- {
+{
 	//ingredient items
 	"item.underwaterbiome.seaweed_fruit": "荧光果",
 	"item.underwaterbiome.lime_powder": "石灰粉",
@@ -20,6 +20,21 @@
 	"item.underwaterbiome.ray_boss_summon": "鱼皮战鼓",
 	"item.underwaterbiome.drowned_boss_summon": "僵尸之脑",
 	"item.underwaterbiome.conical_flask": "锥形瓶",
+	"item.underwaterbiome.thread": "线",
+	"item.underwaterbiome.needle": "针",
+	"item.underwaterbiome.needle_and_thread": "针和线",
+	"item.underwaterbiome.coral_stick": "珊瑚枝",
+	"item.underwaterbiome.creeper_fish": "炸弹鱼",
+	"item.underwaterbiome.shrimp": "虾",
+	"item.underwaterbiome.crab": "螃蟹",
+	"item.underwaterbiome.bait": "鱼饵",
+	"item.underwaterbiome.water_element": "水元素碎片",
+	"item.underwaterbiome.fire_element": "火元素碎片",
+	"item.underwaterbiome.water_bar": "水元素锭",
+	"item.underwaterbiome.lava_bar": "火元素锭",
+	"item.underwaterbiome.methane_bottle": "瓶装甲烷",
+	"item.underwaterbiome.oxygen_fruit": "氧气果",
+	"item.underwaterbiome.obsidian_stick": "黑曜石棍",
 
 	//equipment items
 	"item.underwaterbiome.double_oxygen_tank": "双氧气罐",
@@ -43,7 +58,11 @@
 	"item.underwaterbiome.diamond_knife": "钻石刀",
 	"item.underwaterbiome.wooden_knife": "木刀",
 	"item.underwaterbiome.stone_knife": "石刀",
-	"item.underwaterbiome.iron_knife": ",铁刀",
+	"item.underwaterbiome.iron_knife": "铁刀",
+	"item.underwaterbiome.lava_sword": "火元素剑",
+	"item.underwaterbiome.water_sword": "水元素剑",
+	"item.underwaterbiome.lava_bow": "火元素弓",
+	"item.underwaterbiome.water_bow": "水元素弓",
 
 	//egg items
 	"item.underwaterbiome.shark_egg": "鲨鱼蛋",
@@ -52,6 +71,8 @@
 	"item.underwaterbiome.fish_sturgeon_egg": "鲟鱼蛋",
 	"item.underwaterbiome.ray_egg": "鳐鱼蛋",
 	"item.underwaterbiome.water_skeleton_egg": "亡灵溺尸蛋",
+	"item.underwaterbiome.creeper_fish_egg": "炸弹鱼蛋",
+	"item.underwaterbiome.lava_fish_egg": "熔岩鱼蛋",
 
 	//accessory items
 	"item.underwaterbiome.large_silt": "大块淤泥",
@@ -64,18 +85,24 @@
 	"item.underwaterbiome.magical_through": "老旧的魔法书",
 	"item.underwaterbiome.precise_part": "瞄准镜",
 	"item.underwaterbiome.bloodthirsty_soul": "嗜血战魂",
+	"item.underwaterbiome.sticky_skin": "粘性鱼皮",
+	"item.underwaterbiome.attack_amplifer": "攻击增幅器",
+	"item.underwaterbiome.arrow_modify": "流线型箭头",
 
 	//accessory discription
 	"accessory.large_silt": "近战攻击前造成一层「中毒」（3s）",
 	"accessory.venom_container": "施加「中毒」时多加一层效果",
 	"accessory.undead_killer": "对不死生物攻击时额外造成1点伤害",
 	"accessory.poison_protection": "免疫「中毒」",
-	"accessory.poison_weakness": "攻击时敌人每有一层「中毒」，就多造成20%伤害",
+	"accessory.poison_weakness": "攻击时敌人每有一层「中毒」，就额外造成20%伤害",
 	"accessory.wither_flower": "受击时不会受伤，改为受到「凋零」（时间等同于伤害值）",
 	"accessory.magical_gun": "枪械攻击时改为造成魔法伤害，且造成一层「虚弱」（3s）",
 	"accessory.magical_through": "魔法伤害有20%概率造成暴击,额外造成10点伤害",
 	"accessory.precise_part": "枪械攻击时额外造成2点伤害",
-	"accessory.bloodthirsty_soul": "近战攻击时治愈自身，治愈量等同于所造成伤害的10%",
+	"accessory.sticky_skin": "受击时50%概率无视击退",
+	"accessory.bloodthirsty_soul": "近战攻击时治愈自身，治愈量等同于10%造成伤害",
+	"accessory.attack_amplifer": "每5秒获得攻击增幅，使下次攻击变为重击并额外造成2点伤害",
+	"accessory.arrow_modify": "你周围的箭不会因为水的阻力而减速",
 
 	//blocks
 	"block.underwaterbiome.fluorescent_lamp_off": "荧光灯",
@@ -96,6 +123,17 @@
 	"block.underwaterbiome.ship_door": "铁门",
 	"block.underwaterbiome.ship_chest": "储存箱",
 	"block.underwaterbiome.water_torch": "水下火把",
+	"block.underwaterbiome.mangrove_leaf": "红树叶",
+	"block.underwaterbiome.mangrove_log": "红树木",
+	"block.underwaterbiome.mangrove_plank": "红树木板",
+	"block.underwaterbiome.fish_catcher": "捕鱼陷阱",
+	"block.underwaterbiome.fire_core": "火元素矿",
+	"block.underwaterbiome.water_core": "水元素矿",
+	"block.underwaterbiome.lava_grass": "熔岩附生草",
+	"block.underwaterbiome.stalactite": "钟乳石",
+	"block.underwaterbiome.gas": "可燃冰",
+	"block.underwaterbiome.oxygen_fruit_plant": "氧气果植株",
+	"block.underwaterbiome.life_ring": "救生圈",
 
 	//entities
 	"entity.underwaterbiome.shark": "鲨鱼",
@@ -106,16 +144,19 @@
 	"entity.underwaterbiome.ray_boss": "沙鳐",
 	"entity.underwaterbiome.drowned_boss": "溺尸领主",
 	"entity.underwaterbiome.water_skeleton": "亡灵溺尸",
+	"entity.underwaterbiome.creeper_fish": "炸弹鱼",
+	"entity.underwaterbiome.lava_fish": "熔岩鱼",
 
 	//biomes
-	"biome.underwaterbiome.lighting_seaweed": "发光巨藻之地",
+	"biome.underwaterbiome.lighting_seaweed": "发光巨藻森林",
 	"biome.underwaterbiome.floating_island": "漂浮群岛",
-	"biome.underwaterbiome.normal_seaweed": "海藻之地",
+	"biome.underwaterbiome.normal_seaweed": "海藻森林",
 	"biome.underwaterbiome.rooty_tantacle": "活体森林",
 	"biome.underwaterbiome.broken_canyon": "破碎之地",
 	"biome.underwaterbiome.lava_range": "黑曜石山脉",
 	"biome.underwaterbiome.coral_reef": "大堡礁",
 	"biome.underwaterbiome.coral_tree": "珊瑚森林",
+	"biome.underwaterbiome.mangrave_forest": "红森林",
 	"biome.underwaterbiome.dead_coral": "死亡堡礁",
 
 	//others
@@ -125,6 +166,11 @@
 	"effect.underwaterbiome.frost_bite_high": "Frost Bite",
 	"effect.underwaterbiome.water_curse": "水之诅咒",
 	"effect.underwaterbiome.high_pressure": "压力过大",
+	"effect.underwaterbiome.temp_strength": "攻击增幅",
+
+	"death.attack.scald.player": "你无法冷却自己",
+	"death.attack.frost_bite.player": "你无法保持温暖",
+	"death.attack.water_curse.player": "你被诅咒了！",
 
 	"message.unlock_blueprint": "解锁蓝图: ",
 	"message.already_have_blueprint": "你已经拥有",
@@ -161,11 +207,17 @@
 	"tooltip.biology": "生物学知识",
 	"tooltip.physics": "物理学知识",
 	"tooltip.occult": "神秘学知识",
-	
+	"tooltip.all": "右键获取可自由分配的知识，在成就界面按C/B/P/C以获得对应的知识",
+	"tooltip.potion_instant_damage": "魔法伤害喷溅药水",
+	"tooltip.potion_poison": "剧毒喷溅药水",
+	"tooltip.water_weapon": "攻击使人减速",
+	"tooltip.lava_weapon": "攻击造成火焰伤害",
+
 	"gui.chemistry": 	"C:",
 	"gui.biology": 		"B:",
 	"gui.physics": 		"P:",
 	"gui.occult": 		"O:",
+	"gui.rest": 		"自由分配:",
 
 	//advancements starts
 	"advancements.underwaterbiome.name.title": "",
@@ -176,6 +228,12 @@
 
 	"advancements.underwaterbiome.advanced_iron_block.title": "更有效率的熔炼",
 	"advancements.underwaterbiome.advanced_iron_block.description": "用更少的铁制作只能用于建造的铁块",
+
+	"advancements.underwaterbiome.arrow_modify.title": "流线型设计",
+	"advancements.underwaterbiome.arrow_modify.description": "在水下更好地射箭",
+
+	"advancements.underwaterbiome.attack_amplifer.title": "用知识武装自己",
+	"advancements.underwaterbiome.attack_amplifer.description": "用起来可能不太流畅",
 
 	"advancements.underwaterbiome.conical_flask.title": "实验仪器 I",
 	"advancements.underwaterbiome.conical_flask.description": "比起化学，这其实更靠物理",
@@ -188,6 +246,12 @@
 
 	"advancements.underwaterbiome.double_oxygen_tank.title": "高阶呼吸技术",
 	"advancements.underwaterbiome.double_oxygen_tank.description": "使用更高的气压",
+
+	"advancements.underwaterbiome.element_sword.title": "元素，听我号令",
+	"advancements.underwaterbiome.element_sword.description": "制杖吗？不，我制剑",
+
+	"advancements.underwaterbiome.element_bow.title": "元素加持",
+	"advancements.underwaterbiome.element_bow.description": "你能点燃一条鱼吗？",
 
 	"advancements.underwaterbiome.fish_skin.title": "鱼皮技艺",
 	"advancements.underwaterbiome.fish_skin.description": "用生鱼制作鱼皮",
@@ -210,6 +274,9 @@
 	"advancements.underwaterbiome.iron_slab.title": "金属切割",
 	"advancements.underwaterbiome.iron_slab.description": "把一块铁块切成两半",
 
+	"advancements.underwaterbiome.lava_bar.title": "火元素应用",
+	"advancements.underwaterbiome.lava_bar.description": "愿元素温暖你的心",
+
 	"advancements.underwaterbiome.leather_suit.title": "缝纫技艺",
 	"advancements.underwaterbiome.leather_suit.description": "制作保暖衫",
 
@@ -220,10 +287,16 @@
 	"advancements.underwaterbiome.lime_powder.description": "石灰 + 燃料 ->加热-> 石灰粉",
 
 	"advancements.underwaterbiome.magical_gun.title": "枪械附魔",
-	"advancements.underwaterbiome.magical_gun.description": "你是给枪附魔还是给子弹附魔",
+	"advancements.underwaterbiome.magical_gun.description": "到底是给枪附魔还是给子弹附魔？",
 
-	"advancements.underwaterbiome.magical_through.title": "魔法菱镜",
+	"advancements.underwaterbiome.magical_through.title": "就靠一点点运气",
 	"advancements.underwaterbiome.magical_through.description": "护甲一文不值",
+
+	"advancements.underwaterbiome.needle_and_thread.title": "针线活",
+	"advancements.underwaterbiome.needle_and_thread.description": "铁柱磨成针",
+
+	"advancements.underwaterbiome.obsidian_stick.title": "黑曜石熔炼",
+	"advancements.underwaterbiome.obsidian_stick.description": "除了用钻石镐，你可以通过熔岩鱼获得黑曜石",
 
 	"advancements.underwaterbiome.oxygen_holder.title": "氧气自动压缩技术",
 	"advancements.underwaterbiome.oxygen_holder.description": "缓缓地从周边的水和空气吸收氧气，使用氧气罐右键以收集",
@@ -236,6 +309,12 @@
 
 	"advancements.underwaterbiome.plant_extract.title": "基础炼金",
 	"advancements.underwaterbiome.plant_extract.description": "探索未知的植物",
+
+	"advancements.underwaterbiome.potion_poison.title": "使用毒物的第一步",
+	"advancements.underwaterbiome.potion_poison.description": "让海藻螺尝尝中毒的滋味",
+
+	"advancements.underwaterbiome.potion_instant_damage.title": "瞬间魔法伤害",
+	"advancements.underwaterbiome.potion_instant_damage.description": "你怎么引了这么多僵尸？没事，我有瞬间伤害药水。F*CK！你干什么给它们回血？",
 
 	"advancements.underwaterbiome.precision_part.title": "物理的第一步",
 	"advancements.underwaterbiome.precision_part.description": "虽然没什么用，但造什么都要它",
@@ -276,6 +355,9 @@
 	"advancements.underwaterbiome.venom_extract.title": "剧毒的毒液",
 	"advancements.underwaterbiome.venom_extract.description": "不要去想象淤泥里有什么",
 
+	"advancements.underwaterbiome.water_bar.title": "水元素应用",
+	"advancements.underwaterbiome.water_bar.description": "把碎片变成方块",
+
 	"advancements.underwaterbiome.water_pump.title": "是你吗，硅藻泥?",
 	"advancements.underwaterbiome.water_pump.description": "如果你要在水下建房子，那么你最好用它来去除水",
 	
@@ -285,6 +367,8 @@
 	"advancements.underwaterbiome.water_torch.title": "简易的照明",
 	"advancements.underwaterbiome.water_torch.description": "你得把荧光果压缩成提取物来使制作变得更有效率",
 
+	"advancements.underwaterbiome.element_sword_weapon": "水元素剑/火元素剑",
+	"advancements.underwaterbiome.element_bow_weapon": "水元素弓/火元素弓",
 
 
 	//advancements ends

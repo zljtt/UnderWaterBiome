@@ -3,6 +3,7 @@ package com.github.zljtt.underwaterbiome.Objects.Features;
 import java.util.Random;
 import java.util.function.Function;
 
+import com.github.zljtt.underwaterbiome.Inits.BlockInit;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.Blocks;
@@ -30,8 +31,14 @@ public class FeatureLavaBlock extends Feature<NoFeatureConfig>
 			int x = pos.getX()+ random.nextInt(8)-random.nextInt(8);
 			int z = pos.getZ()+ random.nextInt(8)-random.nextInt(8);
 			BlockPos blockpos = new BlockPos(x, worldIn.getHeight(Heightmap.Type.OCEAN_FLOOR, x, z), z).down();
-			worldIn.setBlockState(blockpos, Blocks.MAGMA_BLOCK.getDefaultState(), 2);
-			worldIn.setBlockState(blockpos.down(), Blocks.LAVA.getDefaultState(), 2);
+			if (random.nextInt(10)<1)
+			{
+				worldIn.setBlockState(blockpos, BlockInit.FIRE_CORE.getDefaultState(), 3);
+			}
+			else
+				worldIn.setBlockState(blockpos, Blocks.MAGMA_BLOCK.getDefaultState(), 3);
+
+			worldIn.setBlockState(blockpos.down(), Blocks.LAVA.getDefaultState(), 3);
 		}
 		
 		return true;

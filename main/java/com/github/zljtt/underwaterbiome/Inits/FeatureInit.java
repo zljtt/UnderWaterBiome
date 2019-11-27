@@ -7,9 +7,12 @@ import java.util.List;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureBone;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureDeadCoral;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureFloatingIsland;
+import com.github.zljtt.underwaterbiome.Objects.Features.FeatureGasPool;
+import com.github.zljtt.underwaterbiome.Objects.Features.FeatureKelp;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureLavaBlock;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureLightingKelp;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureLime;
+import com.github.zljtt.underwaterbiome.Objects.Features.FeatureMangrove;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureMeandrina;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureReef;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureResearchStationWreckage;
@@ -28,6 +31,7 @@ public class FeatureInit
 	public static final List<Feature> FEATURES = new ArrayList<Feature>();
 
 	public static final Feature<NoFeatureConfig> LIGHTING_KELP = new FeatureLightingKelp(NoFeatureConfig::deserialize);
+	public static final Feature<NoFeatureConfig> KELP = new FeatureKelp(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> TANTACLE_ROOT = new FeatureTantacleRoot(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> LAVA_BLOCK = new FeatureLavaBlock(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> MEANDRINA = new FeatureMeandrina(NoFeatureConfig::deserialize);
@@ -37,6 +41,8 @@ public class FeatureInit
 	public static final Feature<NoFeatureConfig> WATER_GRASS = new FeatureWaterGrass(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> DEAD_CORAL = new FeatureDeadCoral(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> BONE = new FeatureBone(NoFeatureConfig::deserialize);
+	public static final Feature<NoFeatureConfig> MANGROVE = new FeatureMangrove(NoFeatureConfig::deserialize, false);
+	public static final Feature<NoFeatureConfig> GAS_POOL = new FeatureGasPool(NoFeatureConfig::deserialize);
 
 	public static final Feature<WreckageConfig> SPACECRAFT_WRECKAGE = new FeatureResearchStationWreckage(WreckageConfig::deserialize);
 
@@ -45,6 +51,7 @@ public class FeatureInit
 	{
 		
 		initFeature(LIGHTING_KELP, "lighting_kelp");
+		initFeature(KELP, "kelp");
 		initFeature(TANTACLE_ROOT, "tantacle_root");
 		initFeature(LAVA_BLOCK, "lava_block");
 		initFeature(MEANDRINA, "meandrina");
@@ -55,8 +62,9 @@ public class FeatureInit
 		initFeature(SPACECRAFT_WRECKAGE, "spacecraft_wreckage");
 		initFeature(DEAD_CORAL, "dead_coral");
 		initFeature(BONE, "bone");
+		initFeature(MANGROVE, "mangrove");
+		initFeature(GAS_POOL, "gas_pool");
 
-		
 		
 		ForgeRegistries.FEATURES.registerAll(FEATURES.toArray(new Feature[0]));
 	}

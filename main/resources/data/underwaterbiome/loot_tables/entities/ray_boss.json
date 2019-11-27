@@ -2,6 +2,15 @@
   "type": "minecraft:entity",
   "pools": [
     {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "underwaterbiome:accessory/sticky_skin"
+        }
+      ]
+    },
+    {
       "rolls": 2,
       "entries": [
         {

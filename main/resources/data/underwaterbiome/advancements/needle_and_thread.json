@@ -1,0 +1,71 @@
+{
+  "parent": "underwaterbiome:force_landing",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:needle",
+      "underwaterbiome:thread",
+      "underwaterbiome:needle_and_thread"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "physics": 3
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:needle_and_thread"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:needle_and_thread"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.needle_and_thread.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.needle_and_thread.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.needle_and_thread",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","bold": false,"extra":[{"text" : "3","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

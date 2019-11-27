@@ -8,11 +8,13 @@ import com.github.zljtt.underwaterbiome.Capabilities.Provider.CapabilityPlayerDa
 import com.github.zljtt.underwaterbiome.Gui.GuiOverlay;
 import com.github.zljtt.underwaterbiome.Handlers.EventHandler;
 import com.github.zljtt.underwaterbiome.Handlers.OxygenHandler;
+import com.github.zljtt.underwaterbiome.Handlers.TriggerHandler;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IOxygen;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IPlayerData;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;
@@ -41,7 +43,6 @@ public class MessageOverlay extends MessageBase
 		context.get().enqueueWork(() -> 
  	    {    	
  	        PlayerEntity sender = context.get().getSender(); 
-
  	        if (data == 0)
  	        {
  	        // oxygen meter
@@ -101,8 +102,31 @@ public class MessageOverlay extends MessageBase
  		      	{
  		    		KnowledgePoints point = cap_o.getKnowledgePoints();	   
  		    		GuiOverlay.knowledge = point;	
+ 		    		GuiOverlay.rest = cap_o.getRestFree();	
  		      	}
  	        }
+        	IPlayerData cap_o =  sender.getCapability(CapabilityPlayerDataProvider.CAP).orElse(null);
+        	if(cap_o!=null && cap_o.getRestFree()>0 && data>=2 && data<=5)
+        	{
+        		if (!sender.getEntityWorld().isRemote())
+        		{
+        			cap_o.setRestFree(cap_o.getRestFree()-1);
+            		switch(data)
+            		{
+            		case 2:cap_o.getKnowledgePoints().addChemistry(1);break;
+            		case 3:cap_o.getKnowledgePoints().addBiology(1);break;
+            		case 4:cap_o.getKnowledgePoints().addPhysics(1);break;
+            		case 5:cap_o.getKnowledgePoints().addOccult(1);break;
+            		}
+        		}
+        		if (sender instanceof ServerPlayerEntity)
+        		{
+        			TriggerHandler.NEED_TECHPOINT.trigger((ServerPlayerEntity)sender, cap_o.getKnowledgePoints());
+        		}
+        		
+        	}
+        	
+
     		
  	        
 	    		

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "I"
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:water_bar"
+    },
+    "I": {
+      "item": "underwaterbiome:obsidian_stick"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:water_sword",
+    "count": 1
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:precision_part",
+  "parent": "underwaterbiome:needle_and_thread",
   "rewards": {
     "recipes": [
       "underwaterbiome:fish_skin_stone",
@@ -41,7 +41,7 @@
           "color": "gold",
           "extra":[
             {
-              "translate" : "underwaterbiome.fish_skin",
+              "translate" : "item.underwaterbiome.fish_skin",
               "color": "yellow",
               "bold": false,
               "extra":[

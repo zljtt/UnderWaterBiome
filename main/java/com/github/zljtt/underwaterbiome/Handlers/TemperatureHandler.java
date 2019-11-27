@@ -45,24 +45,29 @@ public class TemperatureHandler
 				Item feet = event.player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem();
 				Item head = event.player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem();
 				Item legs = event.player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem();
-				
+				Item main_hand = event.player.getHeldItemMainhand().getItem();
+				Item off_hand = event.player.getHeldItemOffhand().getItem();
+
 				//increase temp by biome
     			double add_biome = biome.getTemperature(player.getPosition())-0.5;
+    			
+    			
 				cap_o.increaseTemperature(add_biome,false);
 				
 				if (canHeat)
 	    		{
 					double increaseTemp = 2 - bottom_offset/5;
-	    			double heat_prof_total = Reference.HEAT_PROF_ITEM.getOrDefault(chest, 0)
+					double heat_prof_total = Reference.HEAT_PROF_ITEM.getOrDefault(chest, 0)
 	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(feet, 0)
 	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(head, 0)
-	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(legs, 0);	   
+	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(legs, 0)
+	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(main_hand, 0)
+	    					+ Reference.HEAT_PROF_ITEM.getOrDefault(off_hand, 0);
 	    			double heat_prof_total0 = (heat_prof_total+cap_o.getBaseHeatProf())/10;
 					cap_o.increaseTemperature(Math.max(increaseTemp - heat_prof_total0, 0), true);//x=10 y = 0 / x=0 y=2
 	    		}
 	    		else
-	    		{
-	    			
+	    		{	    			
 	    			//reduce temp by pressure
 					if (top_offset>10)
 					{
@@ -75,11 +80,23 @@ public class TemperatureHandler
 					{
 						cap_o.increaseTemperature((10-top_offset)/30,false);
 					}
+					for(int x =-2; x<3;x++){
+						for(int y =-2; y<3;y++) {
+							for(int z =-2; z<3;z++) {
+								if (player.world.getBlockState(player.getPosition().add(x, y, z)).getBlock().equals(Blocks.MAGMA_BLOCK))
+								{
+									cap_o.increaseTemperature(0.2,true);
+								}
+							}
+						}
+					}
 	    			//add temp by cold_prof
 					double cold_prof_total = Reference.COLD_PROF_ITEM.getOrDefault(chest, 0)
 	    					+ Reference.COLD_PROF_ITEM.getOrDefault(feet, 0)
 	    					+ Reference.COLD_PROF_ITEM.getOrDefault(head, 0)
-	    					+ Reference.COLD_PROF_ITEM.getOrDefault(legs, 0);
+	    					+ Reference.COLD_PROF_ITEM.getOrDefault(legs, 0)
+	    					+ Reference.COLD_PROF_ITEM.getOrDefault(main_hand, 0)
+	    					+ Reference.COLD_PROF_ITEM.getOrDefault(off_hand, 0);
 	    			cap_o.increaseTemperature((cold_prof_total+cap_o.getBaseColdProf())/10,false);		
 	    		}	
 			}

@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Objects.Biomes;
 
+import com.github.zljtt.underwaterbiome.Inits.EntityInit;
 import com.github.zljtt.underwaterbiome.Inits.FeatureInit;
 import com.github.zljtt.underwaterbiome.Utils.Enum.Difficulty;
 
@@ -30,7 +31,8 @@ public class BiomeLavaRange extends BiomeOceanBase
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.SQUID, 3, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.MAGMA_CUBE, 20, 1, 1));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.DROWNED, 5, 1, 1));
-	      
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityInit.ENTITY_LAVA_FISH, 1, 1, 1));
+
 	      
 	}    
 }

@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Utils.Proxy;
 
+import com.github.zljtt.underwaterbiome.Handlers.RegistryHandler;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IProxy;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,6 +11,7 @@ public class ServerProxy implements IProxy
 	
 	@Override
     public void init() {
+    	RegistryHandler.preInitRegistries();
 
     }
 

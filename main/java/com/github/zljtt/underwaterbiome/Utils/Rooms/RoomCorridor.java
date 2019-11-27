@@ -19,12 +19,14 @@ public class RoomCorridor extends RoomBase
 	{
 		super(name, min_width,min_height,min_depth,hasSecond,false, difficulty_range);
 		this.has_second_floor = hasSecond;
+		
 	}
 	
 	@Override
 	public void generate(IWorld worldIn, RoomInfo info, WreckageConfig config, Random ran)
 	{
 		Map<BlockPos,BlockState> tobuild = new HashMap<BlockPos,BlockState>();
+		tobuild.putAll(info.clearRoom());
 		//build floor
 		tobuild.putAll(info.buildFloor(worldIn, config));
 		//build walls

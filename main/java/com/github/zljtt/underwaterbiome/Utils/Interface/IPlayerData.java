@@ -40,6 +40,10 @@ public interface IPlayerData
 
 	List<String> getUsedItems();
 	List<String> getUnlockedBiomes();
+	int getNatureAnger();
+	void setNatureAnger(int print);
+	int getRestFree();
+	void setRestFree(int print);
 
 	
 }

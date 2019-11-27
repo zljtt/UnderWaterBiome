@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "III",
-    "GRG",
+    "GRH",
     "III"
   ],
   "key": {
@@ -13,7 +13,10 @@
       "item": "underwaterbiome:precision_part"
     },
     "G": {
-      "item": "minecraft:gold_ingot"
+      "item": "underwaterbiome:water_bar"
+    },
+    "H": {
+      "item": "underwaterbiome:lava_bar"
     }
   },
   "result": {

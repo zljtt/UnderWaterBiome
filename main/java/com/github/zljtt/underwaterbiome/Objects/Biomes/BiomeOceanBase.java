@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Objects.Biomes;
 
+import com.github.zljtt.underwaterbiome.Inits.EntityInit;
 import com.github.zljtt.underwaterbiome.Inits.FeatureInit;
 import com.github.zljtt.underwaterbiome.Objects.Features.Configs.WreckageConfig;
 import com.github.zljtt.underwaterbiome.Utils.Enum.Difficulty;
@@ -49,6 +50,8 @@ public class BiomeOceanBase extends Biome
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
 	      this.addFeature(GenerationStage.Decoration.UNDERGROUND_STRUCTURES, Biome.createDecoratedFeature(Feature.MINESHAFT, new MineshaftConfig((double)0.004F, MineshaftStructure.Type.NORMAL), Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
+	      
+	      if(pollution!=Difficulty.EASY)this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityInit.ENTITY_CREEPER_FISH, 1, 2, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SPIDER, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE, 95, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));

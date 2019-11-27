@@ -9,7 +9,7 @@
     "have_higher_points": {
       "trigger": "underwaterbiome:have_knowledge",
       "conditions": {
-        "physics": 16
+        "physics": 14
       }
     },
     "have_the_recipe": {
@@ -47,7 +47,7 @@
                   "extra":[
                     {
                       "translate" : "message.physics","color": "yellow","bold": false,"extra":[{
-                      "text" : "16","color": "aqua"
+                      "text" : "14","color": "aqua"
                     }
                   ]
                     }

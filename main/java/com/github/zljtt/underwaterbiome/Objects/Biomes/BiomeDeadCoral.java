@@ -64,7 +64,7 @@ public class BiomeDeadCoral extends BiomeOceanBase
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 15, 5, 10));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.DOLPHIN, 2, 1, 2));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityInit.ENTITY_FISH_STURGEON, 2, 1, 1));
-	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityInit.ENTITY_WATER_SKELETON, 5, 1, 1));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityInit.ENTITY_WATER_SKELETON, 2, 1, 1));
 
 
 	      

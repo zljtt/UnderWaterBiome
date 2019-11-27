@@ -11,10 +11,13 @@ import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeDeadCoral;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeFloatingland;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLavaRange;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLightingKelp;
+import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeMangrove;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeNormalKelp;
+import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeOceanBase;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeRootyTentacle;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Enum.Difficulty;
+import com.github.zljtt.underwaterbiome.World.GenLayerWaterWorldBiome;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -39,6 +42,8 @@ public class BiomeInit
 		
 	public static final Biome FLOATING_ISLAND = new BiomeFloatingland(-1.8F, 0.2F, 0x53A1FC,(String)null, 4, Difficulty.NORMAL);//
 	
+	public static final Biome MANGROVE = new BiomeMangrove(-0.8F, 0.01F, 0x12DDCD,(String)null, 2, Difficulty.EASY);//
+
 	public static final Biome BROKEN_CANYAN = new BiomeBrokenCanyon(-1F, 0.1F, 0x125C89,(String)null, 5, Difficulty.NORMAL);//5
 		public static final Biome LAVA_RANGE = new BiomeLavaRange(-1.8F, 0.02F, 0x65599A,"broken_canyon", 2, Difficulty.DIFFICULT);//5
 		public static final Biome ROOTY_TANTACLE = new BiomeRootyTentacle(-1.5F, 0.07F, 0xDFFF7F,"broken_canyon", 2, Difficulty.DIFFICULT);//5
@@ -58,7 +63,8 @@ public class BiomeInit
 		initBiome(event, BROKEN_CANYAN, "broken_canyon", BiomeType.COOL, Type.OCEAN);
 		initBiome(event, LAVA_RANGE, "lava_range", BiomeType.COOL, Type.OCEAN);
 		
-
+		initBiome(event, MANGROVE, "mangrave_forest", BiomeType.WARM, Type.OCEAN);
+		
 
 	}
 	
@@ -67,10 +73,10 @@ public class BiomeInit
 		BIOMES.add(biome);
 		biome.setRegistryName(new ResourceLocation(Reference.MODID,name));
 		event.getRegistry().register(biome);	
-		
+		GenLayerWaterWorldBiome.createWeightedBiomeEntry(((BiomeOceanBase)biome).getWeight(), biome);
 		
 		BiomeDictionary.addTypes(biome, types);
-		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, 10));
+		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, ((BiomeOceanBase)biome).getWeight()));
 		BiomeManager.addSpawnBiome(biome);
 		return biome;
 	}

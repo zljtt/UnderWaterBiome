@@ -33,7 +33,7 @@ public class KnowledgePointHandler
 		{
 			IPlayerData data = ((PlayerEntity)event.getEntity()).getCapability(CapabilityPlayerDataProvider.CAP).orElse(null);
 			String biome = event.getEntity().getEntityWorld().getBiome(new BlockPos(event.getNewChunkX()*16,64,event.getNewChunkZ()*16)).getRegistryName().getPath();
-			System.out.println(biome+"|"+data.getUnlockedBiomes());
+//			System.out.println(biome+"|"+data.getUnlockedBiomes());
 
 			if (data!=null && (data.getUnlockedBiomes().size()==0||!data.getUnlockedBiomes().contains(biome)))
 			{
@@ -56,10 +56,10 @@ public class KnowledgePointHandler
 		String id = Integer.toString(Item.getIdFromItem(item));
 		if (data!=null && (data.getUsedItems().size()==0||!data.getUsedItems().contains(id)))
 		{
-			System.out.print(id);
+//			System.out.print(id);
 			data.useItem(id);
 			EventHandler.craft_time = data.getUsedItems().size();
-			if (data.getUsedItems().size()%5==0)
+			if (data.getUsedItems().size()%3==0)
 			{
 				ITextComponent com = new TranslationTextComponent(I18n.format("message.craft_get_knowledge"));
 				if (!event.getEntityPlayer().getEntityWorld().isRemote())
@@ -69,24 +69,7 @@ public class KnowledgePointHandler
 				}
 			}	
 		}
-		if (item instanceof ItemBlueprintFragment)
-		{
-			event.getPlayer().addItemStackToInventory(new ItemStack(ItemInit.SPACESHIP_DRIVING_RECORDER));
-		}
-		if (item.equals(ItemInit.FISH_SKIN))
-		{
-			Item itemk;
-			switch(event.getCrafting().getCount())
-			{
-			case 1:itemk = ItemInit.WOODEN_KNIFE;break;
-			case 2:itemk = ItemInit.STONE_KNIFE;break;
-			case 3:itemk = ItemInit.IRON_KNIFE;break;
-			case 4:itemk = ItemInit.GOLDEN_KNIFE;break;
-			case 5:itemk = ItemInit.DIAMOND_KNIFE;break;
-			default:itemk = Items.AIR;
-			}
-			event.getPlayer().addItemStackToInventory(new ItemStack(itemk));
-		}
+		
 		
     }
 

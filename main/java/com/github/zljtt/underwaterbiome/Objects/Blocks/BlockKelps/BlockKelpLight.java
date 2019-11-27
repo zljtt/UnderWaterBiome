@@ -1,5 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Blocks.BlockKelps;
 
+import java.util.Random;
+
 import com.github.zljtt.underwaterbiome.Inits.BlockInit;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockWaterPlantBase;
 
@@ -13,9 +15,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 
 public class BlockKelpLight extends BlockWaterPlantBase {
 	private final BlockKelpTop top;
+	Random ran = new Random();
 
 	public BlockKelpLight(String name, BlockKelpTop p_i49501_1_, Block.Properties p_i49501_2_) {
 		super(name, p_i49501_2_, Block.makeCuboidShape(0, 0, 0, 16, 16, 16),false);
@@ -32,8 +36,11 @@ public class BlockKelpLight extends BlockWaterPlantBase {
 	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
 			BlockPos currentPos, BlockPos facingPos) {
-		if (facing == Direction.DOWN && !stateIn.isValidPosition(worldIn, currentPos)) {
+		if (facing == Direction.DOWN && !stateIn.isValidPosition(worldIn, currentPos)) 
+		{
 			worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
+			if (worldIn.getWorld() !=null)
+				this.tick(stateIn, worldIn.getWorld(), currentPos, ran);
 		}
 
 		if (facing == Direction.UP) {
@@ -54,8 +61,12 @@ public class BlockKelpLight extends BlockWaterPlantBase {
 		return block != Blocks.MAGMA_BLOCK && (block == this || block == BlockInit.KELP
 				|| blockstate.func_224755_d(worldIn, blockpos, Direction.UP));
 	}
+	@Override
+	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) 
+	{
+		if (!state.isValidPosition(worldIn, pos)) {
+			worldIn.destroyBlock(pos, true);
+		}
 
-	public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-		return new ItemStack(Blocks.KELP);
-	}
+	   }
 }

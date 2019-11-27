@@ -25,7 +25,6 @@ public class WorldTypeWaterWorld extends WorldType
 	        OverworldBiomeProviderSettings biomeProviderSettings = new OverworldBiomeProviderSettings();
 	        biomeProviderSettings.setWorldInfo(world.getWorldInfo());
 	        biomeProviderSettings.setGeneratorSettings(overworldGenSettings);
-	
 	        return new OverworldChunkGenerator(world, new BiomeProviderWaterWorld(biomeProviderSettings), overworldGenSettings);
     	}
     	else

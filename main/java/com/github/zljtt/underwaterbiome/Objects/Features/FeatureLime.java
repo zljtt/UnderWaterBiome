@@ -7,6 +7,7 @@ import com.github.zljtt.underwaterbiome.Inits.BlockInit;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -33,7 +34,8 @@ public class FeatureLime extends Feature<NoFeatureConfig>
 			BlockPos blockpos = new BlockPos(x, worldIn.getHeight(Heightmap.Type.OCEAN_FLOOR_WG, x, z), z);
 			if (worldIn.getBlockState(blockpos.down()).getBlock()==Blocks.SAND)
 			{
-				worldIn.setBlockState(blockpos, BlockInit.LIME.getStateWithRandomDirection(), 2);
+				boolean tr = worldIn.getBlockState(blockpos).getBlock()==Blocks.WATER;
+				worldIn.setBlockState(blockpos, BlockInit.LIME.getStateWithRandomDirection().with(BlockStateProperties.WATERLOGGED, tr), 2);
 				return true;
 			}	
 			

@@ -16,10 +16,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.potion.Effect;
+import net.minecraft.resources.ResourcePackInfo.Priority;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -29,16 +31,18 @@ public class RegistryHandler
 {
 	static Minecraft mc = Minecraft.getInstance();
 
+	@SubscribeEvent//(priority = EventPriority.HIGHEST)
+	public static void registerBlock(final RegistryEvent.Register<Block> event)
+	{ 
+		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
+	}
+	
 	@SubscribeEvent
 	public static void registerItem(final RegistryEvent.Register<Item> event)
 	{
 		ItemInit.register(event);
 	}
-	@SubscribeEvent
-	public static void registerBlock(final RegistryEvent.Register<Block> event)
-	{ 
-		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
-	}
+	
 	@SubscribeEvent
 	public static void registerTileEntity(final RegistryEvent.Register<TileEntityType<?>> event)
 	{ 

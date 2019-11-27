@@ -55,7 +55,7 @@ public class FeatureFloatingIsland extends Feature<NoFeatureConfig>
 				
 				if (worldIn.getBlockState(gen_pos_0).getBlock()==Blocks.WATER)
 				{
-					worldIn.setBlockState(gen_pos_0,Blocks.STONE.getDefaultState(), 2);
+						worldIn.setBlockState(gen_pos_0,Blocks.STONE.getDefaultState(), 2);
 				}
 				
 				j+=1;
@@ -71,7 +71,12 @@ public class FeatureFloatingIsland extends Feature<NoFeatureConfig>
 				
 				if (worldIn.getBlockState(gen_pos_0).getBlock()==Blocks.WATER)
 				{
-					worldIn.setBlockState(gen_pos_0,Blocks.SAND.getDefaultState(), 2);
+					if (random.nextInt(15)<1)
+					{
+						worldIn.setBlockState(gen_pos_0,BlockInit.WATER_CORE.getDefaultState(), 2);
+					}
+					else
+						worldIn.setBlockState(gen_pos_0,Blocks.SAND.getDefaultState(), 2);
 				}
 			}
 			for (int i = 0; i < range*range;i++)

@@ -1,5 +1,6 @@
 package com.github.zljtt.underwaterbiome.Handlers;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -14,9 +15,12 @@ import com.github.zljtt.underwaterbiome.Inits.ItemInit;
 import com.github.zljtt.underwaterbiome.Objects.Biomes.BiomeLavaRange;
 import com.github.zljtt.underwaterbiome.Objects.Blocks.BlockInvisible;
 import com.github.zljtt.underwaterbiome.Objects.Features.FeatureStarter;
+import com.github.zljtt.underwaterbiome.Objects.Items.ItemBlueprintFragment;
+import com.github.zljtt.underwaterbiome.Objects.Items.ItemKnife;
 import com.github.zljtt.underwaterbiome.Objects.Items.ItemSpaceshipDivingRecorder;
 import com.github.zljtt.underwaterbiome.Objects.Items.Base.ItemAccessoryBase;
 import com.github.zljtt.underwaterbiome.Objects.Messages.MessageDebug;
+import com.github.zljtt.underwaterbiome.Objects.Messages.MessageOverlay;
 import com.github.zljtt.underwaterbiome.Utils.AccessoryEntry;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Enum.BreathableItem;
@@ -24,22 +28,31 @@ import com.github.zljtt.underwaterbiome.Utils.Enum.LightingItem;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IOxygen;
 import com.github.zljtt.underwaterbiome.Utils.Interface.IPlayerData;
 import com.github.zljtt.underwaterbiome.World.WorldTypeWaterWorld;
+
+import net.minecraft.block.AbstractCoralPlantBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.advancements.AdvancementsScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.command.impl.TimeCommand;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityPredicate;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
@@ -61,10 +74,15 @@ import net.minecraftforge.common.extensions.IForgeEntity;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import net.minecraftforge.event.TickEvent.WorldTickEvent;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 
@@ -79,6 +97,8 @@ public class EventHandler
 	static int craft_time = 0;
 	boolean timer_3= false;
 
+	public static int timer_4= -1;
+
 	//game setting
 	public static BlockPos rayTraceBlockPos;
 
@@ -90,8 +110,41 @@ public class EventHandler
     public void onPlayerLogIn(PlayerEvent.PlayerLoggedInEvent event)
     {
 		timer_3 = false;
-    }	
-//	
+    }
+	
+	@SubscribeEvent
+	public void onCrafting(PlayerEvent.ItemCraftedEvent event)
+	{
+		Item item = event.getCrafting().getItem();
+		if (item.equals(ItemInit.FISH_SKIN))
+		{
+			Item itemk;
+			switch(event.getCrafting().getCount())
+			{
+			case 1:itemk = ItemInit.WOODEN_KNIFE;break;
+			case 2:itemk = ItemInit.STONE_KNIFE;break;
+			case 3:itemk = ItemInit.IRON_KNIFE;break;
+			case 4:itemk = ItemInit.GOLDEN_KNIFE;break;
+			case 5:itemk = ItemInit.DIAMOND_KNIFE;break;
+			default:itemk = Items.AIR;
+			}
+			event.getPlayer().addItemStackToInventory(new ItemStack(itemk));
+		}
+	}
+	@SubscribeEvent
+	public void onPlayerBreak(BlockEvent.BreakEvent event)
+	{
+		if (event.getState().getBlock() instanceof AbstractCoralPlantBlock 
+				&& event.getPlayer().getHeldItemMainhand().getItem() instanceof ItemKnife)
+		{
+			ItemEntity entity = new ItemEntity(event.getPlayer().getEntityWorld(), 
+					event.getPos().getX()+0.5F,
+					event.getPos().getY()+0.5F, 
+					event.getPos().getZ()+0.5F,
+					new ItemStack(ItemInit.CORAL_STICK));
+			event.getPlayer().getEntityWorld().addEntity(entity);
+		}
+	}
 	@SubscribeEvent
     public void onGetHealth(PlayerTickEvent event)
     {
@@ -261,26 +314,49 @@ public class EventHandler
 	@SubscribeEvent
     public void onPlayerHoldFloat(PlayerTickEvent event)
     {
-		if ((event.player.getHeldItemMainhand().getItem()==BlockInit.FLOATING_CORE.BLOCKITEM
-			||event.player.getHeldItemOffhand().getItem()==BlockInit.FLOATING_CORE.BLOCKITEM)
+		Item item = event.player.getHeldItemMainhand().getItem().getItem();
+		Boolean isFloatingCore = item==BlockInit.FLOATING_CORE.asItem();
+		Boolean isLifeRing = false;//item==BlockInit.LIFE_RING.asItem();
+
+		if ( (isFloatingCore||isLifeRing)
 				&&event.player.isInWater()
-				&&event.player.getPosition().getY()<(event.player.getEntityWorld().getSeaLevel())
-				&&event.player.getMotion().getY()<0.5)
+				&&event.player.getMotion().getY() < (isFloatingCore?0.7D:isLifeRing?1.0D:0))
 		{
-			event.player.setMotion(event.player.getMotion().getX(), event.player.getMotion().getY()+0.01, event.player.getMotion().getZ());
-		}
-		
+			event.player.setMotion(event.player.getMotion().getX(), event.player.getMotion().getY()+0.01F, event.player.getMotion().getZ());
+		}	
     }
-	
+
 	@SubscribeEvent
-    public void onPlayerPressKey(InputEvent.KeyInputEvent event)
+    public void onPlayerPressKey(GuiScreenEvent.KeyboardKeyPressedEvent.Post event)
     {
 //		if (event.getKey()==GLFW.GLFW_KEY_P)
 //		{
 //			NetworkingHandler.sendToServer(new MessageDebug(0));
-
+//
 //			this.mc.worldRenderer.loadRenderers();
 //		}
+		if (mc.currentScreen instanceof AdvancementsScreen)
+		{
+			timer_4 = 20;
+//			System.out.println("advancement");
+			if (event.getKeyCode()==GLFW.GLFW_KEY_C)
+			{
+				NetworkingHandler.sendToServer(new MessageOverlay(2));
+			}
+			else if (event.getKeyCode()==GLFW.GLFW_KEY_B)
+			{
+				NetworkingHandler.sendToServer(new MessageOverlay(3));
+			}
+			else if (event.getKeyCode()==GLFW.GLFW_KEY_P)
+			{
+				NetworkingHandler.sendToServer(new MessageOverlay(4));
+			}
+			else if (event.getKeyCode()==GLFW.GLFW_KEY_O)
+			{
+				NetworkingHandler.sendToServer(new MessageOverlay(5));
+			}
+		}
+		
     }
 	@SubscribeEvent
 	public void onTooltip(ItemTooltipEvent event)

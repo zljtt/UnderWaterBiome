@@ -49,7 +49,7 @@ public class BlockCabinDoor extends BlockWaterLoggedBase
 
 	public BlockCabinDoor(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty, needBlueprint,  type,  difficulty);
+		super(name, porperty, true,  needBlueprint, type,  difficulty);
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 	}
 	@Override

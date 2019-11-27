@@ -57,8 +57,14 @@ public class RoomStorage extends RoomSquare
 			{
 				for(int k = 0; k<3;k++)
 				{
+					if (ran.nextInt(3)==0)
 					RoomInfo.addChest(mid_start.offset(info.direction, 2+i).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateYCCW());
+					else
+						tobuild.put(mid_start.offset(info.direction, 2+i).up(k), RoomInfo.iron_block);
+					if (ran.nextInt(3)==0)
 					RoomInfo.addChest(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY()).up(k), worldIn, getChestResourceLocation(config.difficulty), ran, info.direction.rotateY());
+					else
+						tobuild.put(mid_start.offset(info.direction, 2+i).offset(info.direction.rotateY()).up(k), RoomInfo.iron_block);
 				}
 			}
 		}

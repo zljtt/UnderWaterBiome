@@ -6,6 +6,7 @@ import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.Interface.INeedBluePrint;
+import com.github.zljtt.underwaterbiome.Utils.Interface.INeedItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
@@ -13,7 +14,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
-public class BlockIronSlab extends SlabBlock implements INeedBluePrint
+public class BlockIronSlab extends SlabBlock implements INeedBluePrint, INeedItem
 {
 
 	
@@ -24,7 +25,7 @@ public class BlockIronSlab extends SlabBlock implements INeedBluePrint
 		
 		
 		BlockInit.BLOCKS.add(this);
-		ItemInit.ITEMS.add(new BlockItem(this, new Item.Properties().group(BlockInit.blockGroup)).setRegistryName(this.getRegistryName()));
+//		ItemInit.ITEMS.add(new BlockItem(this, new Item.Properties().group(BlockInit.blockGroup)).setRegistryName(this.getRegistryName()));
 
 	}
 
@@ -32,6 +33,12 @@ public class BlockIronSlab extends SlabBlock implements INeedBluePrint
 	public BlueprintInfo getBlueprintInfo() 
 	{
 		return new BlueprintInfo(true, new int[] {0,1}, BlueprintType.PHYSICS);
+	}
+
+	@Override
+	public boolean needItem() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 

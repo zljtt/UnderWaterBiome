@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:force_landing",
+  "parent": "underwaterbiome:precision_part",
   "rewards": {
     "recipes": [
       "underwaterbiome:perpetual_motion_core"
@@ -11,7 +11,7 @@
       "conditions": {
         "chemistry": 2,
         "biology": 2,
-        "physics": 2,
+        "physics": 5,
         "occult": 2
       }
     },
@@ -53,7 +53,7 @@
                     {
                       "translate" : "message.biology","color": "yellow","italic": false,"extra":[{"text" : "2","color": "aqua","extra":[
                     {
-                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{"text" : "2","color": "aqua","extra":[
+                      "translate" : "message.physics","color": "yellow","italic": false,"extra":[{"text" : "5","color": "aqua","extra":[
                     {
                       "translate" : "message.occult","color": "yellow","italic": false,"extra":[{"text" : "2","color": "aqua"}]
                     }

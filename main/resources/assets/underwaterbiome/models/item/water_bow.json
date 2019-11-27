@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "underwaterbiome:item/psyche_gun"
+        "layer0": "underwaterbiome:item/water_bow"
     }
 }

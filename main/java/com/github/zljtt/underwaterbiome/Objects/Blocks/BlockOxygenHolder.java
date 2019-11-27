@@ -40,7 +40,7 @@ public class BlockOxygenHolder extends BlockBase
 	
 	public BlockOxygenHolder(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty,  needBlueprint, type,  difficulty);
+		super(name, porperty, true, needBlueprint, type,  difficulty);
 	    this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(OXYGEN_LEVEL, 0));
 	}
 	

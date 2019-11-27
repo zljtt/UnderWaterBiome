@@ -3,7 +3,7 @@
   "pattern": [
     " # ",
     "IPI",
-    " # "
+    " T "
   ],
   "key": {
     "#": {
@@ -14,6 +14,9 @@
     },
     "P": {
       "item": "underwaterbiome:precision_part"
+    },
+    "T": {
+      "item": "underwaterbiome:needle"
     }
   },
   "result": {

@@ -46,7 +46,6 @@ public class UnderwaterBiome
     {
     	Reference.init();
     	proxy.init();
-    	RegistryHandler.preInitRegistries();
 
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());

@@ -18,7 +18,7 @@ public class BlockFluorescentLampOff extends BlockBase
 
 	public BlockFluorescentLampOff(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty,  needBlueprint, type,  difficulty);
+		super(name, porperty, true, needBlueprint, type,  difficulty);
 	}
 	@Override
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn,

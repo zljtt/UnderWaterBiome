@@ -6,7 +6,18 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "weight": 50,
           "name": "minecraft:kelp"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "underwaterbiome:plant_fiber"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 40,
+          "name": "minecraft:air"
         }
       ],
       "conditions": [

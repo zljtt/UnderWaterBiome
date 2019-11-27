@@ -23,9 +23,8 @@ public class Reference
 
 	public static Map<Item, Integer> COLD_PROF_ITEM = new HashMap<Item, Integer>();
 	public static Map<Item, Integer> HEAT_PROF_ITEM = new HashMap<Item, Integer>();
-	public static Map<String, Integer> TECH_POINT_MAP = new HashMap<String, Integer>();
-	public static final DamageSource FROST_BITE = new DamageSource("frost_bite"); 
-	public static final DamageSource SCALD = new DamageSource("scald");
+	public static final DamageSource FROST_BITE = new DamageSource("frost_bite").setDamageBypassesArmor(); 
+	public static final DamageSource SCALD = new DamageSource("scald").setDamageBypassesArmor();
 	public static final DamageSource WATER_CURSE = new DamageSource("water_curse");
 
 	public static final BreathableItem[] BREATHABLEITEM = new BreathableItem[] {BreathableItem.DOUBLE_OXYGEN_TANK,BreathableItem.SINGLE_OXYGEN_TANK};
@@ -36,23 +35,9 @@ public class Reference
 		
 		initColdProfMap(COLD_PROF_ITEM);
 		initHeatProfMap(HEAT_PROF_ITEM);
-		initTechPointMap(TECH_POINT_MAP);
 
 	}
-	private static void initTechPointMap(Map<String, Integer> map) 
-	{
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
-		map.put("advanced_fuel", 5);
 
-	}
 	public static void initColdProfMap(Map<Item, Integer> map)
 	{
 		map.put(Items.IRON_BOOTS, -1);
@@ -79,6 +64,10 @@ public class Reference
 		map.put(Items.LEATHER_CHESTPLATE, 2);
 		map.put(Items.LEATHER_HELMET, 2);
 		map.put(Items.LEATHER_LEGGINGS, 2);
+		
+		map.put(ItemInit.LAVA_BOW, 3);
+		map.put(ItemInit.LAVA_SWORD, 3);
+
 	}
 	public static void initHeatProfMap(Map<Item, Integer> map)
 	{
@@ -106,6 +95,9 @@ public class Reference
 		map.put(Items.LEATHER_CHESTPLATE, 0);
 		map.put(Items.LEATHER_HELMET, 0);
 		map.put(Items.LEATHER_LEGGINGS, 0);
+		
+//		map.put(ItemInit.WATER_BOW, 3);
+		map.put(ItemInit.WATER_SWORD, 3);
 	}
 
 }

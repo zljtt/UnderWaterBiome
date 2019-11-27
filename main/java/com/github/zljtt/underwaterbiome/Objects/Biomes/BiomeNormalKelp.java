@@ -1,6 +1,7 @@
 package com.github.zljtt.underwaterbiome.Objects.Biomes;
 
 import com.github.zljtt.underwaterbiome.Inits.EntityInit;
+import com.github.zljtt.underwaterbiome.Inits.FeatureInit;
 import com.github.zljtt.underwaterbiome.Utils.Enum.Difficulty;
 
 import net.minecraft.block.Blocks;
@@ -32,7 +33,7 @@ public class BiomeNormalKelp extends BiomeOceanBase
 	    		  , depth, scale, color, parent, weight, pollution,0.5F);
 	      
 //	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.KELP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.TOP_SOLID_HEIGHTMAP, IPlacementConfig.NO_PLACEMENT_CONFIG));
-	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.KELP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.TOP_SOLID_HEIGHTMAP_NOISE_BIASED, new TopSolidWithNoiseConfig(80, 120D, 0.0D, Heightmap.Type.OCEAN_FLOOR_WG)));
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(FeatureInit.KELP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.TOP_SOLID_HEIGHTMAP_NOISE_BIASED, new TopSolidWithNoiseConfig(80, 120D, 0.0D, Heightmap.Type.OCEAN_FLOOR_WG)));
 	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.SEAGRASS, new SeaGrassConfig(80, 0.3D), Placement.TOP_SOLID_HEIGHTMAP, IPlacementConfig.NO_PLACEMENT_CONFIG));
 
 	      DefaultBiomeFeatures.addSedimentDisks(this);

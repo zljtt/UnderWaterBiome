@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:attack_amplifer"
+    ]
+  },
+  "criteria": {
+    "use_blueprint": {
+      "trigger": "underwaterbiome:unlocked_blue_print",
+      "conditions": {
+        "blueprint": "attack_amplifer"
+      }   
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:attack_amplifer"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_blueprint",
+      "has_the_recipe"
+    ]
+  ]
+}

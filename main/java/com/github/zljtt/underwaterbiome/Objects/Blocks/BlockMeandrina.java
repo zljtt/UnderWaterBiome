@@ -3,6 +3,7 @@ package com.github.zljtt.underwaterbiome.Objects.Blocks;
 import java.util.Random;
 
 import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockWaterPlantBase;
+import com.github.zljtt.underwaterbiome.Utils.Interface.INeedItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,7 +20,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class BlockMeandrina extends BlockWaterPlantBase
+public class BlockMeandrina extends BlockWaterPlantBase implements INeedItem
 {
     protected static final VoxelShape SHAPE_BASE = Block.makeCuboidShape(1, 0, 1, 15, 4, 15);
     protected static final VoxelShape SHAPE_MID = Block.makeCuboidShape(2, 4, 2, 14, 8, 14);
@@ -71,5 +72,11 @@ public class BlockMeandrina extends BlockWaterPlantBase
 	    {
 	    	return blockstate.func_224755_d(worldIn, blockpos, Direction.UP) &&  worldIn.getBlockState(pos.up()).getBlock()==Blocks.WATER ;
 	    }
+	}
+
+	@Override
+	public boolean needItem() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 }

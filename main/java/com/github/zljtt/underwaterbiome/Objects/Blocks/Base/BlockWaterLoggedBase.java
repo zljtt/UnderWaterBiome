@@ -23,10 +23,11 @@ public class BlockWaterLoggedBase extends BlockBase implements IWaterLoggable
 {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	public BlockWaterLoggedBase(String name, Properties porperty, boolean needBlueprint,BlueprintType type, int... difficulty) 
+	public BlockWaterLoggedBase(String name, Properties porperty,boolean item, boolean needBlueprint,BlueprintType type, int... difficulty) 
 	{
-		super(name, porperty, needBlueprint,  type, difficulty);
-		
+		super(name, porperty,item, needBlueprint,  type, difficulty);
+	    this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false));
+
 	}
 
 	public IFluidState getFluidState(BlockState state) 
@@ -41,7 +42,7 @@ public class BlockWaterLoggedBase extends BlockBase implements IWaterLoggable
 	         {
 	            worldIn.getPendingFluidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 	         }
-	         return false;
+	         return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 	}
 	
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
@@ -63,5 +64,6 @@ public class BlockWaterLoggedBase extends BlockBase implements IWaterLoggable
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) 
 	{
 	      builder.add(WATERLOGGED);
+	      super.fillStateContainer(builder);
 	}
 }

@@ -24,31 +24,32 @@ public enum GenLayerWaterWorldBiome implements IAreaTransformer0, IDimOffset0Tra
         return Registry.BIOME.getId(getRandomOceanBiome(context, BiomeInit.CORAL_REEF));
     }
     
-    private int totalBiomesWeight = 0;
-    private ArrayList<WeightedBiomeEntry> oceanBiomes = Lists.newArrayList();
+    private static int totalBiomesWeight = 0;
+    private static ArrayList<WeightedBiomeEntry> oceanBiomes = Lists.newArrayList();
 
     
     
-    final WeightedBiomeEntry ROOTY_TANTACLE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.ROOTY_TANTACLE).getWeight(),BiomeInit.ROOTY_TANTACLE);
-    final WeightedBiomeEntry NORMAL_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.NORMAL_SEAWEED).getWeight(),BiomeInit.NORMAL_SEAWEED);
-    final WeightedBiomeEntry DEAD_CORAL = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.DEAD_CORAL).getWeight(),BiomeInit.DEAD_CORAL);
-    final WeightedBiomeEntry LIGHTING_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.LIGHTING_SEAWEED).getWeight(),BiomeInit.LIGHTING_SEAWEED);
-    final WeightedBiomeEntry BROKEN_CANYAN = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.BROKEN_CANYAN).getWeight(),BiomeInit.BROKEN_CANYAN);
-    final WeightedBiomeEntry FLOATING_ISLAND = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.FLOATING_ISLAND).getWeight(),BiomeInit.FLOATING_ISLAND);
-    final WeightedBiomeEntry LAVA_RANGE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.LAVA_RANGE).getWeight(),BiomeInit.LAVA_RANGE);
-    final WeightedBiomeEntry CORAL_REEF = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.CORAL_REEF).getWeight(),BiomeInit.CORAL_REEF);
-    final WeightedBiomeEntry CORAL_TREE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.CORAL_TREE).getWeight(),BiomeInit.CORAL_TREE);
+//    final WeightedBiomeEntry ROOTY_TANTACLE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.ROOTY_TANTACLE).getWeight(),BiomeInit.ROOTY_TANTACLE);
+//    final WeightedBiomeEntry NORMAL_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.NORMAL_SEAWEED).getWeight(),BiomeInit.NORMAL_SEAWEED);
+//    final WeightedBiomeEntry DEAD_CORAL = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.DEAD_CORAL).getWeight(),BiomeInit.DEAD_CORAL);
+//    final WeightedBiomeEntry LIGHTING_SEAWEED = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.LIGHTING_SEAWEED).getWeight(),BiomeInit.LIGHTING_SEAWEED);
+//    final WeightedBiomeEntry BROKEN_CANYAN = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.BROKEN_CANYAN).getWeight(),BiomeInit.BROKEN_CANYAN);
+//    final WeightedBiomeEntry FLOATING_ISLAND = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.FLOATING_ISLAND).getWeight(),BiomeInit.FLOATING_ISLAND);
+//    final WeightedBiomeEntry LAVA_RANGE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.LAVA_RANGE).getWeight(),BiomeInit.LAVA_RANGE);
+//    final WeightedBiomeEntry CORAL_REEF = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.CORAL_REEF).getWeight(),BiomeInit.CORAL_REEF);
+//    final WeightedBiomeEntry CORAL_TREE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.CORAL_TREE).getWeight(),BiomeInit.CORAL_TREE);
+//    final WeightedBiomeEntry MANGROVE = createWeightedBiomeEntry(((BiomeOceanBase)BiomeInit.MANGROVE).getWeight(),BiomeInit.MANGROVE);
 
 //    final WeightedBiomeEntry DEEP_OCEAN = createWeightedBiomeEntry(10,Biomes.DEEP_OCEAN);
 //    final WeightedBiomeEntry LUKEWARM_OCEAN = createWeightedBiomeEntry(10,Biomes.LUKEWARM_OCEAN);
 
     public Biome getRandomOceanBiome(INoiseRandom context, Biome fallback)
     {
-    	if (this.totalBiomesWeight == 0)
+    	if (GenLayerWaterWorldBiome.totalBiomesWeight == 0)
             return fallback;
 
-        int weight = context.random(this.totalBiomesWeight);
-        Iterator<WeightedBiomeEntry> iterator = this.oceanBiomes.iterator();
+        int weight = context.random(GenLayerWaterWorldBiome.totalBiomesWeight);
+        Iterator<WeightedBiomeEntry> iterator = GenLayerWaterWorldBiome.oceanBiomes.iterator();
         WeightedBiomeEntry item;
         do
         {
@@ -58,7 +59,7 @@ public enum GenLayerWaterWorldBiome implements IAreaTransformer0, IDimOffset0Tra
         while (weight >= 0);
         return item.biome;
     }
-    private WeightedBiomeEntry createWeightedBiomeEntry(int weight, Biome biome)
+    public static WeightedBiomeEntry createWeightedBiomeEntry(int weight, Biome biome)
     {
     	WeightedBiomeEntry entry = new WeightedBiomeEntry(weight, biome);
     	totalBiomesWeight += weight;

@@ -3,11 +3,14 @@
   "group":"fish_skin",
   "pattern": [
     "XXX",
-    "X X"
+    "X#X"
   ],
   "key": {
     "X": {
       "item": "underwaterbiome:fish_skin"
+    },
+    "#": {
+      "item": "underwaterbiome:needle_and_thread"
     }
   },
   "result": {

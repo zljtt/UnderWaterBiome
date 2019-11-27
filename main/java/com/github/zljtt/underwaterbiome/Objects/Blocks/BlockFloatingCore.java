@@ -2,28 +2,24 @@ package com.github.zljtt.underwaterbiome.Objects.Blocks;
 
 import com.github.zljtt.underwaterbiome.Inits.BlockInit;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
+import com.github.zljtt.underwaterbiome.Objects.Blocks.Base.BlockBase;
 import com.github.zljtt.underwaterbiome.Utils.Reference;
+import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
+import com.github.zljtt.underwaterbiome.Utils.Interface.INeedItem;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Block.Properties;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
-public class BlockFloatingCore extends Block
+public class BlockFloatingCore extends BlockBase
 {
 
-	public BlockItem BLOCKITEM;
-	public BlockFloatingCore(String name, Properties porperty) 
+	public BlockFloatingCore(String name, Properties porperty, boolean needBlueprint, BlueprintType type,
+			int... difficulty) 
 	{
-		
-		super(porperty);
-		setRegistryName(new ResourceLocation(Reference.MODID,name));
-		this.BLOCKITEM = (BlockItem) new BlockItem(this, new Item.Properties().group((BlockInit.blockGroup)));
-		
-		
-		BlockInit.BLOCKS.add(this);
-		ItemInit.ITEMS.add(BLOCKITEM.setRegistryName(this.getRegistryName()));
+		super(name, porperty, true, needBlueprint, type, difficulty);
 
 	}
-
 }

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.github.zljtt.underwaterbiome.Utils.Reference;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo.BlueprintType;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
@@ -22,6 +23,7 @@ import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -75,9 +77,11 @@ public class BlockWallWaterTorch extends BlockWaterTorch
 	      BlockPos blockpos = context.getPos();
 	      Direction[] adirection = context.getNearestLookingDirections();
 	      IFluidState ifluidstate = context.getWorld().getFluidState(context.getPos());
-
-	      for(Direction direction : adirection) {
-	         if (direction.getAxis().isHorizontal()) {
+	      
+	      for(Direction direction : adirection) 
+	      {
+	         if (direction.getAxis().isHorizontal()) 
+	         {
 	            Direction direction1 = direction.getOpposite();
 	            blockstate = blockstate.with(HORIZONTAL_FACING, direction1);
 	            if (blockstate.isValidPosition(iworldreader, blockpos)) 
@@ -92,9 +96,17 @@ public class BlockWallWaterTorch extends BlockWaterTorch
 
 	   public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	   {
-	      return facing.getOpposite() == stateIn.get(HORIZONTAL_FACING) && !stateIn.isValidPosition(worldIn, currentPos) ? 
-	    		  (stateIn.get(WATERLOGGED)?Blocks.WATER.getDefaultState():Blocks.AIR.getDefaultState()) 
-	    		  : stateIn;
+		   if (facing.getOpposite() == stateIn.get(HORIZONTAL_FACING) && !stateIn.isValidPosition(worldIn, currentPos))
+			{
+				worldIn.destroyBlock(currentPos, true);
+				
+			}
+		   if (stateIn.get(WATERLOGGED)) 
+		      {
+		         worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+		      }
+
+	      return  super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	   }
 
 
@@ -132,4 +144,9 @@ public class BlockWallWaterTorch extends BlockWaterTorch
 	   {
 	      builder.add(HORIZONTAL_FACING,WATERLOGGED);
 	   }
+	   public ResourceLocation getLootTable() 
+		{
+			return new ResourceLocation(Reference.MODID,"blocks/wall_water_torch");
+			
+		};
 }

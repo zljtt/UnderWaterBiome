@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:force_landing",
+  "parent": "underwaterbiome:needle_and_thread",
   "rewards": {
     "recipes": [
       "underwaterbiome:precision_part"

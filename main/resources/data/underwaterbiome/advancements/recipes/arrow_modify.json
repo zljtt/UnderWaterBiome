@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:arrow_modify"
+    ]
+  },
+  "criteria": {
+    "use_blueprint": {
+      "trigger": "underwaterbiome:unlocked_blue_print",
+      "conditions": {
+        "blueprint": "arrow_modify"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:arrow_modify"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_blueprint",
+      "has_the_recipe"
+    ]
+  ]
+}

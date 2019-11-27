@@ -1,0 +1,70 @@
+{
+  "parent": "underwaterbiome:lava_bar",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:potion_instant_damage"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "occult": 4
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:potion_instant_damage"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "minecraft:splash_potion",
+      "tag":"{Potion:\"minecraft:harming\"}"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.potion_instant_damage.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.potion_instant_damage.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "tooltip.potion_instant_damage",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","bold": false,"extra":[{"text" : "4","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

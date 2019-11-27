@@ -3,6 +3,7 @@ package com.github.zljtt.underwaterbiome.Objects.Items.Base;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.zljtt.underwaterbiome.Inits.EffectInit;
 import com.github.zljtt.underwaterbiome.Inits.ItemInit;
 import com.github.zljtt.underwaterbiome.Utils.AccessoryEntry;
 import com.github.zljtt.underwaterbiome.Utils.BlueprintInfo;
@@ -34,9 +35,12 @@ public abstract class ItemAccessoryBase extends Item implements INeedBluePrint
 	BlueprintInfo info;
 	String name;
 	ObtainType obtain_type;
+	protected Boolean added = true;
+	public Boolean shouldRemoveEffect = false;
+
 	public ItemAccessoryBase(String name, Item.Properties property, ObtainType ob, boolean needBlueprint, BlueprintType type, int... difficulty) 
 	{
-		super(property);
+		super(property.maxStackSize(1));
 		this.obtain_type = ob;
 		this.name = name;
 		setRegistryName(new ResourceLocation(Reference.MODID,"accessory/"+name));
@@ -45,6 +49,10 @@ public abstract class ItemAccessoryBase extends Item implements INeedBluePrint
 		if (ob == ObtainType.CHEST)ItemInit.ACCESSORY_CHEST.add(this);
 		else if (ob == ObtainType.CRAFTING)ItemInit.ACCESSORY_CRAFTING.add(this);
 		else if (ob == ObtainType.ENTITY_DROP)ItemInit.ACCESSORY_ENTITY_DROP.add(this);
+	}
+	public void setAdded(Boolean add)
+	{
+		this.added = add;
 	}
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
@@ -67,6 +75,7 @@ public abstract class ItemAccessoryBase extends Item implements INeedBluePrint
 	{
 		return event;
 	}
+
 	@Override
 	public String getTranslationKey() 
 	{
@@ -80,6 +89,7 @@ public abstract class ItemAccessoryBase extends Item implements INeedBluePrint
 	}
 	public static <T extends Event>T testAccessoryAndEdit(World worldIn, PlayerEntity player, T event, AccessoryEntry<?> type)
 	{
+		boolean shouldRemoveEffect = false; 
 		List<Item> n = new ArrayList<Item>();
 		for (ItemStack stack:player.inventory.mainInventory)
 		{
@@ -87,12 +97,35 @@ public abstract class ItemAccessoryBase extends Item implements INeedBluePrint
 					&& !n.contains(stack.getItem()))
 			{
 				ItemAccessoryBase item = (ItemAccessoryBase) stack.getItem();
-				System.out.println(item.name);
 				event = item.editEffect(worldIn, player, event);
 				if(!item.getAccumulateable()) n.add(stack.getItem());
+
+				if (item.shouldRemoveEffect)
+				{
+					item.shouldRemoveEffect =false;
+					shouldRemoveEffect = true;
+				}
+				
 			}
 		}
+		if (shouldRemoveEffect)
+		{
+			player.removePotionEffect(EffectInit.TEMP_STRENGTH);
+		}
+		
 		return event;
+		
+	}
+	public static boolean testAccessory(PlayerEntity player, Item item)
+	{
+		for (ItemStack stack:player.inventory.mainInventory)
+		{
+			if (stack.getItem() instanceof ItemAccessoryBase && (ItemAccessoryBase) stack.getItem() == item)
+			{
+				return true;
+			}
+		}
+		return false;
 		
 	}
 	public static boolean isMeleeDamage(Item item)

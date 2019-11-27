@@ -1,5 +1,5 @@
 {
-  "parent": "underwaterbiome:torch_near",
+  "parent": "underwaterbiome:potion_poison",
   "rewards": {
     "recipes": [
       "underwaterbiome:venom_extract"

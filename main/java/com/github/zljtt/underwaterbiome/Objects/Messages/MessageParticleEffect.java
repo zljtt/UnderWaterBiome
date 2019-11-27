@@ -43,22 +43,25 @@ public class MessageParticleEffect extends MessageBase
 	{
 		context.get().enqueueWork(() -> 
  	    {    	
+			System.out.print(data);
 	 	    PlayerEntity sender = context.get().getSender(); 
 
  	    	BlockPos pos = sender.getPosition();
- 	    	double d0 = (double)pos.getX()+ran.nextDouble()-ran.nextDouble();
-		    double d1 = (double)pos.getY() + 0.7D+ran.nextDouble()-ran.nextDouble();
-		    double d2 = (double)pos.getZ()+ran.nextDouble()-ran.nextDouble();
+ 	    	
 		    BasicParticleType type;
 		    switch(data)
 		    {
 		    case "enchant":type = ParticleTypes.ENCHANT; break;
 		    default: type = ParticleTypes.ENCHANT;
 		    }
-	 	    for (int i = 0; i<10;i++)
+	 	    for (int i = 0; i<20;i++)
 			{
+	 	    	double d0 = (double)pos.getX()-0.5+ran.nextDouble()*2;
+			    double d1 = (double)pos.getY()+ran.nextDouble()*2;
+			    double d2 = (double)pos.getZ()-0.5+ran.nextDouble()*2;
 	 		   sender.getEntityWorld().addParticle(type, d0, d1, d2, 0.0D, 0.0D, 0.0D);
 			}
+	 	    
  	    });
     	context.get().setPacketHandled(true);
 	}
