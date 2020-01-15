@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "I#I",
+    "III"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:drowned_boss_summon",
+    "count": 1
+  }
+}

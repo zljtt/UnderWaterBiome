@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I#I",
+    "###",
+    "I#I"
+  ],
+  "key": {
+    "I": {
+      "item": "underwaterbiome:fish_skin"
+    },
+    "#": {
+      "item": "underwaterbiome:shark_fin"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:ray_boss_summon",
+    "count": 1
+  }
+}

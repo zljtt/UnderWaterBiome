@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "underwaterbiome:lime"
+  },
+  "result": "underwaterbiome:lime_powder",
+  "experience": 0.15,
+  "cookingtime": 200
+}

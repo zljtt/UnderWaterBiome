@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "underwaterbiome:block/ship_door_bottom",
+        "top": "underwaterbiome:block/ship_door_top"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "fish_skin",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "item": "underwaterbiome:diamond_knife"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:fish_skin",
+    "count": 5
+  }
+}

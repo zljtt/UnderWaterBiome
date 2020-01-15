@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "IPI",
+    " T "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "underwaterbiome:single_oxygen_tank"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    },
+    "T": {
+      "item": "underwaterbiome:needle"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:double_oxygen_tank",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "underwaterbiome:block/life_ring" },
+        "facing=south": { "model": "underwaterbiome:block/life_ring", "y": 90 },
+        "facing=west": { "model": "underwaterbiome:block/life_ring", "y": 180 },
+        "facing=north": { "model": "underwaterbiome:block/life_ring", "y": 270 }
+    }
+}

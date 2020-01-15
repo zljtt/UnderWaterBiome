@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "underwaterbiome:block/wall_water_torch" },
+        "facing=south": { "model": "underwaterbiome:block/wall_water_torch", "y": 90 },
+        "facing=west": { "model": "underwaterbiome:block/wall_water_torch", "y": 180 },
+        "facing=north": { "model": "underwaterbiome:block/wall_water_torch", "y": 270 }
+    }
+}

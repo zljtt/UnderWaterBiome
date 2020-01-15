@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "IPI",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:glass_pane"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+
+  },
+  "result": {
+    "item": "underwaterbiome:cabin_door",
+    "count": 1
+  }
+}

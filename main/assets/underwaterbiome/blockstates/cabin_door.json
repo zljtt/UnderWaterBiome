@@ -1,0 +1,11 @@
+{
+    "variants": 
+    {
+        "facing=north": { "model": "underwaterbiome:block/cabin_door", "y": 180},
+        "facing=south": { "model": "underwaterbiome:block/cabin_door", "y": 0},
+        "facing=west": { "model": "underwaterbiome:block/cabin_door", "y": 90},
+        "facing=east": { "model": "underwaterbiome:block/cabin_door", "y": 270}
+
+    }
+}
+

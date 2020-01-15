@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP",
+    "#T",
+    "PP"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "underwaterbiome:perpetual_motion_core"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:decipher_device",
+    "count": 1
+  }
+}

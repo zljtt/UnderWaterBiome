@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PIP",
+    "P P",
+    "P#P"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:redstone"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:single_oxygen_tank",
+    "count": 1
+  }
+}

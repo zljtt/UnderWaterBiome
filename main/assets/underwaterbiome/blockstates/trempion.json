@@ -1,0 +1,10 @@
+{
+    "variants": 
+    {
+        "half=upper,age=0": { "model": "underwaterbiome:block/trempion_up_0" },
+        "half=upper,age=1": { "model": "underwaterbiome:block/trempion_up_1" },
+        "half=lower,age=0": { "model": "underwaterbiome:block/trempion_down_0" },
+        "half=lower,age=1": { "model": "underwaterbiome:block/trempion_down_1" }
+    }
+}
+

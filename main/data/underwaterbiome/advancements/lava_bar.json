@@ -1,0 +1,69 @@
+{
+  "parent": "underwaterbiome:water_bar",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:lava_bar"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "occult": 3
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:lava_bar"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:lava_bar"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.lava_bar.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.lava_bar.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.lava_bar",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","bold": false,"extra":[{"text" : "3","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

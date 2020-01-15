@@ -1,0 +1,77 @@
+{
+  "parent": "underwaterbiome:element_sword",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:water_bow",
+      "underwaterbiome:lava_bow"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "occult": 12
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:water_bow"
+      }
+    },
+    "have_two_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:lava_bow"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:lava_bow"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.element_bow.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.element_bow.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "advancements.underwaterbiome.element_bow_weapon",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","bold": false,"extra":[{"text" : "12","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe",
+      "have_two_recipe"
+    ]
+  ]
+}

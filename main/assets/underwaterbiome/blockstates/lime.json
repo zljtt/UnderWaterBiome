@@ -1,0 +1,11 @@
+{
+    "variants": 
+    {
+        "facing=north": { "model": "underwaterbiome:block/lime"},
+        "facing=south": { "model": "underwaterbiome:block/lime", "y": 90},
+        "facing=west": { "model": "underwaterbiome:block/lime", "y": 180},
+        "facing=east": { "model": "underwaterbiome:block/lime", "y": 270}
+
+    }
+}
+

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Y# ",
+    "Y I",
+    "Y# "
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:lava_bar"
+    },
+    "I": {
+      "item": "underwaterbiome:obsidian_stick"
+    },
+    "Y": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:lava_bow",
+    "count": 1
+  }
+}

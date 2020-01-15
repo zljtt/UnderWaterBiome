@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "underwaterbiome:block/advanced_iron_block",
+        "front": "underwaterbiome:block/ship_chest",
+        "side": "underwaterbiome:block/advanced_iron_block",
+        "particle": "underwaterbiome:block/advanced_iron_block"
+    }
+}
+

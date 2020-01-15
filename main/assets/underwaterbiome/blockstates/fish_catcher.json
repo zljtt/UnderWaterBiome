@@ -1,0 +1,9 @@
+{
+    "variants": 
+    {
+        "has_bait=true": { "model": "underwaterbiome:block/fish_catcher_has_bait"},
+        "has_bait=false": { "model": "underwaterbiome:block/fish_catcher"}
+
+    }
+}
+

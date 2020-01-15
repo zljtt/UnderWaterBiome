@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I",
+    "H"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:stick"
+    },
+    "I": {
+      "item": "underwaterbiome:lighting_extract"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:water_torch",
+    "count": 64
+  }
+}

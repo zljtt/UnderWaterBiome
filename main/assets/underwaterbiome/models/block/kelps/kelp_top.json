@@ -1,0 +1,7 @@
+{
+    "parent": "block/tinted_cross",
+    "textures": {
+    	"particle": "underwaterbiome:block/kelps/kelp_top",
+        "cross": "underwaterbiome:block/kelps/kelp_top"
+    }
+}

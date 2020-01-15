@@ -1,0 +1,56 @@
+{
+    "variants": 
+    {
+        "facing=south,oxygen_level=0": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_1" },
+        "facing=west,oxygen_level=0": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_1", "y": 90 },
+        "facing=north,oxygen_level=0": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_1", "y": 180 },
+        "facing=east,oxygen_level=0": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_1", "y": 270 },
+
+        "facing=south,oxygen_level=1": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_2" },
+        "facing=west,oxygen_level=1": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_2", "y": 90 },
+        "facing=north,oxygen_level=1": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_2", "y": 180 },
+        "facing=east,oxygen_level=1": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_2", "y": 270 },
+
+        "facing=south,oxygen_level=2": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_3" },
+        "facing=west,oxygen_level=2": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_3", "y": 90 },
+        "facing=north,oxygen_level=2": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_3", "y": 180 },
+        "facing=east,oxygen_level=2": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_3", "y": 270 },
+
+        "facing=south,oxygen_level=3": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_4" },
+        "facing=west,oxygen_level=3": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_4", "y": 90 },
+        "facing=north,oxygen_level=3": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_4", "y": 180 },
+        "facing=east,oxygen_level=3": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_4", "y": 270 },
+
+        "facing=south,oxygen_level=4": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_5" },
+        "facing=west,oxygen_level=4": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_5", "y": 90 },
+        "facing=north,oxygen_level=4": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_5", "y": 180 },
+        "facing=east,oxygen_level=4": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_5", "y": 270 },
+
+        "facing=south,oxygen_level=5": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_6" },
+        "facing=west,oxygen_level=5": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_6", "y": 90 },
+        "facing=north,oxygen_level=5": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_6", "y": 180 },
+        "facing=east,oxygen_level=5": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_6", "y": 270 },
+
+        "facing=south,oxygen_level=6": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_7" },
+        "facing=west,oxygen_level=6": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_7", "y": 90 },
+        "facing=north,oxygen_level=6": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_7", "y": 180 },
+        "facing=east,oxygen_level=6": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_7", "y": 270 },
+
+        "facing=south,oxygen_level=7": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_8" },
+        "facing=west,oxygen_level=7": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_8", "y": 90 },
+        "facing=north,oxygen_level=7": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_8", "y": 180 },
+        "facing=east,oxygen_level=7": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_8", "y": 270 },
+
+        "facing=south,oxygen_level=8": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_9" },
+        "facing=west,oxygen_level=8": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_9", "y": 90 },
+        "facing=north,oxygen_level=8": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_9", "y": 180 },
+        "facing=east,oxygen_level=8": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_9", "y": 270 },
+
+        "facing=south,oxygen_level=9": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_10" },
+        "facing=west,oxygen_level=9": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_10", "y": 90 },
+        "facing=north,oxygen_level=9": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_10", "y": 180 },
+        "facing=east,oxygen_level=9": { "model": "underwaterbiome:block/oxygen_holder/oxygen_holder_10", "y": 270 }
+
+    }
+}
+

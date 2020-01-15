@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "underwaterbiome:block/iron_slab" },
+        "type=top": { "model": "underwaterbiome:block/iron_slab_top" },
+        "type=double": { "model": "minecraft:block/iron_block" }
+    }
+}

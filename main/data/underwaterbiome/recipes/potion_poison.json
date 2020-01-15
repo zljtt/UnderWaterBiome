@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:conical_flask"
+    },
+    {
+      "item": "underwaterbiome:silt"
+    }
+  ],
+  "result": {
+    "item": "minecraft:splash_potion",
+    "tag": "{Potion:\"minecraft:poison\"}"
+  }
+}

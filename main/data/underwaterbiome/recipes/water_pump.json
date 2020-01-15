@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I#I",
+    "#I#",
+    "I#I"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:kelp"
+    },
+    "I": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:water_pump",
+    "count": 1
+  }
+}

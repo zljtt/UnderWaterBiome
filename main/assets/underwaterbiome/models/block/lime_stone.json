@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "underwaterbiome:block/lime_stone"
+    }
+}

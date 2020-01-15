@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group":"fish_skin",
+  "pattern": [
+    "X#X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "underwaterbiome:fish_skin"
+    },
+    "#": {
+      "item": "underwaterbiome:needle_and_thread"
+    }
+  },
+  "result": {
+    "item": "minecraft:leather_boots"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "#": {
+      "item": "underwaterbiome:plant_extract"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:fuel",
+    "count": 6
+  }
+}

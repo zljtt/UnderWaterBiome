@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#H#",
+    " P "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    },
+    "H": {
+      "item": "underwaterbiome:water_bar"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:accessory/arrow_modify",
+    "count": 1
+  }
+}

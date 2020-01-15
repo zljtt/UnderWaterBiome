@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "###",
+    "III"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "I": {
+      "item": "underwaterbiome:lime_powder"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:heating_pad",
+    "count": 6
+  }
+}

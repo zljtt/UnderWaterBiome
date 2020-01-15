@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:temperature_meter"
+    },
+    {
+      "item": "underwaterbiome:pressure_meter"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:measuring_device"
+  }
+}

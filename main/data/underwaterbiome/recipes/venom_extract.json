@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:silt"
+    },
+    {
+      "item": "underwaterbiome:silt"
+    },
+    {
+      "item": "underwaterbiome:silt"
+    },
+    {
+      "item": "underwaterbiome:plant_extract"
+    },
+    {
+      "item": "underwaterbiome:plant_extract"
+    },
+    {
+      "item": "underwaterbiome:conical_flask"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:venom_extract"
+  }
+}

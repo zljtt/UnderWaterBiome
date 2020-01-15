@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:needle"
+    },
+    {
+      "item": "underwaterbiome:thread"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:needle_and_thread"
+  }
+}

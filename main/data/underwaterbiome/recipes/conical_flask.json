@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:conical_flask",
+    "count": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "underwaterbiome:coral_stick"
+  },
+  "result": "minecraft:stick",
+  "experience": 0.05,
+  "cookingtime": 100
+}
