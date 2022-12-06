@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "GIG",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "underwaterbiome:perpetual_motion_core"
+    },
+    "G": {
+      "item": "underwaterbiome:water_bar"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:oxygen_holder",
+    "count": 1
+  }
+}

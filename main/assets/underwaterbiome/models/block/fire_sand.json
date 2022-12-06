@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "particle": "underwaterbiome:block/fire_sand",
+        "bottom": "underwaterbiome:block/sand",
+        "top": "underwaterbiome:block/fire_sand",
+        "side": "underwaterbiome:block/fire_sand_side"
+    }
+}

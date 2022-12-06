@@ -1,0 +1,83 @@
+{
+  "parent": "underwaterbiome:lighting_extract",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:water_torch_advanced"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "chemistry": 6,
+        "biology": 3,
+        "occult": 3
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:water_torch_advanced"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:water_torch"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.water_torch_advanced.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.water_torch_advanced.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "block.underwaterbiome.water_torch",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.chemistry","color": "yellow","bold": false,"extra":[{"text" : "6","color": "aqua","extra":[
+                    {
+                      "translate" : "message.biology","color": "yellow","italic": false,"extra":[{"text" : "3","color": "aqua","extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","italic": false,"extra":[{"text" : "3","color": "aqua"}]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

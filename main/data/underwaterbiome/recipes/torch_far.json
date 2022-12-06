@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I",
+    "H",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:precision_part"
+    },
+    "H": {
+      "item": "underwaterbiome:torch_near"
+    },
+    "I": {
+      "item": "underwaterbiome:lighting_extract"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:torch_far",
+    "count": 1
+  }
+}

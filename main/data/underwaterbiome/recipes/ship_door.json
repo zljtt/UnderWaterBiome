@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "P#",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:advanced_iron_block"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:ship_door",
+    "count": 3
+  }
+}

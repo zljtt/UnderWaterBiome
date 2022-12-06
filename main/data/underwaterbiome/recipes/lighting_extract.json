@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:seaweed_fruit"
+    },
+    {
+      "item": "underwaterbiome:seaweed_fruit"
+    },
+    {
+      "item": "underwaterbiome:conical_flask"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:lighting_extract"
+  }
+}

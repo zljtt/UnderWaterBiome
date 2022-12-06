@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:drowned_boss_summon"
+    ]
+  },
+  "criteria": {
+    "has_pressure_meter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:rotten_flesh"
+          }
+        ]
+      }
+    },
+    "has_temperature_meter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:gold_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:drowned_boss_summon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pressure_meter",
+      "has_temperature_meter",
+      "has_the_recipe"
+    ]
+  ]
+}

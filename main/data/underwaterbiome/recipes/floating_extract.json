@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:floating_core"
+    },
+    {
+      "item": "underwaterbiome:conical_flask"
+    }
+  ],
+  "result": {
+    "item": "underwaterbiome:floating_extract"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "underwaterbiome:plant_fiber"
+    },
+    {
+      "item": "underwaterbiome:plant_fiber"
+    }
+  ],
+  "result": {
+    "item": "minecraft:string"
+  }
+}

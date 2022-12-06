@@ -1,0 +1,76 @@
+{
+  "parent": "underwaterbiome:pressure_meter",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:magical_gun"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "physics": 9,
+        "occult": 10
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:magical_gun"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:accessory/magical_gun"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.magical_gun.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.magical_gun.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.magical_gun",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","bold": false,"extra":[{"text" : "9","color": "aqua","extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","italic": false,"extra":[{"text" : "10","color": "aqua"}]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:lime_powder"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:lime_stone",
+    "count": 1
+  }
+}

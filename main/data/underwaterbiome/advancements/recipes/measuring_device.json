@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:measuring_device"
+    ]
+  },
+  "criteria": {
+    "has_pressure_meter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "underwaterbiome:pressure_meter"
+          }
+        ]
+      }
+    },
+    "has_temperature_meter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "underwaterbiome:temperature_meter"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:measuring_device"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pressure_meter",
+      "has_temperature_meter",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/underwater-biome",
+  "1.14.4": {
+    "0.7.2": "<>",
+    "0.7.2": "<>"
+  },
+  "promos": {
+    "1.14.4-latest": "0.7.2",
+    "1.14.4-recommended": "0.7.2"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "parent": "underwaterbiome:precision_part",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:temperature_meter"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "physics": 6,
+        "occult": 4
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:temperature_meter"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:temperature_meter"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.temperature_meter.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.temperature_meter.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.temperature_meter",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.physics","color": "yellow","bold": false,"extra":[{
+                      "text" : "6","color": "aqua","extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","italic": false,"extra":[{
+                      "text" : "4","color": "aqua"
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

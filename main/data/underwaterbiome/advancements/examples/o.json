@@ -1,0 +1,69 @@
+{
+  "parent": "underwaterbiome:recipename",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:recipename"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "occult": 1
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:recipename"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:recipename"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.recipename.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.recipename.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.recipename",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","bold": false,"extra":[{"text" : "i_n_t_e_g_e_r","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

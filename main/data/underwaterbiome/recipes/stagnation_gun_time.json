@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    " HP",
+    " I "
+  ],
+  "key": {
+    "H": {
+      "item": "underwaterbiome:stagnation_gun"
+    },
+    "I": {
+      "item": "underwaterbiome:floating_extract"
+    },
+    "P": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:stagnation_gun_time",
+    "count": 1
+  }
+}

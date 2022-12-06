@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IT",
+    "#I",
+    "IT"
+  ],
+  "key": {
+    "#": {
+      "item": "underwaterbiome:perpetual_motion_core"
+    },
+    "T": {
+      "item": "minecraft:redstone"
+    },
+    "I": {
+      "item": "underwaterbiome:precision_part"
+    }
+  },
+  "result": {
+    "item": "underwaterbiome:accessory/magical_gun",
+    "count": 1
+  }
+}

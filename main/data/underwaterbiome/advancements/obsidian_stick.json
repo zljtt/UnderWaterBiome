@@ -1,0 +1,69 @@
+{
+  "parent": "underwaterbiome:lava_bar",
+  "rewards": {
+    "recipes": [
+      "underwaterbiome:obsidian_stick"
+    ]
+  },
+  "criteria": {
+    "have_higher_points": {
+      "trigger": "underwaterbiome:have_knowledge",
+      "conditions": {
+        "occult": 4
+      }
+    },
+    "have_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "underwaterbiome:obsidian_stick"
+      }
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "underwaterbiome:obsidian_stick"
+    },
+    "title": {
+      "translate": "advancements.underwaterbiome.obsidian_stick.title"
+    },
+    "frame": "task",
+    "description": {
+      "translate": "advancements.underwaterbiome.obsidian_stick.description",
+      "extra":[
+        {
+          "translate" : "message.reward",
+          "bold": true,
+          "color": "gold",
+          "extra":[
+            {
+              "translate" : "item.underwaterbiome.obsidian_stick",
+              "color": "yellow",
+              "bold": false,
+              "extra":[
+                {
+                  "translate" : "message.require",
+                  "bold": true,
+                  "color": "gold",
+                  "extra":[
+                    {
+                      "translate" : "message.occult","color": "yellow","bold": false,"extra":[{"text" : "4","color": "aqua"}]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "have_higher_points",
+      "have_the_recipe"
+    ]
+  ]
+}

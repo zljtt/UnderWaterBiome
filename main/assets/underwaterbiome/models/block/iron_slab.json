@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "underwaterbiome:block/advanced_iron_block",
+        "top": "underwaterbiome:block/advanced_iron_block",
+        "side": "underwaterbiome:block/advanced_iron_block"
+    }
+}
